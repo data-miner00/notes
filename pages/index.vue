@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 const localePath = useLocalePath();
+const { data: navigation } = await useAsyncData("navigation", () =>
+  fetchContentNavigation()
+);
 </script>
 
 <template>
@@ -87,5 +90,10 @@ const localePath = useLocalePath();
         </FeatureCard>
       </li>
     </ul>
+  </section>
+  <section>
+    <pre>
+      {{ navigation }}
+    </pre>
   </section>
 </template>
