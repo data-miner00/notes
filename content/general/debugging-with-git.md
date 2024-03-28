@@ -10,7 +10,7 @@ tags:
   - debugging
   - grep
   - bisect
-updatedAt: 2024-03-24T11:12:17.718Z
+updatedAt: 2024-03-28T11:05:53.157Z
 createdAt: 2023-10-27T11:12:17.718Z
 --- 
 
@@ -142,7 +142,7 @@ git show <commit-hash>
 
 ## Grep
 
-`git grep` is just [Grep](https://man7.org/linux/man-pages/man1/grep.1.html), but for Git. It is used to search text with string or regular expressions for commited files within a Git repository.
+`git grep` is just [Grep](https://man7.org/linux/man-pages/man1/grep.1.html), but for Git. It is used to search text with string or regular expressions for committed files within a Git repository.
 
 ```
 git grep <regex/text>

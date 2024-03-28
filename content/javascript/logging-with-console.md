@@ -9,7 +9,7 @@ tags:
   - javascript
   - logging
   - debugging
-updatedAt: 2023-07-15T13:17:10.163Z
+updatedAt: 2024-03-28T11:05:53.157Z
 createdAt: 2022-08-12T17:38:48.848Z
 ---
 
@@ -81,7 +81,7 @@ console.groupEnd()
 
 ### Dir
 
-Provides a better readibility for object types when logged. Outputs JSON info when html elements (with `document.querySelector` or methods akin) was passed.
+Provides a better readability for object types when logged. Outputs JSON info when html elements (with `document.querySelector` or methods akin) was passed.
 
 ![Using dir in console](/images/console/dir.png)
 
@@ -194,7 +194,7 @@ Below are the summary of the aforementioned methods:
 
 ## Styling
 
-Here is a pro tip for the `console.log` fanatics. The logging in the browser (not Node.js) can be enhanced with different CSS stylings to make the log looks much better than the default one. To do that, add `%c` with a whitespace followed by the content to log, followed by **a string of** CSS related styles, seperated by semicolons between the styles.
+Here is a pro tip for the `console.log` fanatics. The logging in the browser (not Node.js) can be enhanced with different CSS stylings to make the log looks much better than the default one. To do that, add `%c` with a whitespace followed by the content to log, followed by **a string of** CSS related styles, separated by semicolons between the styles.
 
 ```js
 console.log(
@@ -207,7 +207,7 @@ Results in the following awesome looking console.
 
 ![Sample colorful logs in console](/images/console/gradient.png)
 
-To provide multiple different stylings for one single log can be achieved by specifying more `%c` characters. They are essentially indicating **where** does the style would start from. If the intepreter encounters a second `%c` in one single log, the first applied style will **stop** there and begin to style the following with the second styles string provided.
+To provide multiple different stylings for one single log can be achieved by specifying more `%c` characters. They are essentially indicating **where** does the style would start from. If the interpreter encounters a second `%c` in one single log, the first applied style will **stop** there and begin to style the following with the second styles string provided.
 
 The following example will demonstrate what was discussed above.
 
