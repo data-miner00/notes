@@ -10,7 +10,11 @@ module.exports = {
     "./locales/**/*.json",
   ],
   theme: {
-    extend: {},
+    extend: {
+      brightness: {
+        50: "50%",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
   darkMode: "class",
