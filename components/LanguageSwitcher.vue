@@ -11,7 +11,7 @@ function closePopup() {
   <div class="relative flex items-center">
     <button
       @click="() => (isPopupOpen = !isPopupOpen)"
-      class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
+      class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-800 rounded-md"
     >
       <svg
         fill="none"
@@ -80,5 +80,5 @@ function closePopup() {
 
 <style scoped lang="sass">
 .language
-  @apply p-2 flex flex-col items-center hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded text-center
+  @apply p-2 flex flex-col items-center hover:border-gray-200 dark:hover:border-slate-700 dark:hover:bg-slate-800 hover:bg-white border border-solid border-transparent rounded text-center
 </style>

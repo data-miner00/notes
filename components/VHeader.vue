@@ -111,5 +111,5 @@ onUnmounted(() => {
 
 <style scoped lang="sass">
 .scrolled
-  @apply bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4
+  @apply bg-white border-gray-300 dark:bg-slate-900 dark:border-gray-800 py-4
 </style>

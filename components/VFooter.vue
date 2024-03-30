@@ -180,7 +180,7 @@
 
 .dark .footer::before {
   --mask-color: #fff;
-  --background-color: #1e293b;
+  --background-color: #0f172a;
 }
 
 nav {

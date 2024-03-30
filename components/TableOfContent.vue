@@ -26,7 +26,7 @@ var scrollToTop = function () {
 
 <template>
   <aside
-    class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-800 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-700 xl:w-[272px] text-sm transform lg:-translate-y-60"
+    class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-900 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-800 xl:w-[272px] text-sm transform lg:-translate-y-60"
     aria-label="Table of Content"
   >
     <header
@@ -36,7 +36,7 @@ var scrollToTop = function () {
 
       <button
         v-show="isShowToTopButton"
-        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600 dark:text-cyan-600"
+        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-sky-400"
         @click="scrollToTop"
       >
         scroll to top
@@ -67,7 +67,7 @@ var scrollToTop = function () {
 
 <style lang="scss" scoped>
 a.active {
-  @apply bg-gray-50 dark:bg-slate-700 text-green-600 dark:text-cyan-600;
+  @apply bg-gray-50 dark:bg-slate-800 text-green-600 dark:text-cyan-600;
 }
 
 button {

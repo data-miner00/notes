@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
       <li
         v-for="(tag, index) in data?.tags"
         :key="index"
-        class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-700 rounded py-1 px-2"
+        class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
       >
         #{{ tag }}
       </li>
@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
     class="mx-auto flex flex-col-reverse lg:flex-row justify-center px-6 lg:px-0"
   >
     <article
-      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-50 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400"
+      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-50 dark:prose-pre:bg-slate-800 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>

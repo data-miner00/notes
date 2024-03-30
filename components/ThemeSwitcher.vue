@@ -11,7 +11,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
 <template>
   <div class="relative">
     <button
-      class="px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
+      class="px-2 py-2 bg-gray-100 dark:bg-slate-800 rounded-md"
       @click="open = !open"
     >
       <svg
@@ -48,7 +48,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
     >
       <!-- system mode -->
       <li
-        class="py-1 px-2 flex items-center cursor-pointer dark:hover:bg-slate-700 hover:bg-gray-50"
+        class="py-1 px-2 flex items-center cursor-pointer dark:hover:bg-slate-800 hover:bg-gray-50"
         @click="selectTheme('system')"
       >
         <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
