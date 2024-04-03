@@ -38,10 +38,11 @@ definePageMeta({
         </p>
 
         <NuxtLink
-          to="/list"
+          :to="localePath('/articles')"
           class="text-xl lg:text-2xl text-sky-500 relative after:absolute after:left-0 after:right-0 after:top-[calc(100%+4px)] after:bg-sky-500 after:h-[2px]"
-          >View entries</NuxtLink
         >
+          View articles
+        </NuxtLink>
       </div>
 
       <footer
