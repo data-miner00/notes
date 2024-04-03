@@ -47,32 +47,32 @@ function closePopup() {
       class="absolute -bottom-40 right-0 flex flex-col items-stretch rounded"
     >
       <NuxtLink
-        :to="switchLocalePath('fr')"
-        @click="closePopup"
-        class="language"
-      >
-        <span class="block">
-          <NuxtImg
-            src="/images/flag-france.svg"
-            alt="The flag of France"
-            class="h-8"
-          />
-        </span>
-        <span class="block"> Français </span>
-      </NuxtLink>
-      <NuxtLink
         :to="switchLocalePath('en')"
         @click="closePopup"
         class="language"
       >
         <span class="block">
           <NuxtImg
-            src="/images/flag-united-states.svg"
+            src="/images/united-states.png"
             alt="The flag of the States"
             class="h-8"
           />
         </span>
         <span class="block">English</span>
+      </NuxtLink>
+      <NuxtLink
+        :to="switchLocalePath('ko')"
+        @click="closePopup"
+        class="language"
+      >
+        <span class="block">
+          <NuxtImg
+            src="/images/south-korea.png"
+            alt="The flag of Korea"
+            class="h-8"
+          />
+        </span>
+        <span class="block">한국어</span>
       </NuxtLink>
     </div>
   </div>

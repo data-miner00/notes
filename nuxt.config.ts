@@ -4,12 +4,11 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1.0",
-      title: "Nuxt Content Template",
+      title: "Shaun Chong's Blog",
       meta: [
         {
           name: "description",
-          content:
-            "A hand-crafted feature-rich document driven template powered by Nuxt and Nuxt Content.",
+          content: "Technical blog website by Shaun Chong.",
         },
       ],
       link: [
@@ -62,21 +61,13 @@ export default defineNuxtConfig({
         file: "en.json",
       },
       {
-        code: "fr",
-        file: "fr.json",
+        code: "ko",
+        file: "ko.json",
       },
     ],
     vueI18n: {
       legacy: false,
       locale: "en",
-      messages: {
-        en: {
-          welcome: "Welcome",
-        },
-        fr: {
-          welcome: "Bienvenue",
-        },
-      },
     },
     langDir: "locales",
     lazy: true,
@@ -85,9 +76,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
-      siteName: "Nuxt Content Template",
-      siteDescription:
-        "A Nuxt3 template built specifically for documentations and blogs.",
+      siteName: "Shaun Chong's Blog",
+      siteDescription: "Technical blog website by Shaun Chong.",
       language: "en",
     },
   },
