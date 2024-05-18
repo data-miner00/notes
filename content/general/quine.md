@@ -6,7 +6,7 @@ author:
   - name: Shaun Chong
     avatar: levi.png
 tags:
-  - clang
+  - c
   - cpp
   - python
   - fun

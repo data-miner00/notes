@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { urls } from "../appsettings.json";
-
 const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation()
@@ -11,10 +9,6 @@ const articles = await queryContent()
   .limit(5)
   .find();
 
-definePageMeta({
-  layout: "none",
-});
-
 const tags = computed(() =>
   Array.from(
     new Set(
@@ -24,63 +18,10 @@ const tags = computed(() =>
     )
   )
 );
-
-type NavigationLink = {
-  content: string;
-  url: string;
-};
-
-const links: NavigationLink[] = [
-  {
-    content: "Home",
-    url: "/",
-  },
-  {
-    content: "Notes",
-    url: "",
-  },
-  {
-    content: "Articles",
-    url: "",
-  },
-  {
-    content: "Life",
-    url: urls.blog,
-  },
-  {
-    content: "Site",
-    url: urls.website,
-  },
-];
 </script>
 
 <template>
   <div class="font-montserrat">
-    <header class="flex py-4 fixed w-full top-0 left-0 bg-white">
-      <div class="w-[1024px] mx-auto relative flex">
-        <ul class="flex gap-4 mx-auto">
-          <li v-for="link of links" :key="link.content">
-            <NuxtLink
-              class="p-4 uppercase text-xs block text-gray-600 w-[100px] text-center tracking-widest"
-              :to="link.url"
-              active-class="font-semibold"
-            >
-              {{ link.content }}
-              <i
-                v-if="link.url.startsWith('http')"
-                class="bi bi-box-arrow-up-right"
-              ></i>
-            </NuxtLink>
-          </li>
-        </ul>
-        <div
-          class="absolute transform -translate-y-1/2 top-1/2 right-0 flex gap-1"
-        >
-          <ThemeSwitcher />
-          <LanguageSwitcher />
-        </div>
-      </div>
-    </header>
     <div class="max-w-5xl mx-auto">
       <Hero
         content="Shaun Chong"
@@ -154,7 +95,6 @@ const links: NavigationLink[] = [
       </div>
     </div>
   </div>
-  <VFooter />
 </template>
 
 <style scoped lang="sass">
