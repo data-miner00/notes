@@ -11,15 +11,16 @@ defineProps<Props>();
 
 <template>
   <div
-    class="img-container w-full rounded-lg border border-solid border-gray-200 dark:border-gray-600 my-5"
+    class="img-container w-full rounded-lg border border-solid border-gray-200 dark:border-gray-600 my-5 inline-block"
   >
-    <img
+    <NuxtImg
       :src="src"
       :alt="alt"
       class="block mx-auto"
       :width="width"
       :height="height"
-    />
+    >
+    </NuxtImg>
   </div>
 </template>
 
