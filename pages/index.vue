@@ -1,92 +1,160 @@
 <script lang="ts" setup>
-const localePath = useLocalePath();
+import { urls } from "../appsettings.json";
 
-var githubUrl = "https://github.com/data-miner00";
-var websiteUrl = "https://mumk.dev";
-var blogUrl = "https://blog.mumk.dev";
+const localePath = useLocalePath();
+const { data: navigation } = await useAsyncData("navigation", () =>
+  fetchContentNavigation()
+);
 
 definePageMeta({
   layout: "none",
 });
+
+const tags = computed(() =>
+  Array.from(
+    new Set(
+      navigation.value?.flatMap((topic) =>
+        topic.children?.flatMap((article) => article.tags)
+      )
+    )
+  )
+);
+
+const articles = computed(() =>
+  // first five articles
+  navigation.value?.flatMap((topic) => topic.children).slice(0, 5)
+);
+
+type NavigationLink = {
+  content: string;
+  url: string;
+};
+
+const links: NavigationLink[] = [
+  {
+    content: "Home",
+    url: "/",
+  },
+  {
+    content: "Notes",
+    url: "",
+  },
+  {
+    content: "Articles",
+    url: "",
+  },
+  {
+    content: "Life",
+    url: urls.blog,
+  },
+  {
+    content: "Site",
+    url: urls.website,
+  },
+];
 </script>
 
 <template>
-  <main class="flex h-screen relative">
-    <VLandingHeader />
-
-    <div class="flex-1 hidden lg:block">
-      <NuxtImg
-        src="/images/seascape.jpg"
-        class="h-full block object-cover object-center dark:filter dark:brightness-40"
-        alt="The aerial scenic view of the ocean"
-      />
-    </div>
-    <div class="flex-1 px-10 flex flex-col justify-between">
-      <div></div>
-      <div>
-        <h1 class="text-4xl lg:text-6xl font-bold mb-10 lg:!leading-[80px]">
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-sky-300 to-blue-400"
-            >Notes</span
-          >,<br />
-          Thoughts & Experience
-        </h1>
-        <p class="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 mb-10">
-          Welcome! This is the place where I write notes, articles and guides to
-          reinforce my learning and helping others on the internet. The source
-          code is available on GitHub.
-        </p>
-
-        <NuxtLink
-          :to="localePath('/articles')"
-          class="text-xl lg:text-2xl text-sky-500 relative after:absolute after:left-0 after:right-0 after:top-[calc(100%+4px)] after:bg-sky-500 after:h-[2px]"
-        >
-          View articles
-        </NuxtLink>
-      </div>
-
-      <footer
-        class="flex items-center justify-between py-4 text-xs dark:text-gray-400"
-      >
-        <ul class="flex gap-4">
-          <li>
+  <div class="font-montserrat">
+    <header class="flex py-4 fixed w-full top-0 left-0 bg-white">
+      <div class="w-[1024px] mx-auto relative flex">
+        <ul class="flex gap-4 mx-auto">
+          <li v-for="link of links" :key="link.content">
             <NuxtLink
-              :to="githubUrl"
-              class="flex items-center gap-2 dark:hover:text-gray-300 hover:text-gray-600"
-              target="_blank"
-              title="Visit my GitHub profile"
+              class="p-4 uppercase text-xs block text-gray-600 w-[100px] text-center tracking-widest"
+              :to="link.url"
+              active-class="font-semibold"
             >
-              <div class="circle pulse"></div>
-              <div>GitHub</div>
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink
-              :to="websiteUrl"
-              class="flex items-center gap-2 dark:hover:text-gray-300 hover:text-gray-600"
-              target="_blank"
-              title="Visit my website"
-            >
-              <div class="circle pulse"></div>
-              <div>Website</div>
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink
-              :to="blogUrl"
-              class="flex items-center gap-2 dark:hover:text-gray-300 hover:text-gray-600"
-              target="_blank"
-              title="Visit my blogs"
-            >
-              <div class="circle pulse"></div>
-              <div>Blogs</div>
+              {{ link.content }}
+              <i
+                v-if="link.url.startsWith('http')"
+                class="bi bi-box-arrow-up-right"
+              ></i>
             </NuxtLink>
           </li>
         </ul>
-        <div>&copy; 2024 Shaun Chong</div>
-      </footer>
+        <div
+          class="absolute transform -translate-y-1/2 top-1/2 right-0 flex gap-1"
+        >
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+        </div>
+      </div>
+    </header>
+    <div class="max-w-5xl mx-auto">
+      <Hero
+        content="Shaun Chong"
+        :roles="[
+          'Software Engineer',
+          'Lifelong Learner',
+          'Graphics Enthusiast',
+        ]"
+      />
+      <div class="flex gap-16 my-16">
+        <main class="basis-8/12">
+          <ArticleFeed
+            v-for="article of articles"
+            :key="article?._id"
+            :published-at="new Date(article?.createdAt)"
+            :title="article?.title ?? 'Untitled'"
+            excerpt="Hello world the world coolHello world the world coolHello world the world coolHello world the world cool"
+            :url="article?._path ?? ''"
+            image-url="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKe28OFlOWSzFfwE-H7HETSjuoqeR4iqw3_HuFYrGDh6uyXcMMFxs4RPP0n8PAvAXC8uDhvi_fv8VoGrkIXj6ujLtyYng5A4DI89YzCFkVpazkrI7pdzrg-q86mp3ZDE-37FCAB2vEkBR/s320/9-steps-to-creating-a-killer-brief-for-your-graphic-designer.jpg"
+          />
+        </main>
+        <aside class="basis-4/12">
+          <section class="mb-8">
+            <p
+              class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
+            >
+              About Me
+            </p>
+            <p class="text-justify">
+              I am Shaun, a Software Engineer based in Malaysia. I am infatuated
+              with anything everything, especially in tech and spoken language.
+              I write notes and guides about intriguing topics to serve as a
+              reminder for myself and help others.
+            </p>
+          </section>
+
+          <section class="mb-8">
+            <p
+              class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
+            >
+              Socials
+            </p>
+            <div class="flex text-gray-600 gap-8 justify-center">
+              <div><i class="bi bi-twitter"></i></div>
+              <div><i class="bi bi-facebook"></i></div>
+              <div><i class="bi bi-github"></i></div>
+              <div><i class="bi bi-pinterest"></i></div>
+              <div><i class="bi bi-instagram"></i></div>
+            </div>
+          </section>
+
+          <section>
+            <p
+              class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
+            >
+              Tags
+            </p>
+            <ul
+              class="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-50"
+            >
+              <li
+                v-for="(tag, index) in tags"
+                :key="index"
+                class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
+              >
+                #{{ tag }}
+              </li>
+            </ul>
+          </section>
+        </aside>
+      </div>
     </div>
-  </main>
+  </div>
+  <VFooter />
 </template>
 
 <style scoped lang="sass">

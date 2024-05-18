@@ -1,3 +1,5 @@
+var defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -21,6 +23,12 @@ module.exports = {
         70: "70%",
         80: "80%",
         90: "90%",
+      },
+      letterSpacing: {
+        maximum: "3px",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },
   },

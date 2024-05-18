@@ -3,7 +3,7 @@ const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation()
 );
 
-var tags = ["blog", "index", "list"];
+const tags = ["blog", "index", "list"];
 </script>
 
 <template>

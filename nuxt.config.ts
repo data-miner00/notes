@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         lang: "en",
       },
       bodyAttrs: {
-        class: "dark:bg-slate-900 dark:text-gray-50",
+        class: "dark:bg-slate-900 dark:text-gray-50 text-stone-700",
       },
     },
   },
@@ -51,6 +51,9 @@ export default defineNuxtConfig({
     markdown: {
       remarkPlugins: ["remark-math"],
       rehypePlugins: ["rehype-mathjax"],
+    },
+    navigation: {
+      fields: ["updatedAt", "description", "tags", "excerpt", "createdAt"],
     },
   },
   colorMode: { classSuffix: "" },
