@@ -5,6 +5,11 @@ const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation()
 );
+const articles = await queryContent()
+  .where({ _extension: { $eq: "md" } })
+  .sort({ createdAt: -1 })
+  .limit(5)
+  .find();
 
 definePageMeta({
   layout: "none",
@@ -18,11 +23,6 @@ const tags = computed(() =>
       )
     )
   )
-);
-
-const articles = computed(() =>
-  // first five articles
-  navigation.value?.flatMap((topic) => topic.children).slice(0, 5)
 );
 
 type NavigationLink = {
