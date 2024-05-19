@@ -33,11 +33,11 @@ const links: NavigationLink[] = [
   },
   {
     content: "Notes",
-    url: "",
+    url: "/notes",
   },
   {
     content: "Articles",
-    url: "",
+    url: "/articles",
   },
   {
     content: "Life",
@@ -78,7 +78,7 @@ const links: NavigationLink[] = [
           <NuxtLink
             class="p-4 uppercase text-xs block text-gray-600 dark:text-gray-400 w-[100px] text-center tracking-widest"
             :to="link.url"
-            active-class="font-semibold"
+            active-class="font-semibold text-green-600 dark:text-green-600"
           >
             {{ link.content }}
             <i

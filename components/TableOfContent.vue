@@ -67,7 +67,7 @@ var scrollToTop = function () {
 
 <style lang="scss" scoped>
 a.active {
-  @apply bg-gray-50 dark:bg-slate-800 text-green-600 dark:text-cyan-600;
+  @apply bg-gray-50 dark:bg-slate-800 text-green-600;
 }
 
 button {
