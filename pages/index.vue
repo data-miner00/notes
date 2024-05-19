@@ -23,7 +23,7 @@ const tags = computed(() =>
 </script>
 
 <template>
-  <div class="font-montserrat">
+  <div class="">
     <div class="max-w-5xl mx-auto">
       <Hero
         content="Shaun Chong"
@@ -102,7 +102,7 @@ const tags = computed(() =>
             >
               Categories
             </p>
-            <ul class="flex flex-col gap-1">
+            <ul class="flex flex-col gap-2">
               <li :key="topic.title" v-for="topic of navigation">
                 <div class="bg-gray-700 text-center py-1 text-white">
                   {{ topic.title }}
