@@ -26,7 +26,7 @@ const friendlyPublishedDate = computed(() =>
       <button
         class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-colors"
       >
-        Read more
+        {{ $t("homePage.article-feed.read-more") }}
       </button>
     </NuxtLink>
   </article>

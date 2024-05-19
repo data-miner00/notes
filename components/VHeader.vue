@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { urls } from "../appsettings.json";
 
+const { t } = useI18n();
 const localePath = useLocalePath();
 const scrolled = ref(false);
 const open = useState("sidebar-open", () => false);
@@ -26,28 +27,28 @@ type NavigationLink = {
   url: string;
 };
 
-const links: NavigationLink[] = [
+const links = computed<NavigationLink[]>(() => [
   {
-    content: "Home",
-    url: "/",
+    content: t("header.home"),
+    url: localePath("/"),
   },
   {
-    content: "Notes",
-    url: "/notes",
+    content: t("header.notes"),
+    url: localePath("/notes"),
   },
   {
-    content: "Articles",
-    url: "/articles",
+    content: t("header.articles"),
+    url: localePath("/articles"),
   },
   {
-    content: "Life",
+    content: t("header.life"),
     url: urls.blog,
   },
   {
-    content: "Site",
+    content: t("header.site"),
     url: urls.website,
   },
-];
+]);
 </script>
 
 <template>
@@ -79,6 +80,7 @@ const links: NavigationLink[] = [
             class="p-4 uppercase text-xs block text-gray-600 dark:text-gray-400 w-[100px] text-center tracking-widest"
             :to="link.url"
             active-class="font-semibold text-green-600 dark:text-green-600"
+            :target="link.url.startsWith('http') ? '_blank' : null"
           >
             {{ link.content }}
             <i

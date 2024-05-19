@@ -27,11 +27,11 @@ const tags = computed(() =>
   <div class="">
     <div class="max-w-5xl mx-auto">
       <Hero
-        content="Shaun Chong"
+        :content="$t('homePage.hero.name')"
         :roles="[
-          'Software Engineer',
-          'Lifelong Learner',
-          'Graphics Enthusiast',
+          $t('homePage.hero.role1'),
+          $t('homePage.hero.role2'),
+          $t('homePage.hero.role3'),
         ]"
       />
       <div class="flex gap-16 my-16 flex-col lg:flex-row px-6 lg:px-0">
@@ -51,21 +51,16 @@ const tags = computed(() =>
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
-              About Me
+              {{ $t("homePage.about-me.title") }}
             </p>
-            <p class="text-justify">
-              I am Shaun, a Software Engineer based in Malaysia. I am infatuated
-              with anything everything, especially in tech and spoken language.
-              I write notes and guides about intriguing topics to serve as a
-              reminder for myself and help others.
-            </p>
+            <p class="text-justify">{{ $t("homePage.about-me.paragraph") }}</p>
           </section>
 
           <section class="mb-8">
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
-              Socials
+              {{ $t("homePage.socials.title") }}
             </p>
             <div
               class="flex text-gray-600 dark:text-gray-400 gap-8 justify-center"
@@ -82,7 +77,7 @@ const tags = computed(() =>
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
-              Tags
+              {{ $t("homePage.tags.title") }}
             </p>
             <ul
               class="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-50"
@@ -101,7 +96,7 @@ const tags = computed(() =>
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
-              Categories
+              {{ $t("homePage.categories.title") }}
             </p>
             <ul class="flex flex-col gap-2">
               <li :key="topic.title" v-for="topic of navigation?.[0].children">
@@ -116,24 +111,19 @@ const tags = computed(() =>
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
-              This Site
+              {{ $t("homePage.this-site.title") }}
             </p>
-            <p class="text-justify">
-              This site is generated from
-              <NuxtLink :to="urls.template" target="_blank"
-                >Nuxt Content Template
-                <i class="bi bi-box-arrow-up-right"></i></NuxtLink
-              >. The legacy site can be found
-              <NuxtLink :to="urls.book" target="_blank"
-                >here <i class="bi bi-box-arrow-up-right"></i></NuxtLink
-              >. The design is heavily inspired by
-              <NuxtLink :to="urls.inspiration" target="_blank"
-                >Emerge <i class="bi bi-box-arrow-up-right"></i></NuxtLink
-              >. Site source code can be found
-              <NuxtLink :to="urls.repo" target="_blank"
-                >here <i class="bi bi-box-arrow-up-right"></i></NuxtLink
-              >.
-            </p>
+            <p
+              class="text-justify"
+              v-html="
+                $t('homePage.this-site.paragraphHtml', {
+                  templateUrl: urls.template,
+                  bookUrl: urls.book,
+                  inspirationUrl: urls.inspiration,
+                  repoUrl: urls.repo,
+                })
+              "
+            ></p>
           </section>
 
           <section>

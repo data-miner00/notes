@@ -1,11 +1,43 @@
 {
-  "homePage": {},
+  "homePage": {
+    "hero": {
+      "name": "Shaun Chong",
+      "role1": "Software Engineer",
+      "role2": "Lifelong Learner",
+      "role3": "Graphics Enthusiast"
+    },
+    "about-me": {
+      "title": "About me",
+      "paragraph": "I am Shaun, a Software Engineer based in Malaysia. I am infatuated with anything everything, especially in tech and spoken language. I write notes and guides about intriguing topics to serve as a reminder for myself and help others."
+    },
+    "socials": {
+      "title": "Socials"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "categories": {
+      "title": "Categories"
+    },
+    "this-site": {
+      "title": "This site",
+      "paragraphHtml": "This site is generated from <a href=\"{templateUrl}\" target=\"_blank\">Nuxt Content Template <i class=\"bi bi-box-arrow-up-right\"></i></a>. The legacy site can be found <a href=\"{bookUrl}\" target=\"_blank\">here <i class=\"bi bi-box-arrow-up-right\"></i></a>. The design is heavily inspired by <a href=\"{inspirationUrl}\" target=\"_blank\">Emerge <i class=\"bi bi-box-arrow-up-right\"></i></a>. Site source code can be found  <a href=\"{repoUrl}\" target=\"_blank\">here <i class=\"bi bi-box-arrow-up-right\"></i></a>."
+    },
+    "article-feed": {
+      "read-more": "Read More"
+    }
+  },
   "header": {
     "home": "Home",
-    "guide": "Guide",
-    "demo": "Demo",
-    "resources": "Resources",
-    "blogs": "Blogs"
+    "notes": "Notes",
+    "articles": "Articles",
+    "life": "Life",
+    "site": "Site",
+    "theme-switcher": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
   },
   "footer": {
     "description": "The ultimate `.md` template powered by green technologies. ",
