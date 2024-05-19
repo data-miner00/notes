@@ -56,9 +56,23 @@ const links: NavigationLink[] = [
     :class="{ scrolled }"
   >
     <div class="lg:w-[1024px] w-full mx-auto relative flex items-center">
-      <button class="px-4 py-1 block lg:hidden">
-        <i class="bi bi-list"></i>
-      </button>
+      <div class="lg:hidden">
+        <button
+          aria-label="Toggle Sidebar"
+          class="block"
+          @click="toggleSidebar"
+        >
+          <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="2"
+              d="M4 7h22M4 15h22M4 23h22"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <ul class="hidden lg:flex gap-4 mx-auto">
         <li v-for="link of links" :key="link.content">
           <NuxtLink
@@ -81,6 +95,8 @@ const links: NavigationLink[] = [
         <LanguageSwitcher />
       </div>
     </div>
+
+    <MobileSidebar :open="open" :toggle-sidebar="toggleSidebar" />
   </header>
 </template>
 
