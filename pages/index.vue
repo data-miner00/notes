@@ -33,8 +33,8 @@ const tags = computed(() =>
           'Graphics Enthusiast',
         ]"
       />
-      <div class="flex gap-16 my-16">
-        <main class="basis-8/12">
+      <div class="flex gap-16 my-16 flex-col lg:flex-row px-6 lg:px-0">
+        <main class="lg:basis-8/12">
           <ArticleFeed
             v-for="article of articles"
             :key="article?._id"
@@ -45,7 +45,7 @@ const tags = computed(() =>
             image-url="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKe28OFlOWSzFfwE-H7HETSjuoqeR4iqw3_HuFYrGDh6uyXcMMFxs4RPP0n8PAvAXC8uDhvi_fv8VoGrkIXj6ujLtyYng5A4DI89YzCFkVpazkrI7pdzrg-q86mp3ZDE-37FCAB2vEkBR/s320/9-steps-to-creating-a-killer-brief-for-your-graphic-designer.jpg"
           />
         </main>
-        <aside class="basis-4/12">
+        <aside class="lg:basis-4/12">
           <section class="mb-8">
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
@@ -136,7 +136,7 @@ const tags = computed(() =>
           </section>
 
           <section>
-            <img :src="urls.spotifyPlaying" alt="" />
+            <img class="block mx-auto" :src="urls.spotifyPlaying" alt="" />
           </section>
         </aside>
       </div>
