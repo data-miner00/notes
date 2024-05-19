@@ -36,7 +36,9 @@ const hasAuthor = computed(() => props.authors || props.organization);
 </script>
 
 <template>
-  <div class="pl-8 md:pl-16 -indent-8 md:-indent-16 mb-4 last-of-type:mb-0">
+  <div
+    class="pl-8 md:pl-16 -indent-8 md:-indent-16 mb-4 last-of-type:mb-0 break-words"
+  >
     <span v-if="hasAuthor">{{ authorsString }}. </span>
     <time v-if="hasAuthor" :datetime="date">({{ date ?? "n.d." }}). </time>
     <span :class="italicTitle ? 'italic' : ''">
