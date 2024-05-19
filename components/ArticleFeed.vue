@@ -24,7 +24,7 @@ const friendlyPublishedDate = computed(() =>
       <NuxtImg :src="imageUrl" class="w-full block mb-4"></NuxtImg>
       <p class="leading-[1.75] mb-4">{{ excerpt }}</p>
       <button
-        class="block mx-auto px-3 py-2 uppercase border border-solid border-gray-500 text-sm tracking-wide"
+        class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide"
       >
         Read more
       </button>

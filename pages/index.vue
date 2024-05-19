@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { urls } from "../appsettings.json";
+
 const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation()
@@ -64,7 +66,9 @@ const tags = computed(() =>
             >
               Socials
             </p>
-            <div class="flex text-gray-600 gap-8 justify-center">
+            <div
+              class="flex text-gray-600 dark:text-gray-400 gap-8 justify-center"
+            >
               <div><i class="bi bi-twitter"></i></div>
               <div><i class="bi bi-facebook"></i></div>
               <div><i class="bi bi-github"></i></div>
@@ -73,7 +77,7 @@ const tags = computed(() =>
             </div>
           </section>
 
-          <section>
+          <section class="mb-8">
             <p
               class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
             >
@@ -90,6 +94,49 @@ const tags = computed(() =>
                 #{{ tag }}
               </li>
             </ul>
+          </section>
+
+          <section class="mb-8">
+            <p
+              class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
+            >
+              Categories
+            </p>
+            <ul class="flex flex-col gap-1">
+              <li :key="topic.title" v-for="topic of navigation">
+                <div class="bg-gray-700 text-center py-1 text-white">
+                  {{ topic.title }}
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="mb-8">
+            <p
+              class="uppercase text-xs tracking-maximum text-gray-500 mb-4 font-bold text-center"
+            >
+              This Site
+            </p>
+            <p class="text-justify">
+              This site is generated from
+              <NuxtLink :to="urls.template" target="_blank"
+                >Nuxt Content Template
+                <i class="bi bi-box-arrow-up-right"></i></NuxtLink
+              >. The legacy site can be found
+              <NuxtLink :to="urls.book" target="_blank"
+                >here <i class="bi bi-box-arrow-up-right"></i></NuxtLink
+              >. The design is heavily inspired by
+              <NuxtLink :to="urls.inspiration" target="_blank"
+                >Emerge <i class="bi bi-box-arrow-up-right"></i></NuxtLink
+              >. Site source code can be found
+              <NuxtLink :to="urls.repo" target="_blank"
+                >here <i class="bi bi-box-arrow-up-right"></i></NuxtLink
+              >.
+            </p>
+          </section>
+
+          <section>
+            <img :src="urls.spotifyPlaying" alt="" />
           </section>
         </aside>
       </div>

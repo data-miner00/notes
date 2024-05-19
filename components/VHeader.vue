@@ -59,7 +59,7 @@ const links: NavigationLink[] = [
       <ul class="flex gap-4 mx-auto">
         <li v-for="link of links" :key="link.content">
           <NuxtLink
-            class="p-4 uppercase text-xs block text-gray-600 w-[100px] text-center tracking-widest"
+            class="p-4 uppercase text-xs block text-gray-600 dark:text-gray-400 w-[100px] text-center tracking-widest"
             :to="link.url"
             active-class="font-semibold"
           >

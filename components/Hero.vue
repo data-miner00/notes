@@ -14,7 +14,9 @@ const stringifiedRoles = computed(() => props.roles.join(" • "));
     <div class="uppercase font-bold text-5xl tracking-wide mb-4">
       {{ content }}
     </div>
-    <p class="text-xs text-gray-500 uppercase tracking-widest">
+    <p
+      class="text-xs text-gray-500 dark:text-gray-300 uppercase tracking-widest"
+    >
       {{ stringifiedRoles }}
     </p>
   </section>
