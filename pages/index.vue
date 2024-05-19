@@ -3,9 +3,10 @@ import { urls } from "../appsettings.json";
 
 const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation()
+  fetchContentNavigation(queryContent("articles"))
 );
-const articles = await queryContent()
+
+const articles = await queryContent("articles")
   .where({ _extension: { $eq: "md" } })
   .sort({ createdAt: -1 })
   .limit(5)
@@ -14,7 +15,7 @@ const articles = await queryContent()
 const tags = computed(() =>
   Array.from(
     new Set(
-      navigation.value?.flatMap((topic) =>
+      navigation.value?.[0].children?.flatMap((topic) =>
         topic.children?.flatMap((article) => article.tags)
       )
     )
@@ -103,7 +104,7 @@ const tags = computed(() =>
               Categories
             </p>
             <ul class="flex flex-col gap-2">
-              <li :key="topic.title" v-for="topic of navigation">
+              <li :key="topic.title" v-for="topic of navigation?.[0].children">
                 <div class="bg-gray-700 text-center py-1 text-white">
                   {{ topic.title }}
                 </div>

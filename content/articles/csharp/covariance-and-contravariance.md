@@ -15,6 +15,8 @@ createdAt: 2022-11-09T15:06:47.818Z
 
 Covariant and Contravariant are the terms originated from Physics to explain how the scale of the factor can affect the scale of the outcome. Covariant is indicative of the scale of outcome is directly proportional to the scale of the cause whereas contravariant is inversely proportional.
 
+<!--more-->
+
 In Programming, covariance and contravariance exists to compliment the Liskov Substitution Principle of the [SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/).
 
 Simply put, contravariance is the conversion of a derived entity to its parent entity that are higher in the hierarchy. An epitome would converting Cat to Animal (upcasting).

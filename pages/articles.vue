@@ -1,6 +1,8 @@
 <script setup lang="ts">
+const queryBuilder = queryContent("articles");
+
 const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation()
+  fetchContentNavigation(queryBuilder)
 );
 
 const tags = ["blog", "index", "list"];
@@ -32,10 +34,10 @@ const tags = ["blog", "index", "list"];
       </li>
     </ul>
   </Landing>
-  <main class="mx-auto justify-center px-6 lg:px-0 lg:pt-20 sm:w-[65ch]">
+  <main class="mx-auto justify-center px-6 lg:px-0 lg:pt-20 sm:w-[55ch]">
     <div
       :key="topic.title"
-      v-for="topic of navigation"
+      v-for="topic of navigation?.[0].children"
       class="p-6 border border-solid border-gray-200 dark:border-gray-700 rounded mb-12"
     >
       <h2 class="font-bold text-2xl">{{ topic.icon }} {{ topic.title }}</h2>
@@ -46,7 +48,7 @@ const tags = ["blog", "index", "list"];
         class="flex flex-col gap-4"
       >
         <li class="block">
-          <NuxtLink :to="entry._path" class="text-xl italic">{{
+          <NuxtLink :to="entry._path" class="text-xl">{{
             entry.title
           }}</NuxtLink>
         </li>
