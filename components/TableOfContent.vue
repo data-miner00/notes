@@ -36,7 +36,7 @@ var scrollToTop = function () {
 
       <button
         v-show="isShowToTopButton"
-        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-sky-400"
+        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600"
         @click="scrollToTop"
       >
         scroll to top

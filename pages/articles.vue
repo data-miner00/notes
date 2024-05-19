@@ -8,7 +8,7 @@ const tags = ["blog", "index", "list"];
 
 <template>
   <Landing>
-    <span class="text-cyan-600 text-lg md:text-2xl font-bold mb-5">Index</span>
+    <span class="text-green-600 text-lg md:text-2xl font-bold mb-5">Index</span>
     <h1
       class="text-5xl md:text-7xl font-bold mb-6 md:mb-10 lg:max-w-[500px] xl:max-w-[700px]"
     >
