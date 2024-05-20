@@ -3,7 +3,7 @@ type Props = {
   publishedAt: Date;
   title: string;
   imageUrl: string;
-  excerpt: string;
+  excerpt?: Object;
   url: string;
 };
 
@@ -22,7 +22,13 @@ const friendlyPublishedDate = computed(() =>
       </p>
       <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
       <NuxtImg :src="imageUrl" class="w-full block mb-4"></NuxtImg>
-      <p class="leading-[1.75] mb-4">{{ excerpt }}</p>
+
+      <div class="leading-[1.75] mb-4">
+        <ContentRenderer :value="excerpt">
+          <ContentRendererMarkdown :value="excerpt" />
+        </ContentRenderer>
+      </div>
+
       <button
         class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-colors"
       >
