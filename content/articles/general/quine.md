@@ -9,12 +9,13 @@ tags:
   - c
   - cpp
   - python
-  - fun
 updatedAt: 2024-03-24T13:17:10.163Z
 createdAt: 2021-10-31T13:33:30.485Z
 ---
 
 A quine is referred to the code that upon execution, will produce the exact same code that was executed prior as the output. It exhibits the idempotency property. Quine is also known as "self-replicating programs" or "self-copying programs."
+
+<!--more-->
 
 ## C
 

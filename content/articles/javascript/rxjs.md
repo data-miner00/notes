@@ -15,6 +15,8 @@ createdAt: 2022-11-18T11:37:49.432Z
 
 RxJS is a [ReactiveX](https://reactivex.io/) implementation in JavaScript. ReactiveX is an API for asynchronous programming with observable streams. There are many more implementations of ReactiveX in other languages such as [RxJava](https://github.com/ReactiveX/RxJava) for Java, [Rx.NET](https://github.com/dotnet/reactive) for C#, [RxSwift](https://github.com/ReactiveX/RxSwift) for Swift etc.
 
+<!--more-->
+
 The streams of data encompasses database events, dom events and file uploads.
 
 ## Installation

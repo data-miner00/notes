@@ -1,16 +1,29 @@
 <script lang="ts" setup>
+import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
+const { locale } = useI18n();
 const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles"))
 );
 
-const articles = await queryContent("articles")
-  .where({ _extension: { $eq: "md" } })
-  .sort({ createdAt: -1 })
-  .limit(5)
-  .find();
+// very ugly...
+const articles = computedAsync(async () => {
+  if (locale.value === "en") {
+    return await queryContent("articles")
+      .where({ _extension: { $eq: "md" } })
+      .sort({ createdAt: -1 })
+      .limit(5)
+      .find();
+  } else {
+    return await queryContent("ko", "articles")
+      .where({ _extension: { $eq: "md" } })
+      .sort({ createdAt: -1 })
+      .limit(5)
+      .find();
+  }
+});
 
 const tags = computed(() =>
   Array.from(
@@ -41,7 +54,7 @@ const tags = computed(() =>
             :key="article?._id"
             :published-at="new Date(article?.createdAt)"
             :title="article?.title ?? 'Untitled'"
-            excerpt="Hello world the world coolHello world the world coolHello world the world coolHello world the world cool"
+            :excerpt="article?.excerpt"
             :url="article?._path ?? ''"
             image-url="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKe28OFlOWSzFfwE-H7HETSjuoqeR4iqw3_HuFYrGDh6uyXcMMFxs4RPP0n8PAvAXC8uDhvi_fv8VoGrkIXj6ujLtyYng5A4DI89YzCFkVpazkrI7pdzrg-q86mp3ZDE-37FCAB2vEkBR/s320/9-steps-to-creating-a-killer-brief-for-your-graphic-designer.jpg"
           />

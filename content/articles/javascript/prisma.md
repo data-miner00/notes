@@ -16,6 +16,8 @@ createdAt: 2022-10-15T12:01:41.858Z
 
 Prisma is an ORM layer for Node.js and Typescript. While Prisma is mainly used for relational databases, no-SQL database such as MongoDb can still be used through extra configurations.
 
+<!--more-->
+
 There are 3 components that comes under the Prisma umbrella:
 
 - **Prisma Client**: A generated, type-safe query builder for Node.js and TypeScript.

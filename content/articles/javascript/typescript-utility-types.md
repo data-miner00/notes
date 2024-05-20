@@ -14,6 +14,8 @@ createdAt: 2023-03-15T12:52:58.230Z
 
 Utility types in TypeScript acts as helper types that allow us to model and create new types quickly.
 
+<!--more-->
+
 ## NonNullable
 
 Removes all the nullish types from a type declaration.

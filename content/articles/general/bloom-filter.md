@@ -15,6 +15,8 @@ createdAt: 2023-03-22T12:58:10.024Z
 
 Bloom Filter is a data structure that allows rapid lookup on an element, say a string whether it is present in a set. Implementation-wise, it is a **bit vector** that contains an array of zeros and ones (booleans) with a fixed length. It is known for its space and time efficiency.
 
+<!--more-->
+
 It is probabilistic in nature that is useful for lookup on **non-critical data**, such as caching search keywords and detecting weak passwords. Upon querying, bloom filter will only return one of the two responses - "maybe" or "no".
 
 If the answer is "maybe", we only have a high chance that the data is indeed there, based on the allowed false positive rate configured. If the answer is "no", then the data is definitely absent in the set. In other words, a Bloom Filter can have a _low_ chance of getting a False positive (Type I Error) but _never_ a False negative.

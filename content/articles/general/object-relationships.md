@@ -7,11 +7,14 @@ authors:
     avatar: levi.png
 tags:
   - theory
-  - object
-  - modeling
-updatedAt: 2023-11-27T14:10:03.378Z
+  - system
+updatedAt: 2024-05-20T20:10:03.378Z
 createdAt: 2023-11-27T14:10:03.378Z
 ---
+
+In Object-Oriented concept, a relationship refers to the way in two or more classes interact with each other within a system.
+
+<!--more-->
 
 ## Association
 

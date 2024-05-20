@@ -15,6 +15,7 @@ createdAt: 2023-07-15T13:17:10.163Z
 
 Julia is extremely versatile when it comes to interop with other programming languages and environments such as C, Python, R and Java.
 
+<!--more-->
 
 ## Calling Python in Julia
 

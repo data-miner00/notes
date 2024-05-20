@@ -15,6 +15,8 @@ createdAt: 2023-11-04T08:28:42.756Z
 
 Dependency Injection is a common practice to receive external functionalities that a dependant needs instead of creating their own. This practice can be further extended to incorporate [Inversion of Control (IoC)](https://www.educative.io/answers/what-is-inversion-of-control) to use a container for managing said dependencies.
 
+<!--more-->
+
 In this short guide, I will demonstrate the steps for configuring a Windows Presentation Foundation (WPF) application to use [Autofac](https://autofac.org/) as its IoC container.
 
 ## Versions Used

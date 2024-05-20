@@ -16,6 +16,8 @@ createdAt: 2023-02-06T13:40:58.648Z
 
 Hosting a Minecraft server can be expensive for casual players. Free services like Athernos are lacklustre as they can lag the hell out of you whenever they please. Moreover, the saved files are not secured as you might find out that your endearing Minecraft world has been _erased_ entirely from your account, from the hard disk of the server and have no other ways to recover. All the painstaking effort, years of grinding and sanity put into it gets obliterated.
 
+<!--more-->
+
 The only solution to all these ordeal is to host one yourself. This article will provide the only guidance you need to do just that and I can guarantee it won't disappoints.
 
 ## Requirements

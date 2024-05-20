@@ -17,6 +17,8 @@ createdAt: 2023-10-28T12:39:05.389Z
 
 First and foremost, having some basic Linux, debugging and command line knowledge would be helpful for the installation process.
 
+<!--more-->
+
 ## Pre-installation Steps
 
 There are a couple of things that we need to do in order to install Arch Linux. Here are the prerequisites in an ordered manner.

@@ -15,6 +15,8 @@ createdAt: 2022-10-22T03:34:20.346Z
 
 LaTeX is a popular typesetting language that is used broadly in writing documentations and scientific papers. This is the basic structure of a LaTeX document.
 
+<!--more-->
+
 ```tex
 \documentclass[a4paper, 11pt]{article}
 

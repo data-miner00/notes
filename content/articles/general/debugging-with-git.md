@@ -16,6 +16,8 @@ createdAt: 2023-10-27T11:12:17.718Z
 
 There are much more [Git](https://git-scm.com/) commands that can be quite handy apart from the usual `fetch`, `commit`, or `push` commands. This short article will introduce 3 useful Git commands namely `bisect`, `grep` and `blame`.
 
+<!--more-->
+
 ## Bisect
 
 A technique to pinpoint a bug-inducing commit through the commit history. It uses binary search under the hood to detect the bad commit. Interestingly, the process **can be automated** with custom scripts.

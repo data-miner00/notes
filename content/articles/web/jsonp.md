@@ -16,6 +16,8 @@ createdAt: 2023-10-25T13:47:56.869Z
 
 JSONP, also known as JSON with Padding, is a technique for requesting data without being intercepted by Cross-Origin Resource Sharing (CORS) policy. Essentially, we can bypass the CORS check enforced by the browser by using this method. Based on my own experience, a lot of Chinese websites still use this technique to fetch data.
 
+<!--more-->
+
 ## Scenario
 
 Let's say our web application is hosted at `www.a.com` and one of the JavaScript code is trying to fetch data from a remote server hosted at `www.b.com`. If the remote server does not reply the query with a `Access-Control-Allow-Origin` header set to `*` or `www.a.com`, the browser, upon receiving and interpreting the response will throw an error and reject the requested data.

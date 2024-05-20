@@ -15,6 +15,8 @@ createdAt: 2022-08-12T17:38:48.848Z
 
 Obfuscation is the act of deliberately converting a piece of source code into codes that are difficult for human to understand to conceal its true purpose, but the functionality remains unchanged and are perfectly executable by computers.
 
+<!--more-->
+
 ## Example
 
 Here is a [step by step guide](https://www.youtube.com/watch?v=rwOI1biZeD8) on obfuscating a piece of C code. The transformation before and after are quite drastic as compared to each other.

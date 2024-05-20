@@ -14,6 +14,8 @@ createdAt: 2023-01-12T15:27:38.762Z
 
 Zod is a TypeScript library for input validation. TypeScript has done a profound job on ensuring type safety for JavaScript development at compile time. Zod complements TypeScript by providing runtime validation such as form validation in the browser.
 
+<!--more-->
+
 ## Basic Usage
 
 The sample below tries to parse the `user` object against the Zod object schema called `UserSchema`. If the validation is successful, it will return the object itself otherwise it will throw an Error.

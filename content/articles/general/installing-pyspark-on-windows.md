@@ -15,6 +15,8 @@ createdAt: 2023-04-18T01:41:30.909Z
 
 Getting started with PySpark in the local Windows machine can be a little bit tricky as it requires [Apache Spark](https://spark.apache.org/) to be installed first and it has quite a number of dependencies that have complicated installation steps.
 
+<!--more-->
+
 For those who don't know, PySpark is a bridge for Apache Spark in Python. Apache Spark is a trailblazer in big data processing with distributed computing written in Scala and Scala is running on Java Virtual Machine (JVM). PySpark allows the interface to a JVM object directly from Python by utilizing the [Py4j library](https://www.py4j.org/).
 
 ## Setting Up Core Components

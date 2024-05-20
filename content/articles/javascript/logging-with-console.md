@@ -15,6 +15,8 @@ createdAt: 2022-08-12T17:38:48.848Z
 
 More often than not, when Javascript developers try to debug their code, the de facto method would be using `console.log()` as it is simple and straight to the point. It will just print out the anything that has being passed in. Through `console.log()`, we could identify the state of the variables, whether they are a number type, an object type or undefined.
 
+<!--more-->
+
 After that, developers would be complacent about their current debugging technique with `console.log` and being totally ignorant about the existence of other incredibly useful `console` methods.
 
 ## Debugging
