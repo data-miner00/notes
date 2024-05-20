@@ -1,29 +1,37 @@
 <script setup lang="ts">
+import { urls } from "../appsettings.json";
+
 defineProps(["open", "toggleSidebar"]);
 const localePath = useLocalePath();
+const { t } = useI18n();
 
-const links = [
+type NavigationLink = {
+  content: string;
+  url: string;
+};
+
+const links = computed<NavigationLink[]>(() => [
   {
-    translationKey: "header.home",
-    path: "/",
+    content: t("header.home"),
+    url: localePath("/"),
   },
   {
-    translationKey: "header.guide",
-    path: "/guide",
+    content: t("header.notes"),
+    url: localePath("/notes"),
   },
   {
-    translationKey: "header.demo",
-    path: "/demo",
+    content: t("header.articles"),
+    url: localePath("/articles"),
   },
   {
-    translationKey: "header.resources",
-    path: "/resources",
+    content: t("header.life"),
+    url: urls.blog,
   },
   {
-    translationKey: "header.blogs",
-    path: "/blogs/my-first-blog",
+    content: t("header.site"),
+    url: urls.website,
   },
-];
+]);
 </script>
 
 <template>
@@ -41,10 +49,11 @@ const links = [
       <header
         class="flex border-b border-solid border-gray-300 dark:border-gray-700 items-center px-5 py-4 justify-between"
       >
-        <div class="text-xl font-bold mr-5">
+        <div class="text-lg font-bold mr-5">
           <NuxtLink :to="localePath('/')" class="flex items-center">
-            <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
-            <span class="ml-1 block">Templatr</span>
+            <span class="ml-1 block uppercase">{{
+              $t("homePage.hero.name")
+            }}</span>
           </NuxtLink>
         </div>
         <button class="block" @click="toggleSidebar">
@@ -64,11 +73,11 @@ const links = [
             @click="toggleSidebar"
           >
             <NuxtLink
-              class="block px-3 py-2 rounded font-semibold text-sm hover:bg-green-200/50 dark:hover:bg-cyan-400/50"
-              :to="localePath(link.path)"
-              exact-active-class="text-green-400 bg-green-200/50 dark:bg-cyan-400/50 dark:text-cyan-400"
+              class="block px-3 py-2 rounded font-semibold text-sm hover:bg-green-200/50"
+              :to="link.url"
+              exact-active-class="text-green-400 bg-green-200/50 dark:bg-green-500/50"
             >
-              {{ $t(link.translationKey) }}
+              {{ link.content }}
             </NuxtLink>
           </li>
         </ul>

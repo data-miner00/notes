@@ -5,7 +5,6 @@ import "bootstrap-icons/font/bootstrap-icons.min.css";
 <template>
   <NuxtLayout>
     <SeoKit />
-    <!-- <OgImageStatic /> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
