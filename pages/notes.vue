@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const queryBuilder = queryContent("articles");
+const queryBuilder = queryContent("notes");
 
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryBuilder)
@@ -16,12 +16,12 @@ const tags = ["blog", "index", "list"];
     <h1
       class="text-5xl md:text-7xl font-bold mb-6 md:mb-10 lg:max-w-[500px] xl:max-w-[700px]"
     >
-      {{ $t("indexPages.articlePage.title") }}
+      {{ $t("indexPages.notesPage.title") }}
     </h1>
     <p
       class="text-xl md:text-2xl font-normal text-gray-500 dark:text-gray-300 lg:max-w-[500px] xl:max-w-[700px] mb-5"
     >
-      {{ $t("indexPages.articlePage.description") }}
+      {{ $t("indexPages.notesPage.description") }}
     </p>
     <ul
       v-if="tags"
@@ -50,7 +50,7 @@ const tags = ["blog", "index", "list"];
         class="flex flex-col gap-4"
       >
         <li class="block">
-          <NuxtLink :to="entry._path" class="text-xl">{{
+          <NuxtLink :to="entry._path" class="text-xl italic">{{
             entry.title
           }}</NuxtLink>
         </li>

@@ -39,6 +39,17 @@
       "dark": "Dark"
     }
   },
+  "indexPages": {
+    "index": "Index",
+    "articlePage": {
+      "title": "Articles",
+      "description": "The list of reader-friendly, technical articles that I've authored over the years"
+    },
+    "notesPage": {
+      "title": "Notes",
+      "description": "A list of unpolished, raw snippets that I document for quick reference in the future."
+    }
+  },
   "footer": {
     "description": "The ultimate `.md` template powered by green technologies. ",
     "sitemap": {

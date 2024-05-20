@@ -27,6 +27,17 @@
       "read-more": "더 보기"
     }
   },
+  "indexPages": {
+    "index": "색인",
+    "articlePage": {
+      "title": "기사",
+      "description": "내가 수년에 걸쳐 작성한 독자 친화적인 기술 기사 목록"
+    },
+    "notesPage": {
+      "title": "노트",
+      "description": "내가 나중에 빠르게 참조할 수 있도록 문서화하는 다듬어지지 않은 원시 조각 목록"
+    }
+  },
   "header": {
     "home": "홈",
     "notes": "노트",
