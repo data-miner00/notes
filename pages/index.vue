@@ -78,10 +78,16 @@ const tags = computed(() =>
             <div
               class="flex text-gray-600 dark:text-gray-400 gap-8 justify-center"
             >
-              <div><i class="bi bi-twitter"></i></div>
+              <NuxtLink :to="urls.x" target="_blank" class="block"
+                ><i class="bi bi-twitter"></i
+              ></NuxtLink>
               <div><i class="bi bi-facebook"></i></div>
-              <div><i class="bi bi-github"></i></div>
-              <div><i class="bi bi-pinterest"></i></div>
+              <NuxtLink :to="urls.github" target="_blank" class="block"
+                ><i class="bi bi-github"></i
+              ></NuxtLink>
+              <NuxtLink :to="urls.pinterest" target="_blank" class="block"
+                ><i class="bi bi-pinterest"></i
+              ></NuxtLink>
               <div><i class="bi bi-instagram"></i></div>
             </div>
           </section>
