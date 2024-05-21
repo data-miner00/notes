@@ -44,7 +44,7 @@ function closePopup() {
     </button>
     <div
       v-if="isPopupOpen"
-      class="absolute -bottom-40 right-0 flex flex-col items-stretch rounded"
+      class="absolute -bottom-24 right-0 flex flex-col items-stretch rounded bg-gray-100 dark:bg-slate-800"
     >
       <NuxtLink
         :to="switchLocalePath('en')"
@@ -55,7 +55,7 @@ function closePopup() {
           <NuxtImg
             src="/images/united-states.png"
             alt="The flag of the States"
-            class="h-8"
+            class="h-6"
           />
         </span>
         <span class="block">English</span>
@@ -69,7 +69,7 @@ function closePopup() {
           <NuxtImg
             src="/images/south-korea.png"
             alt="The flag of Korea"
-            class="h-8"
+            class="h-6"
           />
         </span>
         <span class="block">한국어</span>
@@ -80,5 +80,5 @@ function closePopup() {
 
 <style scoped lang="sass">
 .language
-  @apply p-2 flex flex-col items-center hover:border-gray-200 dark:hover:border-slate-700 dark:hover:bg-slate-800 hover:bg-white border border-solid border-transparent rounded text-center
+  @apply p-2 flex gap-1 items-center hover:border-gray-200 dark:hover:border-slate-700 dark:hover:bg-slate-800 hover:bg-white border border-solid border-transparent rounded text-center w-32
 </style>
