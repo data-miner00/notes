@@ -1,6 +1,6 @@
 ---
-title: Swagger in AspNetCore WebApi
-description: A walkthrough on adding description and examples to an endpoint with Swagger in AspNetCore WebApi project
+title: AspNetCore WebApi에서 Swagger 설정
+description: AspNetCore WebApi 프로젝트에서 Swagger를 사용하여 엔드포인트에 설명 및 예제를 추가하는 방법에 대한 가이드
 topic: C#
 authors:
   - name: Shaun Chong
@@ -9,48 +9,50 @@ tags:
   - api
   - docs
   - swagger
-updatedAt: 2023-11-01T11:21:03.209Z
+updatedAt: 2024-05-22T07:47:13.902Z
 createdAt: 2023-11-01T11:21:03.209Z
 ---
 
-In this blog, I have condensed the correct steps to enrich the Swagger page by modifying the description and adding examples, starting off with a sample project.
+이 블로그에서는 샘플 프로젝트부터 시작하여 설명을 수정하고 예제를 추가하여 Swagger 페이지를 풍부하게 만드는 올바른 단계를 요약했습니다.
 
 <!--more-->
 
-## Version Check
+> 저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다.
 
-The versions of the technologies used for demonstration are as follows:
+## 사용된 버전
 
-| Index | Technology                         | Version |
-| ----- | ---------------------------------- | ------- |
-| 1.    | dotnet CLI                         | 7.0.304 |
-| 2.    | Target Framework                   | net6.0  |
-| 3.    | Swashbuckle.AspNetCore             | 6.5.0   |
-| 4.    | Swashbuckle.AspNetCore.Annotations | 6.5.0   |
-| 5.    | Swashbuckle.AspNetCore.Filters     | 7.0.12  |
+시연에 사용된 기술의 버전은 다음과 같습니다.
 
-## Setting up
+| 색인 | 기술                               | 버전    |
+| ---- | ---------------------------------- | ------- |
+| 1.   | dotnet CLI                         | 7.0.304 |
+| 2.   | Target Framework                   | net6.0  |
+| 3.   | Swashbuckle.AspNetCore             | 6.5.0   |
+| 4.   | Swashbuckle.AspNetCore.Annotations | 6.5.0   |
+| 5.   | Swashbuckle.AspNetCore.Filters     | 7.0.12  |
 
-First, we will use the weather API template provided by .NET console.
+## 설정
+
+먼저 날씨 API 템플릿을 사용하겠습니다.
 
 ```
 dotnet new webapi -o WeatherApi
 ```
 
-### Installing Dependencies
+### 패키지 설치
 
-After the project has been generated, verify the `Swashbuckle.AspNetCore` package has already been installed either by looking at the `.csproj` file or NuGet explorer in Visual Studio.
+프로젝트가 생성된 후 `.csproj` 파일이나 Visual Studio의 NuGet 탐색기를 확인하여 `Swashbuckle.AspNetCore` 패키지가 이미 설치되어 있는지 확인하세요.
 
-There are two more Swagger dependencies that we'll need.
+필요한 Swagger 패키지를 두 가지 더 있습니다.
 
 - `Swashbuckle.AspNetCore.Annotations`
 - `Swashbuckle.AspNetCore.Filters`
 
-As a side note, if we are using an older version of Swagger, we might need to install different packages listed above. The different versioning of the packages tripped me off a few times already. Here is the [reference](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters#where-to-get-it) table for the `Filters` package to be installed.
+참고로 이전 버전의 Swagger를 사용하는 경우 위에 나열된 다른 패키지를 설치해야 할 수도 있습니다. 패키지의 다른 버전 관리로 인해 이미 몇 번이나 당황했습니다. 맞는 설정한 패키지 버전 링크는 [여기입니다](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters#where-to-get-it).
 
 ## Swagger UI
 
-In the `WeatherForecastController.cs`, there should be an existing endpoint similar to this.
+`WeatherForecastController.cs` 파일 안내서 이런 엔드포인트 있어야 합니다.
 
 ```cs[WeatherForecastController.cs]
 [HttpGet(Name = "GetWeatherForecast")]
@@ -66,17 +68,17 @@ public IEnumerable<WeatherForecast> Get()
 }
 ```
 
-The resulting Swagger page looks like this. As we can see, there is an example response being displayed.
+결과 Swagger 페이지는 다음과 같습니다. 보시다시피 예시 응답이 표시됩니다.
 
-![The default Swagger page](/images/swagger-aspnetcore/1.api-default.png)
+![기본 Swagger 페이지](/images/swagger-aspnetcore/1.api-default.png)
 
-We can change the method signature to `async` and the Swagger page will still show the same content.
+메서드는 `async` 키워드 추가 수 있으면 Swagger 페이지에는 여전히 동일한 내용이 표시됩니다.
 
 ```cs[WeatherForecastController.cs]
 [HttpGet(Name = "GetWeatherForecast")]
 public async Task<IEnumerable<WeatherForecast>> Get()
 {
-	// Pretending there is some async code execution
+	// 비동기 코드 여기에 실행
 	return await Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
 	{
 		Date = DateTime.Now.AddDays(index),
@@ -87,11 +89,11 @@ public async Task<IEnumerable<WeatherForecast>> Get()
 }
 ```
 
-## Modifying Response Description
+## 응답 설명 수정
 
-To modify the description text from the default `Success` for HTTP Code `200` to something else, we need to use the `Swashbuckle.AspNetCore.Annotations` library.
+설명 텍스트를 HTTP 코드 `200`의 기본 `Success`에서 다른 것으로 수정하려면 `Swashbuckle.AspNetCore.Annotations` 라이브러리를 사용해야 합니다.
 
-Head over to `Program.cs` and modify the `AddSwaggerGen` method call as follows to enable the feature.
+`Program.cs`로 이동하여 `AddSwaggerGen` 메서드 호출을 다음과 같이 수정하여 기능을 활성화합니다.
 
 ```diff[Program.cs]
 - builder.Services.AddSwaggerGen();
@@ -101,7 +103,7 @@ Head over to `Program.cs` and modify the `AddSwaggerGen` method call as follows 
 + });
 ```
 
-Next, go back to the endpoint and add the annotation for HTTP codes that are applicable.
+그런 다음 엔드포인트로 돌아가 적용 가능한 HTTP 코드에 대한 주석을 추가합니다.
 
 ```diff[WeatherForecastController.cs]
 + using System.Net;
@@ -112,16 +114,16 @@ Next, go back to the endpoint and add the annotation for HTTP codes that are app
 + [SwaggerResponse((int)HttpStatusCode.NotFound, "Info not found.")]
   public async Task<IEnumerable<WeatherForecast>> Get()
   {
-	  // Pretending there is some async code execution
+	  // 비동기 코드 여기에 실행
 ```
 
-![Description of status code changed](/images/swagger-aspnetcore/2.modified-description.png)
+![변경된 상태 코드 설명](/images/swagger-aspnetcore/2.modified-description.png)
 
-The descriptions of each HTTP codes are now modified according to what was specified in the annotation.
+이제 각 HTTP 코드의 설명은 주석에 지정된 내용에 따라 수정됩니다.
 
-## Adding Examples
+## 예시 추가
 
-To add examples, we will need to enable the Swagger to support this in the `Program.cs` as well.
+예제를 추가하려면 `Program.cs`에서도 이를 지원하도록 Swagger를 활성화해야 합니다.
 
 ```diff[Program.cs]
 + using System.Reflection;
@@ -136,7 +138,7 @@ To add examples, we will need to enable the Swagger to support this in the `Prog
 + builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
 ```
 
-After that, create an example file named `WeatherForecastExample.cs` and populate the file with the following contents. Note that this is the code which you will need to exclude from code coverage too.
+그런 다음 `WeatherForecastExample.cs` 라는 예제 파일을 만들고 파일을 다음 내용으로 채웁니다. 이는 코드 적용 범위에서도 제외해야 하는 코드입니다.
 
 ```cs[WeatherForecastExample.cs]
 using System.Collections.Generic;
@@ -167,7 +169,7 @@ public class WeatherForecastSingleExample : IExamplesProvider<IEnumerable<Weathe
 }
 ```
 
-Navigate back to the controller file and add the following annotation to the endpoint.
+컨트롤러 파일로 다시 이동하여 엔드포인트에 다음 주석을 추가합니다.
 
 ```diff[WeatherForecastController.cs]
 + using Swashbuckle.AspNetCore.Filters;
@@ -178,16 +180,16 @@ Navigate back to the controller file and add the following annotation to the end
 + [SwaggerResponseExample((int)HttpStatusCode.OK, typeof(WeatherForecastExample))]
   public async Task<IEnumerable<WeatherForecast>> Get()
   {
-	  // Pretending there is some async code execution
+	  // 비동기 코드 여기에 실행
 ```
 
-![Added response to Swagger](/images/swagger-aspnetcore/3.added-example.png)
+![Swagger에 응답 예시를 추가되었습니다](/images/swagger-aspnetcore/3.added-example.png)
 
-The examples on the Swagger page for that endpoint will be updated to match the example file.
+해당 엔드포인트에 대한 Swagger 페이지의 예제는 예제 파일과 일치하도록 업데이트됩니다.
 
-## Using IActionResult
+## IActionResult를 사용하다
 
-If we try to wrap the endpoint response in an `IActionResult`, the example response will disappear. I think that Swagger can't serialize the response because the `IActionResult` response has already serialized the actual object.
+엔드포인트 응답을 `IActionResult`로 래핑하려고 하면 예제 응답이 사라집니다. `IActionResult` 응답이 이미 실제 개체를 직렬화했기 때문에 Swagger가 응답을 직렬화할 수 없는 것 같습니다.
 
 ```diff[WeatherForecastController.cs]
   [HttpGet(Name = "GetWeatherForecast")]
@@ -197,7 +199,7 @@ If we try to wrap the endpoint response in an `IActionResult`, the example respo
 - public async Task<IEnumerable<WeatherForecast>> Get()
 + public async Task<IActionResult> Get()
   {
-      // Pretending there is some async code execution
+	  // 비동기 코드 여기에 실행
 -     return await Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
 +     return this.Ok(await Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
       {
@@ -210,11 +212,11 @@ If we try to wrap the endpoint response in an `IActionResult`, the example respo
   }
 ```
 
-The Swagger page will now looks like this.
+이제 Swagger 페이지는 다음과 같습니다. IActionResult로 인해 예제가 누락되었습니다.
 
-![Example missing due to IActionResult](/images/swagger-aspnetcore/4.example-missing.png)
+![IActionResult로 인해 예제가 누락되었습니다.](/images/swagger-aspnetcore/4.example-missing.png)
 
-To fix that, add an additional annotation to the endpoint as follows.
+이 문제를 해결하려면 다음과 같이 엔드포인트에 어노테이션을 추가하세요.
 
 ```diff[WeatherForecastController.cs]
   [SwaggerResponse((int)HttpStatusCode.NotFound, "Info not found.")]
@@ -222,10 +224,10 @@ To fix that, add an additional annotation to the endpoint as follows.
 + [ProducesResponseType(typeof(WeatherForecastExample), (int)HttpStatusCode.OK)]
   public async Task<IActionResult> Get()
   {
-      // Some async code execution
+	  // 비동기 코드 여기에 실행
 ```
 
-The example should show up again in the Swagger page.
+Swagger 페이지에 예제가 다시 표시되어야 합니다.
 
 ## References
 
