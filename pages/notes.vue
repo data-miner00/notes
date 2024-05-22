@@ -1,9 +1,18 @@
 <script setup lang="ts">
-const queryBuilder = queryContent("notes");
-
-const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation(queryBuilder)
+const { locale } = useI18n();
+const queryBuilder = computed(() =>
+  locale.value === "en" ? queryContent("notes") : queryContent("ko", "notes")
 );
+
+const { data } = await useAsyncData("navigation", () =>
+  fetchContentNavigation(queryBuilder.value)
+);
+
+const navigation = computed(() => {
+  return locale.value === "en"
+    ? data.value?.[0].children
+    : data.value?.[0].children?.[0].children;
+});
 
 const tags = ["blog", "index", "list"];
 </script>
@@ -39,7 +48,7 @@ const tags = ["blog", "index", "list"];
   <main class="mx-auto justify-center px-6 lg:px-0 lg:pt-20 sm:w-[55ch]">
     <div
       :key="topic.title"
-      v-for="topic of navigation?.[0].children"
+      v-for="topic of navigation"
       class="p-6 border border-solid border-gray-200 dark:border-gray-700 rounded mb-12"
     >
       <h2 class="font-bold text-2xl">{{ topic.icon }} {{ topic.title }}</h2>
