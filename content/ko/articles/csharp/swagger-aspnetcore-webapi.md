@@ -229,7 +229,7 @@ public class WeatherForecastSingleExample : IExamplesProvider<IEnumerable<Weathe
 
 Swagger 페이지에 예제가 다시 표시되어야 합니다.
 
-## References
+## 참고
 
 <!-- prettier-ignore-start -->
 ::apa-reference

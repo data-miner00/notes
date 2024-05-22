@@ -1,6 +1,6 @@
 ---
-title: WPF Dependency Injection
-description: Configure WPF application to become DI aware with Autofac
+title: WPF 의존성 주입
+description: WPF 프로그렘을 Autofac 의존성 주입 설정
 topic: C#
 author:
   - name: Shaun Chong
@@ -13,28 +13,28 @@ updatedAt: 2024-03-24T08:28:42.756Z
 createdAt: 2023-11-04T08:28:42.756Z
 ---
 
-Dependency Injection is a common practice to receive external functionalities that a dependant needs instead of creating their own. This practice can be further extended to incorporate [Inversion of Control (IoC)](https://www.educative.io/answers/what-is-inversion-of-control) to use a container for managing said dependencies.
+의존성 두입은 종속 항목을 직접 만드는 대신 종속 항목에 필요한 외부 기능을 수신하는 일반적인 방법입니다. 이 방식은 [IoC (Inversion of Control)](https://www.educative.io/answers/what-is-inversion-of-control)를 통합하여 해당 종속성을 관리하기 위한 컨테이너를 사용하도록 더욱 확장될 수 있습니다.
 
 <!--more-->
 
-In this short guide, I will demonstrate the steps for configuring a Windows Presentation Foundation (WPF) application to use [Autofac](https://autofac.org/) as its IoC container.
+이 짧은 가이드에서는 [Autofac](https://autofac.org/)을 IoC 컨테이너로 사용하도록 WPF(Windows Presentation Foundation) 애플리케이션을 구성하는 단계를 설명합니다.
 
-## Versions Used
+## 사용된 버전
 
-This demonstration is tested with the technologies with the following versions:
+이 데모는 다음 버전의 기술로 테스트되었습니다.
 
-| Index | Technology                              | Version        |
-| ----- | --------------------------------------- | -------------- |
-| 1.    | dotnet CLI                              | 7.0.304        |
-| 2.    | Target Framework                        | net6.0-windows |
-| 3.    | Autofac                                 | 7.1.0          |
-| 4.    | Autofac.Configuration                   | 6.0.0          |
-| 5.    | Microsoft.Extensions.Configuration      | 7.0.0          |
-| 6.    | Microsoft.Extensions.Configuration.Json | 7.0.0          |
+| 색인 | 기술                                    | 버전           |
+| ---- | --------------------------------------- | -------------- |
+| 1.   | dotnet CLI                              | 7.0.304        |
+| 2.   | Target Framework                        | net6.0-windows |
+| 3.   | Autofac                                 | 7.1.0          |
+| 4.   | Autofac.Configuration                   | 6.0.0          |
+| 5.   | Microsoft.Extensions.Configuration      | 7.0.0          |
+| 6.   | Microsoft.Extensions.Configuration.Json | 7.0.0          |
 
-## Create IoC Container
+## IoC 컨테이너 만두기
 
-First, create a class file named `ContainerConfig.cs`. This is the place for registering dependencies and any other startup configuration.
+먼저 `ContainerConfig.cs`라는 클래스 파일을 만듭니다. 의존송 및 기타 시작 구성을 등록하는 곳입니다.
 
 ```cs[ContainerConfig.cs]
 using Autofac;
@@ -57,9 +57,9 @@ internal static class ContainerConfig
 }
 ```
 
-## Store the Container
+## 컨테이너를 유지
 
-Navigate to `App.xaml.cs`, the entry point of the application to store the IoC container.
+IoC 컨테이너를 저장할 애플리케이션의 진입점인 `App.xaml.cs`로 이동합니다.
 
 ```cs[App.xaml.cs]
 using System.Windows;
@@ -73,7 +73,7 @@ public partial class App : Application
 }
 ```
 
-Next, override the `OnStartup` to call the main window for display through the DI container and dispose the container `OnExit`.
+그 다음에 `OnStartup`을 재정의하여 DI 컨테이너를 통해 표시할 기본 창을 호출하고 `OnExit` 컨테이너를 삭제합니다.
 
 ```cs[App.xaml.cs]
 protected override void OnStartup(StartupEventArgs e)
@@ -92,11 +92,11 @@ protected override void OnExit(ExitEventArgs e)
 }
 ```
 
-## Remove Auto Startup
+## 자동 시작 제거
 
-By default, the application will call the `MainWindow` automatically on startup. The catch is, this `MainWindow` is not managed by the DI container. As a result, we end up having **2** separate `MainWindow` open during the startup.
+기본적으로 애플리케이션은 시작 시 자동으로 `MainWindow`를 호출합니다. 문제는 이 `MainWindow`가 DI 컨테이너에 의해 관리되지 않는다는 것입니다. 결과적으로 시작하는 동안 **2**개의 별도 `MainWindow`가 열려 있게 됩니다.
 
-To fix that, head over to `App.xaml` to remove `StartupUri` property.
+이 문제를 해결하려면 `App.xaml`로 이동하여 `StartupUri` 속성을 제거하세요.
 
 ```diff[App.xaml]
   <Application x:Class="MyWpfApp"
@@ -111,13 +111,13 @@ To fix that, head over to `App.xaml` to remove `StartupUri` property.
   </Application>
 ```
 
-This will only run one instance of `MainWindow` that is managed by the DI container.
+그러면 DI 컨테이너가 관리하는 `MainWindow` 인스턴스 하나만 실행됩니다.
 
-## Using Dependencies
+## 종속성 사용
 
-With the DI container properly set up, we can now use the dependencies freely in the project as long as the dependencies are properly registered in the `ContainerConfig.cs` file.
+DI 컨테이너가 올바르게 설정되었으므로 이제 `ContainerConfig.cs` 파일에 종속성이 올바르게 등록되어 있는 한 프로젝트에서 종속성을 자유롭게 사용할 수 있습니다.
 
-Here is a trivial example with `MainWindow.xaml.cs`. Try to keep the `this.InitializeComponent` method call on the top of the constructor to prevent exception of manipulating the form element when the form is not initialized.
+다음은 `MainWindow.xaml.cs`를 사용한 간단한 예입니다. 양식이 초기화되지 않을 때 양식 요소 조작 예외를 방지하려면 생성자 상단에 `this.InitializeComponent` 메소드 호출을 유지하십시오.
 
 ```cs[MainWindow.xaml.cs]
 public partial class MainWindow : Window
@@ -135,11 +135,11 @@ public partial class MainWindow : Window
 }
 ```
 
-## Add Configurations
+## 구성 추가
 
-To use a JSON configuration file like `appsettings.json` in the WebApi project, we can configure them as well.
+WebApi 프로젝트에서 `appsettings.json`과 같은 JSON 구성 파일을 사용하기 위해 구성할 수도 있습니다.
 
-Let's say we have a configuration file named `appsettings.json` that has the following contents.
+다음 내용을 포함하는 `appsettings.json`이라는 구성 파일이 있다고 가정해 보겠습니다.
 
 ```json[appsettings.json]
 {
@@ -150,7 +150,7 @@ Let's say we have a configuration file named `appsettings.json` that has the fol
 }
 ```
 
-We need to create the options file that reflect the `MyConfig` section. So, create a file named `MyConfigOption.cs` with the following contents.
+`MyConfig` 섹션을 반영하는 옵션 파일을 생성해야 합니다. 따라서 다음 내용으로 `MyConfigOption.cs`라는 파일을 만듭니다.
 
 ```cs[MyConfigOption.cs]
 public class MyConfigOption
@@ -160,7 +160,7 @@ public class MyConfigOption
 }
 ```
 
-Finally, register the `appsettings.json` file in `ContainerConfig.cs` and resolve the configuration option for usage.
+마지막으로 `ContainerConfig.cs`에 `appsettings.json` 파일을 등록하고 사용을 위한 구성 옵션을 해결합니다.
 
 ```diff[ContainerConfig.cs]
   using Autofac;
@@ -180,16 +180,16 @@ Finally, register the `appsettings.json` file in `ContainerConfig.cs` and resolv
 +         var module = new ConfigurationModule(configBuilder.Build());
 +         builder.RegisterModule(module);
 
-		  // Get the deserialized config of `MyConfig` section.
+		  // `MyConfig` 섹션의 역직렬화된 구성을 가져옵니다.
 +         var myConfig = config.GetSection("MyConfig").Get<MyConfigOption>();
 
 		  // Console.WriteLine(myConfig.Theme);
 
-		  // register services required
+		  // 필요한 서비스 등록
 		  builder.RegisterType<MyHandler>().As<IHandler>().SingleInstance();
 		  builder.RegisterType<MyService>().As<IService>().SingleInstance();
 
-		  // register the forms required
+		  // 필요한 양식 등록
 		  builder.RegisterType<MainWindow>().SingleInstance();
 
 		  return builder.Build();
@@ -197,7 +197,7 @@ Finally, register the `appsettings.json` file in `ContainerConfig.cs` and resolv
   }
 ```
 
-## References
+## 참고
 
 <!-- prettier-ignore-start -->
 ::apa-reference
