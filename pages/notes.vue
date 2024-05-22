@@ -50,7 +50,7 @@ const tags = ["blog", "index", "list"];
         class="flex flex-col gap-4"
       >
         <li class="block">
-          <NuxtLink :to="entry._path" class="text-xl italic">{{
+          <NuxtLink :to="entry._path" class="text-xl">{{
             entry.title
           }}</NuxtLink>
         </li>

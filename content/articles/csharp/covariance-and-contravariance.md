@@ -9,7 +9,7 @@ tags:
   - variance
   - interface
   - csharp
-updatedAt: 2023-07-16T01:05:19.344Z
+updatedAt: 2024-05-22T03:53:55.046Z
 createdAt: 2022-11-09T15:06:47.818Z
 ---
 
@@ -50,6 +50,7 @@ Both `x` and `y` are able to invoke the `Eat` method. However, since the `Meow` 
 
 ```cs
 x.Meow(); // compilation error
+y.Meow(); // compilation error
 ```
 
 Only the `Cat` object that has its own class as reference is able to access the `Meow` method.
@@ -135,6 +136,7 @@ Interfaces with type `T` itself without any base or derived types can always sat
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 title: Liskov substitution principle
@@ -166,3 +168,4 @@ date: 2022, May 16
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->
