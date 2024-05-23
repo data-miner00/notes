@@ -584,6 +584,7 @@ To use the $\LaTeX$ logo, we can just use the following tag.
 
 ## References
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -643,3 +644,4 @@ date: 2021, August 11
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->

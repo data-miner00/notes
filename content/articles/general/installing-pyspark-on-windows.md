@@ -9,7 +9,7 @@ tags:
   - python
   - spark
   - setup
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2024-05-23T14:31:44.473Z
 createdAt: 2023-04-18T01:41:30.909Z
 ---
 
@@ -21,7 +21,7 @@ For those who don't know, PySpark is a bridge for Apache Spark in Python. Apache
 
 ## Setting Up Core Components
 
-## Installing Java
+### Installing Java
 
 The first item that needs to be installed is Java, specifically Java Development Kit (JDK) and **not** Java Runtime Environment (JRE). The link to Oracle JDK can be found [here](https://www.oracle.com/java/technologies/downloads/#java8-windows) and OpenJDK [here](https://jdk.java.net/20/). There are a wide assortment of OpenJDK vendors out there, choose any which you are comfortable with.
 
@@ -77,7 +77,7 @@ SET JAVA_HOME=C:\Program Files\Java\jdk-17.0.1
 
 ### Add Paths
 
-Lastly, add the Paths that directs to the binaries required by Spark. Locate `Path` and click edit. A list of exposed directories should show. Make sure path to JDK, Spark and Python exists. Add manually if otherwise.
+Lastly, add the paths that directs to the binaries required by Spark. Locate `Path` and click edit. A list of exposed directories should show. Make sure path to JDK, Spark and Python exists. Add manually if otherwise.
 
 ```
 C:\Program Files\Java\jdk-17.0.1\bin
@@ -135,7 +135,7 @@ df = spark.createDataFrame(
     [(1, None, "a"), (2, "b", None), (3, "c", "d")], ["id", "col1", "col2"]
 )
 
-# drop rows that have at least 2 non-null values
+# drop rows that have at least 2 null values
 df_thresh = df.na.drop(thresh=2)
 
 # show the results
@@ -163,6 +163,7 @@ SUCCESS: The process with PID 24088 (child process of PID 5140) has been termina
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -194,3 +195,4 @@ publisher: IBM
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->
