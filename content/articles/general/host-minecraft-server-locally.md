@@ -9,16 +9,13 @@ tags:
   - minecraft
   - server
   - ngrok
-  - friends
-updatedAt: 2024-03-26T20:17:10.163Z
+updatedAt: 2024-05-23T13:00:19.507Z
 createdAt: 2023-02-06T13:40:58.648Z
 ---
 
-Hosting a Minecraft server can be expensive for casual players. Free services like Athernos are lacklustre as they can lag the hell out of you whenever they please. Moreover, the saved files are not secured as you might find out that your endearing Minecraft world has been _erased_ entirely from your account, from the hard disk of the server and have no other ways to recover. All the painstaking effort, years of grinding and sanity put into it gets obliterated.
+Hosting a Minecraft server can be expensive for casual players. Free services like Athernos are laggy at times. Moreover, the saved files might get lost on the server entirely. All the painstaking effort to the world has gone in vain. Hence, it is imperative for us to self-host the server ourselves.
 
 <!--more-->
-
-The only solution to all these ordeal is to host one yourself. This article will provide the only guidance you need to do just that and I can guarantee it won't disappoints.
 
 ## Requirements
 
@@ -26,7 +23,7 @@ For everything to work, there are a couple of software and tools that must be in
 
 ### Java
 
-The first and the most crucial component to be installed is **Java**. In brief, Java is a programming language as well as a platform that executes the applications written in the Java language. Look it up about [Java](https://www.java.com/en/download/help/whatis_java.html) if interested.
+The first and the most crucial component to be installed is [Java](https://www.java.com/en/download/help/whatis_java.html).
 
 Usually, Java is installed along with the Minecraft Launcher as Minecraft Java Edition is dependent on, of course, Java. Verify that Java is installed by typing `java --version` in the command prompt and it should result as the following output.
 
@@ -40,13 +37,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
 
 The second item on the list is the Minecraft server. Go to the [official download page](https://www.minecraft.net/en-us/download/server) and download the required file from the download link that reads "Download minecraft_server.x.x.x.jar".
 
-The `x.x.x` represents the **version** of Minecraft for the server. You will need to find the corresponding version of server file if you intend to host the server for older version of Minecraft.
-
-**Rename** the file to just `server.jar` for ease of reference after it has been downloaded.
+The `x.x.x` represents the **version** of Minecraft for the server. Find the best version that suits you. After that, rename the JAR file to `server.jar`.
 
 ### ngrok
 
-[ngrok](https://ngrok.com) is a simplified API-first _ingress-as-a-service_ that adds connectivity, security and observability to any apps with no code changes. ngrok allows us to create tunnel for the public to join our locally hosted Minecraft server quick, easy and most importantly, **free**.
+[ngrok](https://ngrok.com) allows us to create tunnel to the public so that our friends can join our locally hosted Minecraft server quickly and for free.
 
 Proceed to sign up for a free ngrok account and download the ngrok client from the dashboard. There should be a banner that contains links for the ngrok downloader for various OS. Download the version that is suitable for your operating system and _extract_ the `ngrok.exe` file from the zip file to anywhere in your computer.
 
@@ -181,7 +176,7 @@ ngrok tcp --region us 25565
 PAUSE
 ```
 
-The command expose the port `25565` which is the local Minecraft server run on with the designated region for routing.choose one that is closest to your geographical location. Here is the list of [available regions](https://ngrok.com/docs/ngrok-agent/config#region) for reference.
+The command expose the port `25565` which is the local Minecraft server run on with the designated region for routing. Choose one that is closest to your geographical location. Here is the list of [available regions](https://ngrok.com/docs/ngrok-agent/config#region) for reference.
 
 Save the changes and exit the file. Execute it by double click on and it should now expose your local Minecraft server to the public. The output below shows the ngrok is up and running.
 
@@ -208,7 +203,7 @@ Copy the TCP URL in the `Forwarding` property and give it to your friends to joi
 
 ## Whitelisting
 
-Since the server is publicly available to the entire internet, you wouldn't want some random strangers to be able to join your world to wreak havoc and ruin your day.
+Since the server is publicly available to the entire internet, malevolent actors is capable to detect the open channel and join the world to cause harm.
 
 To do that, go to `server.properties` file and look for a field named `white-list` and set its value to `true`. After that, to whitelist a player, go to the running server command prompt and type the following to whitelist a player.
 
@@ -224,6 +219,7 @@ This article walks through how to set up a self-hosted server and made it access
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -234,3 +230,4 @@ date: 2022, August 22
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->

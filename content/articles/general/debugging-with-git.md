@@ -9,10 +9,9 @@ tags:
   - git
   - debugging
   - grep
-  - bisect
 updatedAt: 2024-03-28T11:05:53.157Z
 createdAt: 2023-10-27T11:12:17.718Z
---- 
+---
 
 There are much more [Git](https://git-scm.com/) commands that can be quite handy apart from the usual `fetch`, `commit`, or `push` commands. This short article will introduce 3 useful Git commands namely `bisect`, `grep` and `blame`.
 
@@ -123,7 +122,7 @@ git blame -L 23,54 azure-pipeline.yml
 
 ### Show
 
-Use the `show` command to further inspect a commit. We can utilize the hash gathered from the `blame` command to learn more about the changes. 
+Use the `show` command to further inspect a commit. We can utilize the hash gathered from the `blame` command to learn more about the changes.
 
 ```
 git show <commit-hash>
@@ -177,6 +176,7 @@ git grep -n "section" origin/master -- index.html
 
 ## References
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -227,3 +227,4 @@ url: https://git-scm.com/docs/git-blame
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->
