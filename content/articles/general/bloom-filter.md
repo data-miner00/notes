@@ -25,7 +25,6 @@ Here is a simple Bloom Filter with the size of 10 for demonstration.
 
 ![A simple bloom filter with 10 bits](/images/bloom-filter/bloom-filter.png)
 
-
 ## How it works
 
 To add an item in the Bloom Filter, it takes the input and hashed it with a few hash functions to get multiple hash digests. Subsequently, the results are used to determine the position of the bits to be flipped.
@@ -88,78 +87,78 @@ However, be mindful that the number of hash functions used does **not** correspo
 This is a simple implementation in JavaScript. For Python's implementation, refer to [Brilliant.org](https://brilliant.org/wiki/bloom-filter/).
 
 ```js [bloom.js]
-var crypto = require('crypto')
+var crypto = require("crypto");
 
 class BloomFilter {
-  #size
-  #sliceStart
-  #sliceEnd
-  #array
-  #itemCount = 0
+  #size;
+  #sliceStart;
+  #sliceEnd;
+  #array;
+  #itemCount = 0;
 
   get itemsAdded() {
-    return this.#itemCount
+    return this.#itemCount;
   }
 
   constructor(size = 50, sliceStart = 0, sliceEnd = 4) {
-    this.#size = size
-    this.#sliceStart = sliceStart
-    this.#sliceEnd = sliceEnd
-    this.#array = new Array(size)
+    this.#size = size;
+    this.#sliceStart = sliceStart;
+    this.#sliceEnd = sliceEnd;
+    this.#array = new Array(size);
   }
 
   insert(string) {
-    var [hash1, hash2, hash3, hash4] = this.#getHashes(string)
+    var [hash1, hash2, hash3, hash4] = this.#getHashes(string);
 
     this.#array[
-      Number('0x' + hash1.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
-    ] = 1
+      Number("0x" + hash1.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
+    ] = 1;
     this.#array[
-      Number('0x' + hash2.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
-    ] = 1
+      Number("0x" + hash2.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
+    ] = 1;
     this.#array[
-      Number('0x' + hash3.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
-    ] = 1
+      Number("0x" + hash3.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
+    ] = 1;
     this.#array[
-      Number('0x' + hash4.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
-    ] = 1
-    this.#itemCount++
+      Number("0x" + hash4.slice(this.#sliceStart, this.#sliceEnd)) % this.#size
+    ] = 1;
+    this.#itemCount++;
   }
 
   find(string) {
-    var [hash1, hash2, hash3, hash4] = this.#getHashes(string)
+    var [hash1, hash2, hash3, hash4] = this.#getHashes(string);
 
     return !!(
       this.#array[
-        Number('0x' + hash1.slice(this.#sliceStart, this.#sliceEnd)) %
+        Number("0x" + hash1.slice(this.#sliceStart, this.#sliceEnd)) %
           this.#size
       ] &&
       this.#array[
-        Number('0x' + hash2.slice(this.#sliceStart, this.#sliceEnd)) %
+        Number("0x" + hash2.slice(this.#sliceStart, this.#sliceEnd)) %
           this.#size
       ] &&
       this.#array[
-        Number('0x' + hash3.slice(this.#sliceStart, this.#sliceEnd)) %
+        Number("0x" + hash3.slice(this.#sliceStart, this.#sliceEnd)) %
           this.#size
       ] &&
       this.#array[
-        Number('0x' + hash4.slice(this.#sliceStart, this.#sliceEnd)) %
+        Number("0x" + hash4.slice(this.#sliceStart, this.#sliceEnd)) %
           this.#size
       ]
-    )
+    );
   }
 
   showState() {
-    console.log('State are as follows: ', this.#array)
+    console.log("State are as follows: ", this.#array);
   }
 
   #getHashes(str) {
-    var hash1 = crypto.createHash('sha1').update(str).digest('hex')
-    var hash2 = crypto.createHash('sha256').update(str).digest('hex')
-    var hash3 = crypto.createHash('mdc2').update(str).digest('hex')
-    var hash4 = crypto.createHash('sha384').update(str).digest('hex')
+    var hash1 = crypto.createHash("sha1").update(str).digest("hex");
+    var hash2 = crypto.createHash("sha256").update(str).digest("hex");
+    var hash3 = crypto.createHash("mdc2").update(str).digest("hex");
+    var hash4 = crypto.createHash("sha384").update(str).digest("hex");
 
-    return [hash1, hash2, hash3, hash4]
+    return [hash1, hash2, hash3, hash4];
   }
 }
 ```
@@ -175,6 +174,7 @@ By tolerating the slim chance of collision, we are rewarded with an incredibly m
 
 ## References
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -253,3 +253,4 @@ source: websites
 retrievedDate: 2024, March 26
 ---
 ::
+<!-- prettier-ignore-end -->
