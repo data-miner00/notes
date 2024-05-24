@@ -29,7 +29,6 @@ Besides, association can also be multiplexed in the form of **one-to-one**, **on
 
 ![Diagrams showing relationships between association, aggregation and composition](/images/object-relationships/association.png)
 
-
 ## Aggregation
 
 Aggregation indicates that when an object that is owned or depend by another object, it can still exist on its own even after the dependent party is dead or ceases to exist.
@@ -70,6 +69,7 @@ _"Is a"_ is the keyword for inheritance.
 
 ## References
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -89,3 +89,4 @@ retrievedDate: 2024, March 26
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->

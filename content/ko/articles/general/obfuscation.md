@@ -1,7 +1,7 @@
 ---
-title: Obfuscation
-description: The attempt to conceal the purpose of a source code
-topic: General
+title: 코드 난독화
+description: 소스코드의 목적을 숨기려는 시도
+topic: 일반
 authors:
   - name: Shaun Chong
     avatar: levi.png
@@ -9,19 +9,19 @@ tags:
   - encryption
   - c
   - security
-updatedAt: 2024-03-25T13:17:10.163Z
+updatedAt: 2024-05-24T13:10:15.014Z
 createdAt: 2022-08-12T17:38:48.848Z
 ---
 
-Obfuscation is the act of deliberately converting a piece of source code into codes that are difficult for human to understand to conceal its true purpose, but the functionality remains unchanged and are perfectly executable by computers.
+난독화란 소스 코드의 일부를 의도적으로 실제 목적을 숨기기 위해 인간이 이해하기 어려운 코드로 변환하는 행위이지만 기능은 변경되지 않고 컴퓨터에서 완벽하게 실행될 수 있도록 하는 것입니다.
 
 <!--more-->
 
-## Example
+## 예시
 
-Here is a [step by step guide](https://www.youtube.com/watch?v=rwOI1biZeD8) on obfuscating a piece of C code. The transformation before and after are quite drastic as compared to each other.
+다음은 C 코드 부분을 난독화하는 방법에 대한 [단계별 가이드](https://www.youtube.com/watch?v=rwOI1biZeD8)입니다. 전후의 변화는 서로에 비해 상당히 파격적이다.
 
-### Before Obfuscation
+### 난독화 전 코드
 
 ```c [hello.c]
 int main(void)
@@ -29,10 +29,10 @@ int main(void)
     time_t t;
     struct tm* tm;
 
-    t = time(NULL); /* Get current time in seconds */
-    tm = localtime(&t); /* Transform a timestamp to broken-down time */
+    t = time(NULL); /* 현재 시간을 초 단위로 가져옵니다. */
+    tm = localtime(&t); /* 타임스탬프를 세분화된 시간으로 변환 */
 
-    switch(tm->tm_hour) /* Choose action from the hour value */
+    switch(tm->tm_hour) /* 시간 값에서 작업 선택 */
     {
         case 4: case 5: case 6: case 7:
         case 8: case 9: case 10: case 11:
@@ -55,7 +55,7 @@ int main(void)
 }
 ```
 
-### After Obfuscation
+### 난독화 후 코드
 
 ```c [hello.c]
 #include <time.h>
@@ -63,17 +63,17 @@ char* w = "AAAA########+++///9999AA Good %s!\n\0morning\0day\0afternoon\0evening
 int main(){time_t t=time(0); return printf(w+25, w + w[ localtime(&t)->tm_hour ]);}
 ```
 
-## Online Obfuscator
+## 오라인 난독화기
 
-Obfuscator is also available online for [JavaScript](https://obfuscator.io/) and [Python](https://pyob.oxyry.com/). Google the related keywords for more similar services.
+난독화기는 [JavaScript](https://obfuscator.io/) 및 [Python](https://pyob.oxyry.com/)용으로 온라인에서도 사용할 수 있습니다. 더 유사한 서비스를 찾으려면 관련 키워드를 Google에 검색하세요.
 
-## Disadvantages
+## 단점
 
-- Obfuscation makes reading or reverse-engineering difficult, but not impossible
-- May causes the performance to degrade if not handled properly
-- Introduces complexity for building and debugging to the developers
+- 난독화로 인해 읽기 또는 리버스 엔지니어링이 어려워지지만 불가능하지는 않습니다.
+- 올바르게 취급하지 않을 경우 성능 저하의 원인이 될 수 있습니다.
+- 개발자에게 빌드 및 디버깅의 복잡성을 소개합니다.
 
-## References
+## 참고
 
 <!-- prettier-ignore-start -->
 ::apa-reference
