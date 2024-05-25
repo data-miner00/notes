@@ -458,6 +458,7 @@ source$.pipe(takeUntil(of('something')))
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 title: ReactiveX
@@ -515,3 +516,4 @@ url: https://www.youtube.com/watch?v=ewcoEYS85Co
 source: websites
 ---
 ::
+<!-- prettier-ignore-end -->
