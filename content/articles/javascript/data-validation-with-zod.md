@@ -8,7 +8,7 @@ authors:
 tags:
   - validation
   - typescript
-updatedAt: 2023-07-15T13:17:10.163Z
+updatedAt: 2024-05-25T06:36:08.859Z
 createdAt: 2023-01-12T15:27:38.762Z
 ---
 
@@ -134,9 +134,9 @@ const UserSchema = z.object({
 
 > More on number modifiers [here](https://zod.dev/?id=numbers).
 
-## Literal
+## Literal Type
 
-Like literally.
+Specific value that matches exactly.
 
 ```ts
 z.literal('sashimi')
@@ -287,7 +287,7 @@ To declare a tuple type, pass in an array of Zod type declarations into `z.tuple
 z.tuple([z.number(), z.number(), z.number().gt(4).int()])
 ```
 
-To declare a tuple with undefinite length, `rest` can be used to indicate the type of the elements that are not mentioned in the declarations for the rest of params.
+To declare a tuple with indefinite length, `rest` can be used to indicate the type of the elements that are not mentioned in the declarations for the rest of params.
 
 ```ts
 z.tuple([z.string(), z.date()]).rest(z.number())
@@ -334,7 +334,7 @@ const UserMap = z.record(z.string(), z.number()) // keys and values
 
 ## Map
 
-This is highly resembling the `record` type above, but tailored to the actual JavaScript `Map` type itself.
+This is highly resembles the `record` type above, but tailored to the actual JavaScript `Map` type itself.
 
 ```ts
 const UserMap = z.map(z.string(), z.object({ name: z.string() }))
@@ -407,6 +407,7 @@ if (!results.success) {
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -427,3 +428,4 @@ retrievedDate: 2024, March 25
 publisher: Zod
 ---
 ::
+<!-- prettier-ignore-end -->
