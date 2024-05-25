@@ -401,6 +401,7 @@ The mirror list should be updated according to the availability on the region.
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors:
@@ -475,3 +476,4 @@ source: websites
 date: 2022, June 12
 ---
 ::
+<!-- prettier-ignore-end -->

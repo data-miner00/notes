@@ -172,6 +172,7 @@ The cleanup will make the call to JSONP look seamless.
 
 ## Reference
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 title: JSONP
@@ -215,3 +216,4 @@ url: https://www.youtube.com/watch?v=3AoeiQa8mY8
 date: 2015, April 2
 source: websites
 ---
+<!-- prettier-ignore-end -->
