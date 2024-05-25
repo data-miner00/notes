@@ -1,24 +1,24 @@
 ---
-title: TypeScript Utility Types
+title: TypeScript 유틸리티 타입
 topic: JavaScript
-description: List of useful utility types that TypeScript offers
+description: TypeScript가 제공하는 유용한 유틸리티 타입 목록
 author:
   - name: Shaun Chong
     avatar: levi.png
 tags:
   - typescript
   - javascript
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2024-05-25T12:36:55.931Z
 createdAt: 2023-03-15T12:52:58.230Z
 ---
 
-Utility types in TypeScript acts as helper types that allow us to model and create new types quickly.
+TypeScript의 유틸리티 타입은 새로운 유형을 빠르게 모델링하고 생성할 수 있는 도우미 유형 역할을 합니다.
 
 <!--more-->
 
 ## NonNullable
 
-Removes all the nullish types from a type declaration.
+타입 선언에서 모든 nullish 유형을 제거합니다.
 
 ```ts
 type MaybeString = string | null | undefined
@@ -28,13 +28,13 @@ type NonNullableString = NonNullable<MaybeString>
 type NonNullableString = string
 ```
 
-## Object Types
+## 객체 타입
 
-### Required and Partial
+### Required 및 Partial
 
-The `Required` helper creates a new type that transform all fields of the underlying type as required, removing any optional markers (`?`) exist within the type.
+`Required` 도우미는 기본 타입의 모든 필드를 필요에 따라 변환하고 유형 내에 존재하는 선택적 마커(`?`)를 제거하는 새로운 유형을 만듭니다.
 
-`Partial` on the other hand generates a new type of identical fields but with the optional marker applied to all fields.
+반면 '부분'은 새로운 타입의 동일한 필드를 생성하지만 모든 필드에 선택적 마커가 적용됩니다.
 
 ```ts
 type User = {
@@ -44,7 +44,7 @@ type User = {
 }
 
 type RequiredUser = Required<User>
-// equivalent to
+// 똑같은
 type RequiredUser = {
   id: string
   name: string
@@ -52,7 +52,7 @@ type RequiredUser = {
 }
 
 type PartialUser = Partial<User>
-// equivalent to
+// 똑같은
 type PartialUser = {
   id?: string
   name?: string
@@ -60,9 +60,9 @@ type PartialUser = {
 }
 ```
 
-### Omit and Pick
+### Omit 및 Pick
 
-`Omit` ignores the fields that is specified whereas `Pick` only select the specified fields during the construction of the new type.
+`Omit`은 지정된 필드를 무시하는 반면 '선택'은 새 타입을 생성하는 동안 지정된 필드만 선택합니다.
 
 ```ts
 type User = {
@@ -71,32 +71,32 @@ type User = {
   age?: number
 }
 
-// Omitting one field
+// 필드 1개 생략
 type OmittedUser = Omit<User, 'id'>
 type OmittedUser = {
   name: string
   age?: number
 }
 
-// Omitting multiple fields
+// 필드 몇개 생략
 type OmittedUser2 = Omit<User, 'id' | 'name'>
 type OmittedUser2 = {
   age?: number
 }
 ```
 
-While you may argue picking a certain set of key from a type is as good as creating an entirely new type from scratch, there are certain benefits when it comes to `Pick`. The most compelling reason to use `Pick` is its readability.
+타입에서 특정 키 세트를 선택하는 것이 처음부터 완전히 새로운 유형을 만드는 것만큼 좋다고 주장할 수도 있지만 `Pick`에는 특정한 이점이 있습니다. `Pick`을 사용하는 가장 강력한 이유는 가독성입니다.
 
-Imagine there is type named `User` as demonstrated but with whole lot more of fields. At the login page, you might need its `id` and `password` field and here is where `Pick` comes in handy.
+설명된 대로 `User`라는 타입이 있지만 훨씬 더 많은 필드가 있다고 상상해 보세요. 로그인 페이지에서는 `id`와 `password` 필드가 필요할 수 있으며 여기에서 `Pick`이 유용합니다.
 
 ```ts
-// Picking one property
+// 필드 1개 선택
 type PickedUser = Pick<User, 'id'>
 type PickedUser = {
   id: string
 }
 
-// Picking multiple properties
+// 필드 몇개 선택
 type PickedUser2 = Pick<User, 'id' | 'name'>
 type PickedUser2 = {
   id: string
@@ -104,23 +104,23 @@ type PickedUser2 = {
 }
 ```
 
-### Record
+### 레코드 타입
 
-`Record` type allows us to specify the type for key and its value for an object (or dictionary).
+`Record` 타입을 사용하면 키의 유형과 객체(또는 사전)의 값을 지정할 수 있습니다.
 
 ```ts
 type MyDictionary = Record<number, string>
 
-// equivalent to
+// 똑같은
 
 type MyDictionary = {
   [key: number]: string
 }
 ```
 
-### Readonly
+### 읽이 전용
 
-`Readonly` marks all the field for a type with `readonly` keyword so that all the fields are immutable after creation.
+`Readonly`는 `readonly` 키워드로 타입의 모든 필드를 표시하므로 모든 필드는 생성 후 변경할 수 없습니다.
 
 ```ts
 type User = {
@@ -137,9 +137,9 @@ type ReadonlyUser = {
 }
 ```
 
-### Mutable
+### 변경 필드
 
-There are no `Mutable` utility type in TypeScript that does the opposite of what `Readonly` does, but we can create one ourselves easily.
+TypeScript에는 `Readonly`와 반대되는 `Mutable` 유틸리티 타입이 없지만 쉽게 직접 만들 수 있습니다.
 
 ```ts
 type Mutable<T> = {
@@ -147,7 +147,7 @@ type Mutable<T> = {
 }
 ```
 
-The `-readonly` basically just removes the readonly keyword from a type while iterating through their key value pairs.
+`-readonly`는 기본적으로 키 값 쌍을 반복하면서 타입에서 읽기 전용 키워드를 제거합니다.
 
 ```ts
 type MutableUser = Mutable<ReadonlyUser>
@@ -158,11 +158,11 @@ type MutableUser = {
 }
 ```
 
-## Union Type Helpers
+## 유니언 타입
 
 ### Exclude
 
-`Exclude` does pretty much the same thing with `Omit`, but with union types.
+`Exclude`는 `Omit`과 거의 동일한 작업을 수행하지만 공용체 타입을 사용합니다.
 
 ```ts
 type Role = 'admin' | 'user' | 'anonymous'
@@ -173,7 +173,7 @@ type AnonymousRole = 'anonymous'
 
 ### Extract
 
-`Extract` is used to cherry pick a piece of type info present in a discriminated union with its key.
+`Extract`는 해당 키와 구별된 공용체에 존재하는 타입 정보 조각을 선별하는 데 사용됩니다.
 
 ```ts
 type RoleAttributes =
@@ -189,13 +189,13 @@ type UserRole = Extract<
 >
 ```
 
-## Functions
+## 함수
 
-These utility type are extremely useful when dealing with a library that does not have type sufficient declaration for its functions.
+이러한 유틸리티 타입은 해당 함수에 대한 충분한 선언 유형이 없는 라이브러리를 처리할 때 매우 유용합니다.
 
 ### ReturnType
 
-`ReturnType` is pretty self-explanatory as it extracts the return type of a function itself.
+`ReturnType`은 함수 자체의 반환 타입을 추출하므로 설명이 필요 없습니다.
 
 ```ts
 type Func = (a: number, b: string) => string
@@ -206,25 +206,25 @@ type FuncReturnValue = string
 
 ### Parameters
 
-On the flipside, `Parameters` extracts the parameters of a function type in the form of a named tuple (or array).
+`Parameters`는 네임드 튜플(또는 배열) 형식으로 함수 타입의 매개변수를 추출합니다.
 
 ```ts
 type FuncParams = Parameters<Func>
 type FuncParams = [a: number, b: string]
 ```
 
-To extract the parameters by position, simply index the individual by its index in the named tuple.
+위치별로 매개변수를 추출하려면 간단히 명명된 튜플의 색인을 기준으로 개별 항목을 색인화하면 됩니다.
 
 ```ts
 type FirstFuncParam = Parameters<Func>[0]
 type FirstFuncParam = number
 ```
 
-## Promises
+## 프로미스
 
 ### Promise
 
-Defines an object of promise type.
+Promise 타입의 객체를 정의합니다.
 
 ```ts
 type PromiseNumber = Promise<number>
@@ -232,14 +232,14 @@ type PromiseNumber = Promise<number>
 
 ### Awaited
 
-`Awaited` on the other hand unwraps the underlying type of a `Promise` type.
+반면에 `Awaited`는 `Promise` 타입의 기본 유형을 래핑 해제합니다.
 
 ```ts
 type Result = Awaited<PromiseNumber>
 type Result = number
 ```
 
-## Reference
+## 참고
 
 <!-- prettier-ignore-start -->
 ::apa-reference
