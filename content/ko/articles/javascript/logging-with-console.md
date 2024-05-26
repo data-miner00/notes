@@ -1,6 +1,6 @@
 ---
 title: Console로 로깅
-description: `console.log` 외에 더 유용한 콘솔 방법이 있습니다
+description: '`console.log` 외에 더 유용한 콘솔 방법이 있습니다'
 topic: JavaScript
 authors:
   - name: Shaun Chong
