@@ -48,8 +48,16 @@ const borderColor = computed(() => {
     <header class="font-semibold" :class="textColor">
       <i class="bi" :class="icon"></i> {{ title }}
     </header>
-    <section class="">
+    <section class="callout-section">
       <slot />
     </section>
   </blockquote>
 </template>
+
+<style lang="sass">
+section.callout-section
+  p
+    &::before,
+    &::after
+      content: '' !important
+</style>
