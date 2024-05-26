@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const queryBuilder = computed(() =>
   locale.value === "en"
     ? queryContent("articles")
@@ -17,6 +17,10 @@ const navigation = computed(() => {
 });
 
 const tags = ["blog", "index", "list"];
+
+useHead({
+  title: t("indexPages.articlePage.title"),
+});
 </script>
 
 <template>

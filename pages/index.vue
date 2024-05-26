@@ -2,7 +2,7 @@
 import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles"))
@@ -34,6 +34,10 @@ const tags = computed(() =>
     )
   )
 );
+
+useHead({
+  title: t("homePage.title"),
+});
 </script>
 
 <template>
