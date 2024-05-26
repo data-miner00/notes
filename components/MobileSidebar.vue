@@ -78,6 +78,10 @@ const links = computed<NavigationLink[]>(() => [
               exact-active-class="text-green-400 bg-green-200/50 dark:bg-green-500/50"
             >
               {{ link.content }}
+              <i
+                v-if="link.url.startsWith('http')"
+                class="bi bi-box-arrow-up-right"
+              ></i>
             </NuxtLink>
           </li>
         </ul>
