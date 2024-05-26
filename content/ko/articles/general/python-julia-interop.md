@@ -17,6 +17,16 @@ Julia는 C, Python, R 및 Java와 같은 다른 프로그래밍 언어 및 환�
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ## Julia에서 Python코드 실행
 
 Julia에서는 [일반 레지스트리](https://github.com/JuliaRegistries/General)에서 쉽게 설치할 수 있는 `PyCall` 인터페이스 패키지를 통해 Python 코드를 호출할 수 있습니다.

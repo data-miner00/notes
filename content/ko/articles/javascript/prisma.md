@@ -18,6 +18,16 @@ Prisma는 Node.js 및 Typescript용 ORM 레이어입니다. Prisma는 주로 관
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 Prisma에는 다음과 같은 3가지 구성 요소가 있습니다.
 
 - **Prisma Client**: Node.js 및 TypeScript용으로 생성된 유형 안전 쿼리 빌더입니다.

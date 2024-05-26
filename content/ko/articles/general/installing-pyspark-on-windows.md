@@ -17,6 +17,16 @@ createdAt: 2023-04-18T01:41:30.909Z
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 모르는 사람들을 위해 설명하자면, PySpark는 Python의 Apache Spark용 브리지입니다. Apache Spark는 Scala로 작성된 분산 컴퓨팅을 사용하는 빅 데이터 처리 분야의 선구자이며 Scala는 JVM(Java Virtual Machine)에서 실행됩니다. PySpark를 사용하면 [Py4j 라이브러리](https://www.py4j.org/)를 활용하여 Python에서 직접 JVM 개체에 대한 인터페이스를 사용할 수 있습니다.
 
 ## 핵심 구성 요소 설정

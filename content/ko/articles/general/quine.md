@@ -17,6 +17,16 @@ Quine은 실행 시 이전에 실행된 출력과 동일한 코드를 생성하�
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ## C
 
 ```c [Example 1]

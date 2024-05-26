@@ -16,6 +16,16 @@ TypeScript의 유틸리티 타입은 새로운 유형을 빠르게 모델링하�
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ## NonNullable
 
 타입 선언에서 모든 nullish 유형을 제거합니다.

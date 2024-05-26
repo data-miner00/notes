@@ -17,6 +17,16 @@ LaTeX는 문서 작성 및 과학 논문 작성에 널리 사용되는 인기 �
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ```tex
 \documentclass[a4paper, 11pt]{article}
 

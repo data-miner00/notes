@@ -17,6 +17,16 @@ createdAt: 2022-08-12T17:38:48.848Z
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ## 예시
 
 다음은 C 코드 부분을 난독화하는 방법에 대한 [단계별 가이드](https://www.youtube.com/watch?v=rwOI1biZeD8)입니다. 전후의 변화는 서로에 비해 상당히 파격적이다.

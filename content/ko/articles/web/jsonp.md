@@ -18,6 +18,16 @@ JSONP는 JSON with Padding이라고도 알려져 있으며 CORS(Cross-Origin Res
 
 <!--more-->
 
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
+
 ## 시나리오
 
 웹 애플리케이션이 `www.a.com`에 호스팅되어 있고 JavaScript 코드 중 하나가 `www.b.com`에 호스팅된 원격 서버에서 데이터를 가져오려고 한다고 가정해 보겠습니다. 원격 서버가 `*` 또는 `www.a.com`으로 설정된 `Access-Control-Allow-Origin` 헤더를 사용하여 쿼리에 응답하지 않으면 브라우저는 응답을 수신하고 해석할 때 오류를 발생시키고 거부합니다. 요청한 데이터.

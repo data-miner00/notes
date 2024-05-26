@@ -17,7 +17,15 @@ createdAt: 2022-11-09T15:06:47.818Z
 
 <!--more-->
 
-> 저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다.
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: 부인 성명
+---
+저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+::
+<!-- prettier-ignore-end -->
 
 프로그램밍에서는 그 것 들은 [SOLID 원칙](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)중 하나인 리스코프 치환 원칙(Liskov Substitution Principle)을 보완하다.
 
