@@ -11,23 +11,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="/">
-    <img src="assets/images/nuxt-content.png" />
-  </a>
 
-  <h3 align="center">Nuxt Content Template</h3>
+  <h3 align="center">Article & Notes</h3>
 
   <p align="center">
-    An opionionated Nuxt.js Template with Nuxt Content!
+    A place where I compose. The successor for [book](https://github.com/data-miner00/book).
     <br />
-    <a href="https://nuxt-content-template.netlify.app/"><strong>View Demo »</strong></a>
+    <a href="https://notes.netlify.app/"><strong>View Demo »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/data-miner00/nuxt-content-template">Explore the docs</a>
+    <a href="https://github.com/data-miner00/notes">Explore the docs</a>
     ·
-    <a href="https://github.com/data-miner00/nuxt-content-template/issues">Report Bug</a>
+    <a href="https://github.com/data-miner00/notes/issues">Report Bug</a>
     ·
-    <a href="https://github.com/data-miner00/nuxt-content-template/issues">Request Feature</a>
+    <a href="https://github.com/data-miner00/notes/issues">Request Feature</a>
   </p>
 </div>
 
@@ -60,24 +57,15 @@
 
 ## About The Project
 
-![Template screenshot](/assets/images/screenshot.png)
+![Project screenshot](/assets/images/screenshot.png)
 
-An extremely opinionated template for building Markdown oriented Nuxt websites with Nuxt Content and TailwindCSS. Focus on the development itself rather than all these low-level configuration stuffs.
-
-Incentives:
-
-- Wanted to build out my new personal website
-- Want Markdown
-- Want newest version of Vue, Nuxt and Nuxt Content.
-- Buitl this multi-purpose template so I can use for other projects.
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+This is a place that I write articles and notes to remind me about stuffs that might be useful to me in future and help other who come across the site.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-The technologies and tools used within this template.
+The technologies and tools used with this project.
 
 - Vue
 - Nuxt
@@ -110,7 +98,7 @@ To run this template project in your local for personal use or contribution, sim
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/data-miner00/nuxt-content-template.git
+   git clone https://github.com/data-miner00/notes.git
    ```
 2. Install Node dependencies
    ```sh
@@ -129,20 +117,14 @@ To run this template project in your local for personal use or contribution, sim
 
 ## Roadmap
 
-- [x] Add Dark Mode
-- [x] Add i18n
-- [x] Add Styling
-  - [x] Sass
-  - [x] Tailwind
 - [ ] Add PWA Manifest
-- [x] Responsive styles
 - [ ] DocSearch
-- [x] Copy code block button
 - [ ] Add line numbers to code block
-- [x] Add highlight to code block
 - [ ] Add missing items to mobile navbar
+- [ ] Improve semantics and accessibility
+- [ ] Revamp footer
 
-See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/data-miner00/notes/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,30 +162,29 @@ List of resources that are helpful and would like to give credit to.
 - [Vue.js v3](https://vuejs.org/)
 - [Nuxt v3](https://nuxt.com/)
 - [Nuxt Content](https://content.nuxtjs.org)
-- [Robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
-- [enji.dev](https://www.enji.dev/)
-- [How to Create a Custom Code Block With Nuxt Content v2](https://mokkapps.de/blog/how-to-create-a-custom-code-block-with-nuxt-content-v2/)
 - [VueUse](https://vueuse.org/)
 - [@nuxtjs/color-mode](https://color-mode.nuxtjs.org/)
 - [Nuxt Tailwind](https://tailwindcss.nuxtjs.org/)
-- [How to add class attribute to the body tag in NuxtJs](https://postsrc.com/code-snippets/how-to-add-class-attribute-to-the-body-tag-in-nuxtjs)
 - [Nuxt i18n](https://v8.i18n.nuxtjs.org/)
 - [How to Build a Multi-Language Application with NuxtJS](https://crowdin.com/blog/2023/01/24/nuxt-js-i18n-tutorial)
 - [Vue i18n](https://vue-i18n.intlify.dev/)
 - [Nuxt Seo Kit](https://github.com/harlan-zw/nuxt-seo-kit)
 - [Nuxt Image](https://image.nuxtjs.org/)
+- [The Complete Guide to Nuxt Localization](https://phrase.com/blog/posts/nuxt-js-tutorial-i18n/)
+- [NuxtUI](https://ui.nuxt.com/pro/prose/callout)
+- [Picsum](https://picsum.photos/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/data-miner00/nuxt-content-template.svg?style=for-the-badge
-[contributors-url]: https://github.com/data-miner00/nuxt-content-template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/data-miner00/nuxt-content-template.svg?style=for-the-badge
-[forks-url]: https://github.com/data-miner00/nuxt-content-template/network/members
-[stars-shield]: https://img.shields.io/github/stars/data-miner00/nuxt-content-template.svg?style=for-the-badge
-[stars-url]: https://github.com/data-miner00/nuxt-content-template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/data-miner00/nuxt-content-template.svg?style=for-the-badge
-[issues-url]: https://github.com/data-miner00/nuxt-content-template/issues
-[license-shield]: https://img.shields.io/github/license/data-miner00/nuxt-content-template.svg?style=for-the-badge
-[license-url]: https://github.com/data-miner00/nuxt-content-template/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/data-miner00/notes.svg?style=for-the-badge
+[contributors-url]: https://github.com/data-miner00/notes/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/data-miner00/notes.svg?style=for-the-badge
+[forks-url]: https://github.com/data-miner00/notes/network/members
+[stars-shield]: https://img.shields.io/github/stars/data-miner00/notes.svg?style=for-the-badge
+[stars-url]: https://github.com/data-miner00/notes/stargazers
+[issues-shield]: https://img.shields.io/github/issues/data-miner00/notes.svg?style=for-the-badge
+[issues-url]: https://github.com/data-miner00/notes/issues
+[license-shield]: https://img.shields.io/github/license/data-miner00/notes.svg?style=for-the-badge
+[license-url]: https://github.com/data-miner00/notes/blob/master/LICENSE
