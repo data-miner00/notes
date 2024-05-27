@@ -21,7 +21,12 @@ const friendlyPublishedDate = computed(() =>
         {{ friendlyPublishedDate }}
       </p>
       <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
-      <NuxtImg :src="imageUrl" class="w-full block mb-4"></NuxtImg>
+
+      <div
+        class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4"
+      >
+        <NuxtImg :src="imageUrl" class="w-full block"></NuxtImg>
+      </div>
 
       <div class="leading-[1.75] mb-4">
         <ContentRenderer :value="excerpt">

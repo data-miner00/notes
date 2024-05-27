@@ -38,6 +38,8 @@ const tags = computed(() =>
 useHead({
   title: t("homePage.title"),
 });
+
+const imageUrls = urls.images;
 </script>
 
 <template>
@@ -54,13 +56,13 @@ useHead({
       <div class="flex gap-16 my-16 flex-col lg:flex-row px-6 lg:px-0">
         <main class="lg:basis-8/12">
           <ArticleFeed
-            v-for="article of articles"
+            v-for="(article, index) of articles"
             :key="article?._id"
             :published-at="new Date(article?.createdAt)"
             :title="article?.title ?? 'Untitled'"
             :excerpt="article?.excerpt"
             :url="article?._path ?? ''"
-            image-url="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKe28OFlOWSzFfwE-H7HETSjuoqeR4iqw3_HuFYrGDh6uyXcMMFxs4RPP0n8PAvAXC8uDhvi_fv8VoGrkIXj6ujLtyYng5A4DI89YzCFkVpazkrI7pdzrg-q86mp3ZDE-37FCAB2vEkBR/s320/9-steps-to-creating-a-killer-brief-for-your-graphic-designer.jpg"
+            :image-url="imageUrls[index]"
           />
         </main>
         <aside class="lg:basis-4/12">
