@@ -52,28 +52,33 @@
     }
   },
   "footer": {
-    "description": "Le modèle `.md` ultime alimenté par des technologies vertes.",
+    "description": "너무 피곤해. 오늘 밤에 숙면을 취할 수 있을까요?",
     "sitemap": {
-      "title": "Plan du site",
-      "homepage": "Page d'accueil",
-      "guide": "@:header.guide",
-      "demo": "@:header.demo",
-      "resources": "@:header.resources",
-      "blogs": "@:header.blogs",
-      "credits": "Crédits"
+      "title": "사이트맵",
+      "homepage": "@:header.home",
+      "notes": "@:header.notes",
+      "articles": "@:header.articles"
     },
     "projects": {
-      "title": "Les projets"
+      "title": "프로젝트",
+      "blogs": "블로그",
+      "website": "웹사이트",
+      "book": "책",
+      "linker": "링커",
+      "hn": "해커뉴스",
+      "arkn": "명일방주",
+      "us": "Url 단축기"
     },
     "templates": {
-      "title": "Modèles",
-      "react_esbuild": "Modèle React Esbuild",
-      "react_rescript": "Modèle React Rescript",
-      "algorand_react": "Modèle Algorand React"
+      "title": "템플릿",
+      "python": "파이썬 작업공간 템플릿",
+      "grunt": "Grunt 템플릿",
+      "elm": "Elm Vite 템플릿"
     },
     "technologies": {
-      "title": "Les technologies"
-    }
+      "title": "기술"
+    },
+    "powerByNuxt": "Nuxt에 의해 구동됨"
   },
   "error": {
     "title": "404 Not Found",

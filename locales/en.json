@@ -52,28 +52,33 @@
     }
   },
   "footer": {
-    "description": "The ultimate `.md` template powered by green technologies. ",
+    "description": "Can I just get some good night sleep already?",
     "sitemap": {
       "title": "Sitemap",
-      "homepage": "Homepage",
-      "guide": "@:header.guide",
-      "demo": "@:header.demo",
-      "resources": "@:header.resources",
-      "blogs": "@:header.blogs",
-      "credits": "Credits"
+      "homepage": "@:header.home",
+      "notes": "@:header.notes",
+      "articles": "@:header.articles"
     },
     "projects": {
-      "title": "Projects"
+      "title": "Projects",
+      "blogs": "Blogs",
+      "website": "Website",
+      "book": "Book",
+      "linker": "Linker",
+      "hn": "Hackernews",
+      "arkn": "Arknights",
+      "us": "Url Shortener"
     },
     "templates": {
       "title": "Templates",
-      "react_esbuild": "React Esbuild Template",
-      "react_rescript": "React Rescript Template",
-      "algorand_react": "Algorand React Template"
+      "python": "Python Workspace Template",
+      "grunt": "Grunt Template",
+      "elm": "Elm Vite Template"
     },
     "technologies": {
       "title": "Technologies"
-    }
+    },
+    "powerByNuxt": "Powered by Nuxt"
   },
   "error": {
     "title": "404 Not Found",

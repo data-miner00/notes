@@ -1,3 +1,112 @@
+<script setup lang="ts">
+import { urls } from "../appsettings.json";
+const localePath = useLocalePath();
+
+type NavigationLink = {
+  translationKey: string;
+  url: string;
+};
+
+const links: NavigationLink[] = [
+  {
+    translationKey: "footer.sitemap.homepage",
+    url: "/",
+  },
+  {
+    translationKey: "footer.sitemap.notes",
+    url: "/notes",
+  },
+  {
+    translationKey: "footer.sitemap.articles",
+    url: "/articles",
+  },
+];
+
+const projects: NavigationLink[] = [
+  {
+    translationKey: "footer.projects.blogs",
+    url: urls.blogRepo,
+  },
+  {
+    translationKey: "footer.projects.website",
+    url: urls.websiteRepo,
+  },
+  {
+    translationKey: "footer.projects.book",
+    url: urls.bookRepo,
+  },
+  {
+    translationKey: "footer.projects.linker",
+    url: urls.linkerRepo,
+  },
+  {
+    translationKey: "footer.projects.hn",
+    url: urls.hnRepo,
+  },
+  {
+    translationKey: "footer.projects.arkn",
+    url: urls.arknRepo,
+  },
+  {
+    translationKey: "footer.projects.us",
+    url: urls.usRepo,
+  },
+];
+
+const templates: NavigationLink[] = [
+  {
+    translationKey: "footer.templates.python",
+    url: urls.pythonTemplateRepo,
+  },
+  {
+    translationKey: "footer.templates.grunt",
+    url: urls.gruntTemplateRepo,
+  },
+  {
+    translationKey: "footer.templates.elm",
+    url: urls.elmTemplateRepo,
+  },
+];
+
+type TechLink = {
+  name: string;
+  url: string;
+};
+
+const techs: TechLink[] = [
+  {
+    name: "Vue.js",
+    url: urls.tech.vue,
+  },
+  {
+    name: "Nuxt.js",
+    url: urls.tech.nuxt,
+  },
+  {
+    name: "Nuxt Content",
+    url: urls.tech["nuxt-content"],
+  },
+  {
+    name: "Tailwind CSS",
+    url: urls.tech.tailwind,
+  },
+  {
+    name: "Nuxt Tailwind",
+    url: urls.tech["nuxt-tailwind"],
+  },
+  {
+    name: "Markdown",
+    url: urls.tech.markdown,
+  },
+  {
+    name: "Pnpm",
+    url: urls.tech.pnpm,
+  },
+];
+
+const now = new Date();
+</script>
+
 <template>
   <footer class="footer relative pt-10 pb-10 lg:pb-24 lg:pt-28">
     <div
@@ -8,8 +117,9 @@
           src="/nuxt.svg"
           alt="Nuxt logo"
           class="w-12 h-12 mb-5 block mx-auto lg:mx-0"
+          :title="$t('footer.powerByNuxt')"
         />
-        <h2 class="text-2xl font-bold mb-5">Templatr</h2>
+        <h2 class="text-2xl font-bold mb-5">{{ $t("homePage.hero.name") }}</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300">
           {{ $t("footer.description") }}
         </p>
@@ -20,29 +130,10 @@
       >
         <h2 id="sitemap">{{ $t("footer.sitemap.title") }}</h2>
         <ul>
-          <li>
-            <NuxtLink to="/">{{ $t("footer.sitemap.homepage") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/guide">{{ $t("footer.sitemap.guide") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/demo">{{ $t("footer.sitemap.demo") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/resources">{{
-              $t("footer.sitemap.resources")
-            }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/blog/my-first-blog">{{
-              $t("footer.sitemap.blogs")
-            }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/credits">{{
-              $t("footer.sitemap.credits")
-            }}</NuxtLink>
+          <li v-for="(link, index) of links" :key="index">
+            <NuxtLink :to="localePath(link.url)">
+              {{ $t(link.translationKey) }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -53,46 +144,10 @@
         <h2 id="projects">{{ $t("footer.projects.title") }}</h2>
 
         <ul>
-          <li>
-            <a href="https://github.com/data-miner00/blog">Blog</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/book">Book</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/avax-nft-minter"
-              >Avalanche NFT Minter</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/positron">Positron</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/ng-hackernews"
-              >The Hacker Times</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/web-ui">Gallerium</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/Linker">Linker</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/arknights-event-afk"
-              >Arknights Event Afk</a
-            >
-          </li>
-          <li>
-            <a href="">Portfolio v2</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/avax-nft-minter"
-              >Avalanche NFT Minter</a
-            >
+          <li v-for="(project, index) of projects" :key="index">
+            <NuxtLink :to="project.url" target="_blank">
+              {{ $t(project.translationKey) }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -103,20 +158,10 @@
         <h2 id="templates">{{ $t("footer.templates.title") }}</h2>
 
         <ul>
-          <li>
-            <a href="https://github.com/data-miner00/React-Esbuild-Template">{{
-              $t("footer.templates.react_esbuild")
-            }}</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/react-rescript-template">{{
-              $t("footer.templates.react_rescript")
-            }}</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/algorand-react-template">{{
-              $t("footer.templates.algorand_react")
-            }}</a>
+          <li v-for="(template, index) of templates" :key="index">
+            <NuxtLink :to="template.url" target="_blank">
+              {{ $t(template.translationKey) }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -127,28 +172,10 @@
         <h2 id="technologies">{{ $t("footer.technologies.title") }}</h2>
 
         <ul>
-          <li>
-            <a href="https://vuejs.org/">Vue.js</a>
-          </li>
-          <li>
-            <a href="https://nuxt.com">Nuxt.js</a>
-          </li>
-          <li>
-            <a href="https://content.nuxtjs.org/">Nuxt Content</a>
-          </li>
-          <li>
-            <a href="https://tailwindcss.com/">Tailwind CSS</a>
-          </li>
-          <li>
-            <a href="https://tailwindcss.nuxt.dev/">Nuxt Tailwind</a>
-          </li>
-          <li>
-            <a href="https://www.markdownguide.org/getting-started/"
-              >Markdown</a
-            >
-          </li>
-          <li>
-            <a href="https://pnpm.io/">Pnpm</a>
+          <li v-for="(tech, index) of techs" :key="index">
+            <NuxtLink :to="tech.url" target="_blank">
+              {{ tech.name }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -156,7 +183,7 @@
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Templatr &copy; 2023 by Shaun. All rights unreserved.
+      Notes &copy; {{ now.getFullYear() }} by Shaun. All rights reserved.
     </footer>
   </footer>
 </template>
