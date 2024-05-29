@@ -85,7 +85,7 @@
     "description": "콘텐츠가 존재하지 않습니다. 다른 것을 시도해 보세요."
   },
   "errorPage": {
-    "message": "Page non trouvée",
-    "action": "Rentrer à la maison"
+    "message": "페이지 못 찾아",
+    "action": "홈으로 돌아가다"
   }
 }
