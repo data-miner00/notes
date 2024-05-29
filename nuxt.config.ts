@@ -18,9 +18,6 @@ export default defineNuxtConfig({
           href: "/nuxt.svg",
         },
       ],
-      htmlAttrs: {
-        lang: "en",
-      },
       bodyAttrs: {
         class:
           "dark:bg-slate-900 dark:text-gray-50 text-stone-700 font-montserrat",
@@ -63,15 +60,16 @@ export default defineNuxtConfig({
       {
         code: "en",
         file: "en.json",
+        iso: "en",
       },
       {
         code: "ko",
         file: "ko.json",
+        iso: "ko",
       },
     ],
     vueI18n: {
       legacy: false,
-      locale: "en",
     },
     langDir: "locales",
     lazy: true,
@@ -82,7 +80,6 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
       siteName: "Shaun Chong's Blog",
       siteDescription: "Technical blog website by Shaun Chong.",
-      language: "en",
     },
   },
   image: {
