@@ -77,12 +77,13 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://notes.mumk.dev",
       siteName: "Shaun Chong's Blog",
       siteDescription: "Technical blog website by Shaun Chong.",
     },
   },
   image: {
-    provider: "netlify", // Use your own provider!
+    provider: "vercel",
+    domains: ["fastly.picsum.photo", "spotify-github-profile.vercel.app"],
   },
 });
