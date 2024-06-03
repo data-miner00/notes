@@ -10,7 +10,7 @@ tags:
   - prisma
   - orm
   - sql
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2024-06-03T11:55:33.985Z
 createdAt: 2022-10-15T12:01:41.858Z
 ---
 
@@ -36,7 +36,7 @@ To begin, we will need to create an empty Node.js project.
 npm init -y
 ```
 
-Next, we install Prisma and although optional, it is a good idea to install Typescript as well because Prisma is written on top of it. Second thought, who uses Javascript nowadays lol.
+Next, install Prisma, TypeScript and other complementing dependencies.
 
 ```
 npm install -D prisma typescript ts-node @types/node nodemon
@@ -64,11 +64,11 @@ More information in our documentation:
 https://pris.ly/d/getting-started
 ```
 
-Congratulations, Prisma has been initialized successfully and is ready to rock and roll.
+Prisma has been initialized successfully and is ready to be used.
 
 ## Prisma Schema
 
-Here is how it should look like inside the `schema.prisma` file.
+Prisma will scaffold a file named `schema.prisma` inside the `prisma` folder that is populated with contents that looks like this.
 
 ```prisma[schema.prisma]
 // This is your Prisma schema file,

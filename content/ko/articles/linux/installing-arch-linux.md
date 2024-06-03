@@ -37,7 +37,7 @@ Arch Linux를 설치하려면 몇 가지 작업을 수행해야 합니다. 다�
 2. 귀하의 국가 또는 귀하의 국가와 가장 가까운 거울을 찾으십시오.
 3. `x86_64.iso` 파일을 다운로드하고 **선택적으로** `sha256sums.txt`를 다운로드합니다.
 4. 다운로드한 ISO의 해시를 텍스트 파일과 비교하여 확인합니다. Microsoft Windows에서는 내장된 `certutil` 명령을 사용하여 서명을 확인할 수 있습니다.
-5. ISO 이미지가 확인되면 [balenaEtcher](https://etcher.balena.io/) 또는 [rufus](https: //rufus.ie/en/).
+5. ISO 이미지가 확인되면 [balenaEtcher](https://etcher.balena.io/) 또는 [rufus](https://rufus.ie/en/).
 6. 그런 다음 새로 구운 플래시 드라이브를 대상 컴퓨터에 연결합니다.
 7. 전원을 켜고 BIOS 메뉴가 나타날 때까지 <kbd>Esc</kbd> 키를 반복해서 누르십시오.
 8. 하드웨어에 따라 플래시 드라이브로 계산된 부팅 방법을 알아내야 합니다.
