@@ -15,9 +15,9 @@
   <h3 align="center">Article & Notes</h3>
 
   <p align="center">
-    A place where I compose. The successor for [book](https://github.com/data-miner00/book).
+    A place where I compose. The successor for <a href="https://github.com/data-miner00/book">book</a>.
     <br />
-    <a href="https://notes.netlify.app/"><strong>View Demo »</strong></a>
+    <a href="https://notes.mumk.dev"><strong>View Demo »</strong></a>
     <br />
     <br />
     <a href="https://github.com/data-miner00/notes">Explore the docs</a>
@@ -94,7 +94,7 @@ The list of tools that is used when development.
 
 ### Installation
 
-To run this template project in your local for personal use or contribution, simply perform the following.
+To run this project in your local for personal use or contribution, simply perform the following.
 
 1. Clone the repo
    ```sh
@@ -111,6 +111,20 @@ To run this template project in your local for personal use or contribution, sim
 
 > ⚠️ Important: **Do not update** the dependencies as it will break due to incompatibilities from the latest Nuxt and Nuxt Content.
 
+### Building for Production
+
+Run the `generate` command and static files will be generated in the `.outputs/public` folder that can be put under static hosting.
+
+```sh
+pnpm generate
+```
+
+Optionally run the `preview` to take a peek on how the statically generated website looks like in the production.
+
+```sh
+pnpm preview
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
@@ -122,7 +136,7 @@ To run this template project in your local for personal use or contribution, sim
 - [ ] Add line numbers to code block
 - [ ] Add missing items to mobile navbar
 - [ ] Improve semantics and accessibility
-- [ ] Revamp footer
+- [ ] Add date display for entries
 
 See the [open issues](https://github.com/data-miner00/notes/issues) for a full list of proposed features (and known issues).
 

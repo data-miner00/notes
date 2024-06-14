@@ -10,7 +10,7 @@ tags:
   - prisma
   - orm
   - sql
-updatedAt: 2024-05-25T10:06:40.621Z
+updatedAt: 2024-06-03T11:55:33.985Z
 createdAt: 2022-10-15T12:01:41.858Z
 ---
 
@@ -46,7 +46,7 @@ Prisma에는 다음과 같은 3가지 구성 요소가 있습니다.
 npm init -y
 ```
 
-다음으로 Prisma를 설치하고 선택 사항이지만 그 위에 Prisma가 작성되어 있으므로 Typescript도 함께 설치하는 것이 좋습니다.
+다음으로 Prisma, TypeScript 및 기타 보완 종속성을 설치합니다.
 
 ```
 npm install -D prisma typescript ts-node @types/node nodemon
@@ -74,11 +74,11 @@ More information in our documentation:
 https://pris.ly/d/getting-started
 ```
 
-축하합니다. Prisma가 성공적으로 초기화되었으며 진행할 준비가 되었습니다.
+이제는 Prisma가 성공적으로 초기화되었으며 진행할 준비가 되었습니다.
 
 ## Prisma 스키마
 
-`schema.prisma` 파일 내부의 모습은 다음과 같습니다.
+`prisma` 폴더 안에의 `schema.prisma` 파일은 내부의 모습은 다음과 같습니다.
 
 ```prisma[schema.prisma]
 // This is your Prisma schema file,
