@@ -1,4 +1,8 @@
 {
+  "shared": {
+    "publishedAt": "Published on {date}",
+    "updatedAt": "Last updated on {date}"
+  },
   "homePage": {
     "title": "Notes and Articles",
     "hero": {

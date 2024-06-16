@@ -1,4 +1,8 @@
 {
+  "shared": {
+    "publishedAt": "{date} 게시됨",
+    "updatedAt": "{date} 업데이트됨"
+  },
   "homePage": {
     "title": "노트과 기사",
     "hero": {

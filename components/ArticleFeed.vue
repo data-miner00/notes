@@ -17,8 +17,13 @@ const friendlyPublishedDate = computed(() =>
 <template>
   <article>
     <NuxtLink class="block mb-16" :to="url">
-      <p class="text-center text-xs text-gray-400 mb-1 tracking-wide">
-        {{ friendlyPublishedDate }}
+      <p
+        :title="$t('shared.publishedAt', { date: friendlyPublishedDate })"
+        class="text-center text-xs text-gray-400 mb-1 tracking-wide"
+      >
+        <time :datetime="publishedAt.toDateString()">
+          {{ friendlyPublishedDate }}
+        </time>
       </p>
       <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
 
@@ -35,7 +40,8 @@ const friendlyPublishedDate = computed(() =>
       </div>
 
       <button
-        class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-colors"
+        aria-hidden="true"
+        class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-green-500 hover:bg-green-500 hover:text-white transition-colors"
       >
         {{ $t("homePage.article-feed.read-more") }}
       </button>
