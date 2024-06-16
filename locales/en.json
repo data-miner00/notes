@@ -1,5 +1,6 @@
 {
   "shared": {
+    "publishedAt": "Published on {date}",
     "updatedAt": "Last updated on {date}"
   },
   "homePage": {

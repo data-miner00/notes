@@ -1,5 +1,6 @@
 {
   "shared": {
+    "publishedAt": "{date} 게시됨",
     "updatedAt": "{date} 업데이트됨"
   },
   "homePage": {
