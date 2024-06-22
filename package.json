@@ -1,6 +1,6 @@
 {
-  "name": "nuxt-content-template",
-  "description": "An opinionated template built for documentations and static websites.",
+  "name": "notes",
+  "description": "Technical blog website by Shaun Chong.",
   "author": "Shaun Chong <mumk0313@gmail.com>",
   "license": "MIT",
   "private": true,
