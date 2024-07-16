@@ -31,7 +31,12 @@ const friendlyPublishedDate = computed(() =>
       <div
         class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4 bg-gray-200 dark:bg-gray-700"
       >
-        <NuxtImg :src="imageUrl" class="w-full block" :alt="imageAlt"></NuxtImg>
+        <NuxtImg
+          :src="imageUrl"
+          class="w-full block"
+          :alt="imageAlt"
+          loading="lazy"
+        ></NuxtImg>
       </div>
 
       <div class="leading-[1.75] mb-4">
