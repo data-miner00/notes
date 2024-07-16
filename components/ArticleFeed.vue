@@ -29,7 +29,7 @@ const friendlyPublishedDate = computed(() =>
       <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
 
       <div
-        class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4"
+        class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4 bg-gray-200 dark:bg-gray-700"
       >
         <NuxtImg :src="imageUrl" class="w-full block" :alt="imageAlt"></NuxtImg>
       </div>
