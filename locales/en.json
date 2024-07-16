@@ -26,12 +26,13 @@
     },
     "this-site": {
       "title": "This site",
-      "paragraphHtml": "This site is generated from <a href=\"{templateUrl}\" target=\"_blank\">Nuxt Content Template <i class=\"bi bi-box-arrow-up-right\"></i></a>. The legacy site can be found <a href=\"{bookUrl}\" target=\"_blank\" title=\"Legacy site\">here <i class=\"bi bi-box-arrow-up-right\"></i></a>. The design is heavily inspired by <a href=\"{inspirationUrl}\" target=\"_blank\">Emerge <i class=\"bi bi-box-arrow-up-right\"></i></a>. Site source code can be found  <a href=\"{repoUrl}\" target=\"_blank\" title=\"Site source code\">here <i class=\"bi bi-box-arrow-up-right\"></i></a>."
+      "paragraphHtml": "This site is generated from <a href=\"{templateUrl}\" target=\"_blank\">Nuxt Content Template <i class=\"bi bi-box-arrow-up-right\"></i></a>. Here is the <a href=\"{bookUrl}\" target=\"_blank\">legacy site <i class=\"bi bi-box-arrow-up-right\"></i></a>. The design is heavily inspired by <a href=\"{inspirationUrl}\" target=\"_blank\">Emerge <i class=\"bi bi-box-arrow-up-right\"></i></a>. Here is the <a href=\"{repoUrl}\" target=\"_blank\">site source code <i class=\"bi bi-box-arrow-up-right\"></i></a>."
     },
     "article-feed": {
       "read-more": "Read More",
       "illustration-img-alt": "A random illustration cover for the blog entry"
-    }
+    },
+    "spotify-playing": "My recently listened song on Spotify"
   },
   "header": {
     "home": "Home",

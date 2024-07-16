@@ -29,14 +29,14 @@ const friendlyPublishedDate = computed(() =>
       <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
 
       <div
-        class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4"
+        class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4 bg-gray-200 dark:bg-gray-700"
       >
-        <NuxtPicture
+        <NuxtImg
           :src="imageUrl"
           class="w-full block"
           :alt="imageAlt"
-          format="webp,avif"
-        ></NuxtPicture>
+          loading="lazy"
+        ></NuxtImg>
       </div>
 
       <div class="leading-[1.75] mb-4">
@@ -46,7 +46,6 @@ const friendlyPublishedDate = computed(() =>
       </div>
 
       <button
-        role="presentation"
         class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-green-500 hover:bg-green-500 hover:text-white transition-colors"
       >
         {{ $t("homePage.article-feed.read-more") }}
