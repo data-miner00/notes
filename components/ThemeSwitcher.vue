@@ -12,6 +12,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
   <div class="relative">
     <button
       class="px-2 py-2 bg-gray-100 dark:bg-slate-800 rounded-md"
+      :title="$t('header.theme-switcher.title')"
       @click="open = !open"
     >
       <svg

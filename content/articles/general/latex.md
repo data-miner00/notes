@@ -574,6 +574,52 @@ $$
 
 4. The real numbers, represented as $\mathbb{R}$ is so cool.
 
+## Chemical Equations
+
+We can write chemical equations using _mhchem_ syntax by putting the content inside the `\ce{}` block. For example,
+
+1. A simple chemical equation
+
+$$
+\ce{Xe + 2 F2 -> XeF4}
+$$
+
+```latex
+\ce{Xe + 2 F2 -> XeF4}
+```
+
+2. Bonds
+
+$$
+\ce{H\bond{-}O\bond{-}H\bond{...}H\bond{-}O\bond{-}H}
+$$
+
+```latex
+\ce{H\bond{-}O\bond{-}H\bond{...}H\bond{-}O\bond{-}H}
+```
+
+3. Arrows
+
+$$
+\ce{CoCl2 + 6 H2O <=> CoCl2 * 6 H2O}
+$$
+
+```latex
+\ce{CoCl2 + 6 H2O <=> CoCl2 * 6 H2O}
+```
+
+4. Physical unit
+
+$$
+\pu{123 kJ//mol}
+$$
+
+```latex
+\pu{123 kJ//mol}
+```
+
+Read more about at the [mhchem guide](https://mhchem.github.io/MathJax-mhchem/).
+
 ## LaTeX Logo
 
 To use the $\LaTeX$ logo, we can just use the following tag.
@@ -641,6 +687,16 @@ authors:
 title: "Intro to LaTeX **Full Tutorial** Part II (Equations, Tables, Figures, Theorems, Macros and more)"
 url: https://www.youtube.com/watch?v=-HvRvBjBAvg
 date: 2021, August 11
+source: websites
+---
+::
+
+::apa-reference
+---
+organization: mhchem
+title: mhchem for MathJax. mhchem for KaTeX
+url: https://mhchem.github.io/MathJax-mhchem/
+retrievedDate: 2024, June 28
 source: websites
 ---
 ::

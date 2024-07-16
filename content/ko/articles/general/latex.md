@@ -580,6 +580,52 @@ $$
 
 4. $\mathbb{R}$로 표현되는 실수는 정말 멋집니다.
 
+## 화학 방정식
+
+`\ce{}` 블록 안에 내용을 넣어 _mhchem_ 구문을 사용하여 화학 방정식을 작성할 수 있습니다. 예를 들어,
+
+1. 간단한 화학 방정식
+
+$$
+\ce{Xe + 2 F2 -> XeF4}
+$$
+
+```latex
+\ce{Xe + 2 F2 -> XeF4}
+```
+
+2. 화학 결합
+
+$$
+\ce{H\bond{-}O\bond{-}H\bond{...}H\bond{-}O\bond{-}H}
+$$
+
+```latex
+\ce{H\bond{-}O\bond{-}H\bond{...}H\bond{-}O\bond{-}H}
+```
+
+3. 화살
+
+$$
+\ce{CoCl2 + 6 H2O <=> CoCl2 * 6 H2O}
+$$
+
+```latex
+\ce{CoCl2 + 6 H2O <=> CoCl2 * 6 H2O}
+```
+
+4. 물리적 단위
+
+$$
+\pu{123 kJ//mol}
+$$
+
+```latex
+\pu{123 kJ//mol}
+```
+
+[mhchem 가이드](https://mhchem.github.io/MathJax-mhchem/)에서 자세한 내용을 읽어보세요.
+
 ## LaTeX 로고
 
 $\LaTeX$ 로고를 사용하려면 이 태그를 사용하면 됩니다.
@@ -647,6 +693,16 @@ authors:
 title: "Intro to LaTeX **Full Tutorial** Part II (Equations, Tables, Figures, Theorems, Macros and more)"
 url: https://www.youtube.com/watch?v=-HvRvBjBAvg
 date: 2021, August 11
+source: websites
+---
+::
+
+::apa-reference
+---
+organization: mhchem
+title: mhchem for MathJax. mhchem for KaTeX
+url: https://mhchem.github.io/MathJax-mhchem/
+retrievedDate: 2024, June 28
 source: websites
 ---
 ::

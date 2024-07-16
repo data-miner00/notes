@@ -63,6 +63,7 @@ const imageUrls = urls.images;
             :excerpt="article?.excerpt"
             :url="article?._path ?? ''"
             :image-url="imageUrls[index]"
+            :image-alt="$t('homePage.article-feed.illustration-img-alt')"
           />
         </main>
         <aside class="lg:basis-4/12">
@@ -84,14 +85,26 @@ const imageUrls = urls.images;
             <div
               class="flex text-gray-600 dark:text-gray-400 gap-8 justify-center"
             >
-              <NuxtLink :to="urls.x" target="_blank" class="block"
+              <NuxtLink
+                :to="urls.x"
+                target="_blank"
+                class="block"
+                title="Link to my Twitter"
                 ><i class="bi bi-twitter"></i
               ></NuxtLink>
               <div><i class="bi bi-facebook"></i></div>
-              <NuxtLink :to="urls.github" target="_blank" class="block"
+              <NuxtLink
+                :to="urls.github"
+                target="_blank"
+                class="block"
+                title="Link to my GitHub"
                 ><i class="bi bi-github"></i
               ></NuxtLink>
-              <NuxtLink :to="urls.pinterest" target="_blank" class="block"
+              <NuxtLink
+                :to="urls.pinterest"
+                target="_blank"
+                class="block"
+                title="Link to my Pinterest"
                 ><i class="bi bi-pinterest"></i
               ></NuxtLink>
               <div><i class="bi bi-instagram"></i></div>

@@ -57,6 +57,7 @@ For the authors, if you are offended by the reviewer's comment, take a step back
 
 1. Avoid huge PRs. Break it down into smaller, logical PRs to ease the review process. It is not a race to break your "Biggest PR ever created" record.
 2. Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Prefix each logical commit with appropriate terms so that each commits can be examined separately.
+3. Use [conventional comments](https://conventionalcomments.org/). This will prepare the author or anyone reading the comment on what to expect from it.
 
 ## Summary
 

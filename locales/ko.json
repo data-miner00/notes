@@ -29,7 +29,8 @@
       "paragraphHtml": "이 사이트는 <a href=\"{templateUrl}\" target=\"_blank\">Nuxt 콘텐츠 템플릿에서<i class=\"bi bi-box-arrow-up-right\"></i></a> 생성됩니다. 레거시 사이트는 <a href=\"{bookUrl}\" target=\"_blank\">여기에서 <i class=\"bi bi-box-arrow-up-right\"></i></a> 찾을 수 있습니다. 디자인은 <a href=\"{inspirationUrl}\" target=\"_blank\">Emerge에서<i class=\"bi bi-box-arrow-up-right\"></i></a> 많은 영감을 받았습니다. 사이트 소스 코드는 <a href=\"{repoUrl}\" target=\"_blank\">여기에서 <i class=\"bi bi-box-arrow-up-right\"></i></a> 찾을 수 있습니다."
     },
     "article-feed": {
-      "read-more": "더 보기"
+      "read-more": "더 보기",
+      "illustration-img-alt": "블로그 항목에 대한 무작위 그림 표지입니다"
     }
   },
   "indexPages": {
@@ -52,7 +53,11 @@
     "theme-switcher": {
       "system": "시스템",
       "light": "라이트",
-      "dark": "다크"
+      "dark": "다크",
+      "title": "테마 전환"
+    },
+    "language-switcher": {
+      "title": "언어 선택"
     }
   },
   "footer": {
