@@ -31,7 +31,8 @@
     "article-feed": {
       "read-more": "Read More",
       "illustration-img-alt": "A random illustration cover for the blog entry"
-    }
+    },
+    "spotify-playing": "My recently listened song on Spotify"
   },
   "header": {
     "home": "Home",

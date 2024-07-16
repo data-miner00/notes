@@ -165,7 +165,11 @@ const imageUrls = urls.images;
           </section>
 
           <section>
-            <img class="block mx-auto" :src="urls.spotifyPlaying" alt="" />
+            <img
+              class="block mx-auto"
+              :src="urls.spotifyPlaying"
+              :alt="$t('homePage.spotify-playing')"
+            />
           </section>
         </aside>
       </div>

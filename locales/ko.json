@@ -31,7 +31,8 @@
     "article-feed": {
       "read-more": "더 보기",
       "illustration-img-alt": "블로그 항목에 대한 무작위 그림 표지입니다"
-    }
+    },
+    "spotify-playing": "내 최근 Spotify에 듣는 노래"
   },
   "indexPages": {
     "index": "색인",
