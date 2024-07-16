@@ -42,7 +42,11 @@
     "theme-switcher": {
       "system": "System",
       "light": "Light",
-      "dark": "Dark"
+      "dark": "Dark",
+      "title": "Switch themes"
+    },
+    "language-switcher": {
+      "title": "Select language"
     }
   },
   "indexPages": {

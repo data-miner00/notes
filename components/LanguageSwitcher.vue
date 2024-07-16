@@ -11,6 +11,7 @@ function closePopup() {
   <div class="relative flex items-center">
     <button
       @click="() => (isPopupOpen = !isPopupOpen)"
+      :title="$t('header.language-switcher.title')"
       class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-800 rounded-md"
     >
       <svg

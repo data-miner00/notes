@@ -17,7 +17,7 @@ const friendlyPublishedDate = computed(() =>
 
 <template>
   <article>
-    <NuxtLink class="block mb-16" :to="url">
+    <NuxtLink class="block mb-16" :to="url" :title="title">
       <p
         :title="$t('shared.publishedAt', { date: friendlyPublishedDate })"
         class="text-center text-xs text-gray-400 mb-1 tracking-wide"

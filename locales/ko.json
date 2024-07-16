@@ -53,7 +53,11 @@
     "theme-switcher": {
       "system": "시스템",
       "light": "라이트",
-      "dark": "다크"
+      "dark": "다크",
+      "title": "테마 전환"
+    },
+    "language-switcher": {
+      "title": "언어 선택"
     }
   },
   "footer": {
