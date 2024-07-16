@@ -5,6 +5,7 @@ type Props = {
   imageUrl: string;
   excerpt?: Object;
   url: string;
+  imageAlt: string;
 };
 
 const props = defineProps<Props>();
@@ -30,7 +31,7 @@ const friendlyPublishedDate = computed(() =>
       <div
         class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4"
       >
-        <NuxtImg :src="imageUrl" class="w-full block"></NuxtImg>
+        <NuxtImg :src="imageUrl" class="w-full block" :alt="imageAlt"></NuxtImg>
       </div>
 
       <div class="leading-[1.75] mb-4">
@@ -40,7 +41,7 @@ const friendlyPublishedDate = computed(() =>
       </div>
 
       <button
-        aria-hidden="true"
+        role="presentation"
         class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-green-500 hover:bg-green-500 hover:text-white transition-colors"
       >
         {{ $t("homePage.article-feed.read-more") }}
