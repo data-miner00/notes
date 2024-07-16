@@ -17,6 +17,15 @@ export default defineNuxtConfig({
           type: "image/svg+xml",
           href: "/nuxt.svg",
         },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+        },
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        },
       ],
       bodyAttrs: {
         class:
