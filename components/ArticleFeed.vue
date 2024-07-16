@@ -46,7 +46,6 @@ const friendlyPublishedDate = computed(() =>
       </div>
 
       <button
-        role="presentation"
         class="block mx-auto px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-green-500 hover:bg-green-500 hover:text-white transition-colors"
       >
         {{ $t("homePage.article-feed.read-more") }}
