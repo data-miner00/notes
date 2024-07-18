@@ -135,8 +135,8 @@ pnpm preview
 - [ ] DocSearch
 - [ ] Add line numbers to code block
 - [ ] Add missing items to mobile navbar
-- [ ] Improve semantics and accessibility
-- [ ] Add date display for entries
+- [x] Improve semantics and accessibility
+- [x] Add date display for entries
 
 See the [open issues](https://github.com/data-miner00/notes/issues) for a full list of proposed features (and known issues).
 

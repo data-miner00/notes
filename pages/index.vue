@@ -3,7 +3,6 @@ import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
 const { locale, t } = useI18n();
-const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles"))
 );
@@ -32,7 +31,7 @@ const tags = computed(() =>
         topic.children?.flatMap((article) => article.tags)
       )
     )
-  )
+  ).slice(0, 30)
 );
 
 useHead({
@@ -127,6 +126,12 @@ const imageUrls = urls.images;
                 class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
               >
                 #{{ tag }}
+              </li>
+              <li
+                class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
+                title="more tags hidden"
+              >
+                etc.
               </li>
             </ul>
           </section>
