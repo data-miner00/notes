@@ -10,6 +10,16 @@ export default defineNuxtConfig({
           name: "description",
           content: "Technical blog website by Shaun Chong.",
         },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: light)",
+          content: "white",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: dark)",
+          content: "#0f172a",
+        },
       ],
       link: [
         {
