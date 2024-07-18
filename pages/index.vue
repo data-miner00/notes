@@ -64,6 +64,7 @@ const imageUrls = urls.images;
             :url="article?._path ?? ''"
             :image-url="imageUrls[index]"
             :image-alt="$t('homePage.article-feed.illustration-img-alt')"
+            :image-lazy-loaded="index === 0"
           />
         </main>
         <aside class="lg:basis-4/12">
@@ -165,8 +166,9 @@ const imageUrls = urls.images;
           </section>
 
           <section>
-            <img
+            <NuxtImg
               class="block mx-auto"
+              loading="lazy"
               :src="urls.spotifyPlaying"
               :alt="$t('homePage.spotify-playing')"
             />
