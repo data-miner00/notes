@@ -16,7 +16,10 @@
       "paragraph": "I am Shaun, a Software Engineer based in Malaysia. I am infatuated with anything everything, especially in tech and spoken language. I write notes and guides about intriguing topics to serve as a reminder for myself and help others."
     },
     "socials": {
-      "title": "Socials"
+      "title": "Socials",
+      "githubTitle": "Link to my GitHub",
+      "twitterTitle": "Link to my Twitter",
+      "pinterestTitle": "Link to my Pinterest"
     },
     "tags": {
       "title": "Tags"

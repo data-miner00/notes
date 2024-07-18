@@ -89,7 +89,7 @@ const imageUrls = urls.images;
                 :to="urls.x"
                 target="_blank"
                 class="block"
-                title="Link to my Twitter"
+                :title="$t('homePage.socials.twitterTitle')"
                 ><i class="bi bi-twitter"></i
               ></NuxtLink>
               <div><i class="bi bi-facebook"></i></div>
@@ -97,14 +97,14 @@ const imageUrls = urls.images;
                 :to="urls.github"
                 target="_blank"
                 class="block"
-                title="Link to my GitHub"
+                :title="$t('homePage.socials.githubTitle')"
                 ><i class="bi bi-github"></i
               ></NuxtLink>
               <NuxtLink
                 :to="urls.pinterest"
                 target="_blank"
                 class="block"
-                title="Link to my Pinterest"
+                :title="$t('homePage.socials.pinterestTitle')"
                 ><i class="bi bi-pinterest"></i
               ></NuxtLink>
               <div><i class="bi bi-instagram"></i></div>
@@ -172,7 +172,7 @@ const imageUrls = urls.images;
 
           <section>
             <NuxtImg
-              class="block mx-auto"
+              class="block mx-auto max-w-full"
               loading="lazy"
               :src="urls.spotifyPlaying"
               :alt="$t('homePage.spotify-playing')"
