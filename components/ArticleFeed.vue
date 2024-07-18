@@ -6,6 +6,7 @@ type Props = {
   excerpt?: Object;
   url: string;
   imageAlt: string;
+  imageLazyLoaded: boolean;
 };
 
 const props = defineProps<Props>();
@@ -13,6 +14,8 @@ const props = defineProps<Props>();
 const friendlyPublishedDate = computed(() =>
   new Intl.DateTimeFormat(["ban", "id"]).format(props.publishedAt)
 );
+
+const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
 </script>
 
 <template>
@@ -33,9 +36,9 @@ const friendlyPublishedDate = computed(() =>
       >
         <NuxtImg
           :src="imageUrl"
-          class="w-full block"
+          class="max-w-full block h-auto"
           :alt="imageAlt"
-          loading="lazy"
+          :loading="loadingMode"
         ></NuxtImg>
       </div>
 

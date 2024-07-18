@@ -3,7 +3,6 @@ import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
 const { locale, t } = useI18n();
-const localePath = useLocalePath();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles"))
 );
@@ -32,7 +31,7 @@ const tags = computed(() =>
         topic.children?.flatMap((article) => article.tags)
       )
     )
-  )
+  ).slice(0, 30)
 );
 
 useHead({
@@ -64,6 +63,7 @@ const imageUrls = urls.images;
             :url="article?._path ?? ''"
             :image-url="imageUrls[index]"
             :image-alt="$t('homePage.article-feed.illustration-img-alt')"
+            :image-lazy-loaded="index === 0"
           />
         </main>
         <aside class="lg:basis-4/12">
@@ -89,7 +89,7 @@ const imageUrls = urls.images;
                 :to="urls.x"
                 target="_blank"
                 class="block"
-                title="Link to my Twitter"
+                :title="$t('homePage.socials.twitterTitle')"
                 ><i class="bi bi-twitter"></i
               ></NuxtLink>
               <div><i class="bi bi-facebook"></i></div>
@@ -97,14 +97,14 @@ const imageUrls = urls.images;
                 :to="urls.github"
                 target="_blank"
                 class="block"
-                title="Link to my GitHub"
+                :title="$t('homePage.socials.githubTitle')"
                 ><i class="bi bi-github"></i
               ></NuxtLink>
               <NuxtLink
                 :to="urls.pinterest"
                 target="_blank"
                 class="block"
-                title="Link to my Pinterest"
+                :title="$t('homePage.socials.pinterestTitle')"
                 ><i class="bi bi-pinterest"></i
               ></NuxtLink>
               <div><i class="bi bi-instagram"></i></div>
@@ -126,6 +126,12 @@ const imageUrls = urls.images;
                 class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
               >
                 #{{ tag }}
+              </li>
+              <li
+                class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-800 rounded py-1 px-2"
+                title="more tags hidden"
+              >
+                etc.
               </li>
             </ul>
           </section>
@@ -165,8 +171,9 @@ const imageUrls = urls.images;
           </section>
 
           <section>
-            <img
-              class="block mx-auto"
+            <NuxtImg
+              class="block mx-auto max-w-full"
+              loading="lazy"
               :src="urls.spotifyPlaying"
               :alt="$t('homePage.spotify-playing')"
             />

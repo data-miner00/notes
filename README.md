@@ -135,8 +135,8 @@ pnpm preview
 - [ ] DocSearch
 - [ ] Add line numbers to code block
 - [ ] Add missing items to mobile navbar
-- [ ] Improve semantics and accessibility
-- [ ] Add date display for entries
+- [x] Improve semantics and accessibility
+- [x] Add date display for entries
 
 See the [open issues](https://github.com/data-miner00/notes/issues) for a full list of proposed features (and known issues).
 
@@ -187,6 +187,7 @@ List of resources that are helpful and would like to give credit to.
 - [The Complete Guide to Nuxt Localization](https://phrase.com/blog/posts/nuxt-js-tutorial-i18n/)
 - [NuxtUI](https://ui.nuxt.com/pro/prose/callout)
 - [Picsum](https://picsum.photos/)
+- [How do you avoid cumulative layout shift with responsively sized images?](https://webmasters.stackexchange.com/questions/132280/how-do-you-avoid-cumulative-layout-shift-with-responsively-sized-images)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
