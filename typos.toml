@@ -1,0 +1,6 @@
+[files]
+extend-exclude = [
+    "locales/ko.json",
+    "content/ko/**/*.md",
+    "content/notes/chemistry/radiation.md"
+]
