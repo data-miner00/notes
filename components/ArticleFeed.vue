@@ -36,7 +36,7 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
       >
         <NuxtImg
           :src="imageUrl"
-          class="w-full block"
+          class="max-w-full block h-auto"
           :alt="imageAlt"
           :loading="loadingMode"
         ></NuxtImg>
