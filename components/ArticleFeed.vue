@@ -44,7 +44,7 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
 
       <div class="leading-[1.75] mb-4">
         <ContentRenderer :value="excerpt">
-          <ContentRendererMarkdown :value="excerpt" />
+          <ContentRendererMarkdown :value="(excerpt as Record<string, any>)" />
         </ContentRenderer>
       </div>
 
