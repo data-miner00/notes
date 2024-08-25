@@ -8,7 +8,7 @@ author:
 tags:
   - engineering
   - pullrequest
-updatedAt: 2024-06-26T12:37:01.866Z
+updatedAt: 2024-08-25T05:17:01.046Z
 createdAt: 2024-06-26T12:37:01.866Z
 ---
 
@@ -105,6 +105,17 @@ organization: Google
 title: Google's Code Review Developer Guide
 url: https://google.github.io/eng-practices/review/
 retrievedDate: 2024, June 26
+source: websites
+---
+::
+
+::apa-reference
+---
+authors:
+ - Vessels, S # Sarah Vessels
+title: "How to review code effectively: A GitHub staff engineer's philosophy"
+url: https://github.blog/developer-skills/github/how-to-review-code-effectively-a-github-staff-engineers-philosophy/
+date: 2024, July 23
 source: websites
 ---
 ::
