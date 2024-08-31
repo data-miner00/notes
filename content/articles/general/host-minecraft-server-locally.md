@@ -9,7 +9,7 @@ tags:
   - minecraft
   - server
   - ngrok
-updatedAt: 2024-05-23T13:00:19.507Z
+updatedAt: 2024-08-31T13:14:10.324Z
 createdAt: 2023-02-06T13:40:58.648Z
 ---
 
@@ -44,6 +44,19 @@ The `x.x.x` represents the **version** of Minecraft for the server. Find the bes
 [ngrok](https://ngrok.com) allows us to create tunnel to the public so that our friends can join our locally hosted Minecraft server quickly and for free.
 
 Proceed to sign up for a free ngrok account and download the ngrok client from the dashboard. There should be a banner that contains links for the ngrok downloader for various OS. Download the version that is suitable for your operating system and _extract_ the `ngrok.exe` file from the zip file to anywhere in your computer.
+
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: ngrok is no longer "free"
+---
+It seems like ngrok has reviewed their pricing plan and the free plan is no longer sustainable. The 1GB data transfer allotted will be exhausted in merely two days (or less).
+
+![ngrok transfer limit](/images/minecraft-localhost/ngrok-data-transfer-limit.png)
+
+::
+<!-- prettier-ignore-end -->
 
 ## Setting up Server Directory
 

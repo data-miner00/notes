@@ -9,7 +9,7 @@ tags:
   - minecraft
   - server
   - ngrok
-updatedAt: 2024-05-23T13:00:19.507Z
+updatedAt: 2024-08-31T13:14:10.324Z
 createdAt: 2023-02-06T13:40:58.648Z
 ---
 
@@ -54,6 +54,19 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
 [ngrok](https://ngrok.com)을 사용하면 친구들이 로컬에서 호스팅되는 Minecraft 서버에 빠르고 무료로 참여할 수 있도록 대중에게 터널을 만들 수 있습니다.
 
 계속해서 무료 ngrok 계정에 가입하고 대시보드에서 ngrok 클라이언트를 다운로드하세요. 다양한 OS용 ngrok 다운로더 링크가 포함된 배너가 있어야 합니다. 운영 체제에 적합한 버전을 다운로드하고 zip 파일에서 `ngrok.exe` 파일을 컴퓨터의 어느 곳으로든 *추출*하세요.
+
+<!-- prettier-ignore-start -->
+::callout
+---
+type: warning
+title: ngrok은 더 이상 "무료"가 아닙니다
+---
+ngrok에서 가격 계획을 검토한 것 같고 무료 플랜은 더 이상 지속 가능하지 않습니다. 할당된 1GB 데이터 전송은 단 이틀(또는 그 이하) 만에 소진됩니다.
+
+![ngrok 데이터 전송 한도](/images/minecraft-localhost/ngrok-data-transfer-limit.png)
+
+::
+<!-- prettier-ignore-end -->
 
 ## 서버 디렉토리 설정
 
