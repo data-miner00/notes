@@ -77,7 +77,7 @@ const links = computed<NavigationLink[]>(() => [
       <ul class="hidden lg:flex gap-4 mx-auto">
         <li v-for="link of links" :key="link.content">
           <NuxtLink
-            class="p-4 uppercase text-xs block text-gray-600 dark:text-gray-400 w-[100px] text-center tracking-widest"
+            class="p-4 uppercase text-xs block text-gray-600 dark:text-gray-400 w-[100px] text-center tracking-widest hover:text-green-600 dark:hover:text-green-600"
             :to="link.url"
             active-class="font-semibold text-green-600 dark:text-green-600"
             :target="link.url.startsWith('http') ? '_blank' : null"

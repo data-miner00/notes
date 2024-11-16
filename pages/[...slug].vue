@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="prev"
           :to="localePath(prev._path)"
-          class="text-xs lg:text-base block px-3 py-2 basis-1/2 lg:basis-auto lg:py-1 border border-solid border-gray-200 dark:border-gray-700 rounded"
+          class="text-xs lg:text-base block px-3 py-2 basis-1/2 lg:basis-auto lg:py-1 border border-solid border-gray-200 dark:border-gray-700 rounded hover:text-green-600"
         >
           ← {{ prev.title }}
         </NuxtLink>
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="next"
           :to="localePath(next._path)"
-          class="text-xs lg:text-base block px-3 py-2 basis-1/2 lg:basis-auto lg:py-1 border border-solid border-gray-200 dark:border-gray-700 rounded"
+          class="text-xs lg:text-base block px-3 py-2 basis-1/2 lg:basis-auto lg:py-1 border border-solid border-gray-200 dark:border-gray-700 rounded hover:text-green-600"
         >
           {{ next.title }} →
         </NuxtLink>

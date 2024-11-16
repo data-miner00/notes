@@ -56,7 +56,7 @@ const formattedLastUpdatedDate = computed(() => {
     <div class="py-3">
       <div v-for="(item, index) in toc" :key="index">
         <NuxtLink
-          class="py-2 block pl-7 text-gray-700 dark:text-gray-200"
+          class="py-2 block pl-7 text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-600"
           :to="`#${item.id}`"
           >{{ item.text }}</NuxtLink
         >
