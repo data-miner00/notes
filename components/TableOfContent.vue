@@ -37,7 +37,7 @@ const formattedLastUpdatedDate = computed(() => {
 
 <template>
   <aside
-    class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-900 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-800 xl:w-[272px] text-sm transform lg:-translate-y-60"
+    class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-900 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-800 lg:w-[272px] text-sm transform lg:-translate-y-60"
     aria-label="Table of Content"
   >
     <header
@@ -56,7 +56,7 @@ const formattedLastUpdatedDate = computed(() => {
     <div class="py-3">
       <div v-for="(item, index) in toc" :key="index">
         <NuxtLink
-          class="py-2 block pl-7 text-gray-700 dark:text-gray-200"
+          class="py-2 block pl-7 text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-600"
           :to="`#${item.id}`"
           >{{ item.text }}</NuxtLink
         >

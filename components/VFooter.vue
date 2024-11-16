@@ -221,7 +221,7 @@ nav {
     @apply text-gray-500 dark:text-gray-400 block my-2;
 
     &:hover {
-      @apply text-gray-700 dark:text-gray-300;
+      @apply text-green-600;
     }
   }
 }
