@@ -63,7 +63,7 @@ useHead({
         class="flex flex-col gap-4"
       >
         <li class="block">
-          <NuxtLink :to="entry._path" class="text-xl">{{
+          <NuxtLink :to="entry._path" class="text-xl hover:text-green-600">{{
             entry.title
           }}</NuxtLink>
         </li>
