@@ -73,7 +73,7 @@ const links = computed<NavigationLink[]>(() => [
             @click="toggleSidebar"
           >
             <NuxtLink
-              class="block px-3 py-2 rounded font-semibold text-sm hover:bg-green-200/50"
+              class="block px-3 py-2 rounded font-semibold text-sm hover:bg-green-200/50 hover:text-green-600"
               :to="link.url"
               exact-active-class="text-green-400 bg-green-200/50 dark:bg-green-500/50"
             >
