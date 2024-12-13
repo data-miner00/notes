@@ -9,7 +9,7 @@ tags:
   - science
   - latex
   - cheatsheet
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2024-12-13T17:30:58.824Z
 createdAt: 2022-10-22T03:34:20.346Z
 ---
 
@@ -300,6 +300,18 @@ LaTeX ignores any spaces within an equation. However, spaces still can be added 
 | `\;`    | Big space     |
 | `\:`    | Medium space  |
 | `\,`    | Small space   |
+
+### Text in Equation
+
+English word can be a part of the equation with the `\text` command.
+
+```tex
+\text{Check Digit} = 10 - (\text{sum}\; mod\; 10)
+```
+
+$$
+\text{Check Digit} = 10 - (\text{sum}\; mod\; 10)
+$$
 
 ### Fractions
 
@@ -697,6 +709,17 @@ organization: mhchem
 title: mhchem for MathJax. mhchem for KaTeX
 url: https://mhchem.github.io/MathJax-mhchem/
 retrievedDate: 2024, June 28
+source: websites
+---
+::
+
+::apa-reference
+---
+authors:
+ - Xiong Ying
+title: Discover the beauty of LaTeX
+url: https://latex-tutorial.com/
+retrievedDate: 2024, December 13
 source: websites
 ---
 ::

@@ -9,7 +9,7 @@ tags:
   - science
   - latex
   - cheatsheet
-updatedAt: 2024-05-23T15:30:58.824Z
+updatedAt: 2024-12-13T17:30:58.824Z
 createdAt: 2022-10-22T03:34:20.346Z
 ---
 
@@ -306,6 +306,18 @@ LaTeX는 방정식 내의 모든 공백을 무시합니다. 그러나 다음 명
 | `\;`    | 큰 간격      |
 | `\:`    | 중간 간격    |
 | `\,`    | 작은 간격    |
+
+### 방정식 안에의 영어 단어
+
+`\text` 명령을 사용하며 영어 단어를 방정식에 추가할 수 있습니다.
+
+```tex
+\text{Check Digit} = 10 - (\text{sum}\; mod\; 10)
+```
+
+$$
+\text{Check Digit} = 10 - (\text{sum}\; mod\; 10)
+$$
 
 ### 분수
 
@@ -703,6 +715,17 @@ organization: mhchem
 title: mhchem for MathJax. mhchem for KaTeX
 url: https://mhchem.github.io/MathJax-mhchem/
 retrievedDate: 2024, June 28
+source: websites
+---
+::
+
+::apa-reference
+---
+authors:
+ - Xiong Ying
+title: Discover the beauty of LaTeX
+url: https://latex-tutorial.com/
+retrievedDate: 2024, December 13
 source: websites
 ---
 ::
