@@ -119,9 +119,3 @@ onBeforeUnmount(() => {
     </div>
   </main>
 </template>
-
-<style>
-.math.math-display {
-  overflow-x: auto;
-}
-</style>
