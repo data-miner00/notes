@@ -53,7 +53,7 @@ const links = computed<NavigationLink[]>(() => [
 
 <template>
   <header
-    class="transition-all px-6 lg:px-0 flex py-4 fixed w-full top-0 left-0 z-10 border-b border-transparent border-solid"
+    class="transition-all px-6 lg:px-0 flex py-4 fixed w-full top-0 left-0 z-20 border-b border-transparent border-solid"
     :class="{ scrolled }"
   >
     <div class="lg:w-[1024px] w-full mx-auto relative flex items-center">

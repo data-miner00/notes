@@ -136,7 +136,7 @@ pnpm preview
 
 - [ ] Add PWA Manifest
 - [ ] DocSearch
-- [ ] Add line numbers to code block
+- [x] Add line numbers to code block
 - [ ] Add missing items to mobile navbar
 - [x] Improve semantics and accessibility
 - [x] Add date display for entries
