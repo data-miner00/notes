@@ -8,7 +8,11 @@
     @apply inline-block;
   }
 
-  &.math-display svg {
-    @apply block mx-auto;
+  &.math-display {
+    @apply overflow-x-auto;
+
+    svg {
+      @apply block mx-auto;
+    }
   }
 }

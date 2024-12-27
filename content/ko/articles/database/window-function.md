@@ -272,7 +272,7 @@ authors:
  - Mo Chen
 title: "WINDOW FUNCTIONS | Advanced SQL"
 publisher: YouTube
-retrievedDate: 2023, May 20
+date: 2023, May 20
 url: https://www.youtube.com/watch?v=efrR9eP2hUo
 source: websites
 ---
