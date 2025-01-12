@@ -92,7 +92,12 @@ const imageUrls = urls.images;
                 :title="$t('homePage.socials.twitterTitle')"
                 ><i class="bi bi-twitter"></i
               ></NuxtLink>
-              <div><i class="bi bi-facebook"></i></div>
+              <div
+                class="cursor-not-allowed"
+                :title="$t('homePage.socials.unavailable')"
+              >
+                <i class="bi bi-facebook"></i>
+              </div>
               <NuxtLink
                 :to="urls.github"
                 target="_blank"
@@ -107,7 +112,12 @@ const imageUrls = urls.images;
                 :title="$t('homePage.socials.pinterestTitle')"
                 ><i class="bi bi-pinterest"></i
               ></NuxtLink>
-              <div><i class="bi bi-instagram"></i></div>
+              <div
+                class="cursor-not-allowed"
+                :title="$t('homePage.socials.unavailable')"
+              >
+                <i class="bi bi-instagram"></i>
+              </div>
             </div>
           </section>
 

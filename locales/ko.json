@@ -19,7 +19,8 @@
       "title": "Socials",
       "githubTitle": "내 GitHub 프로필 링크",
       "twitterTitle": "내 Twitter 프로필 링크",
-      "pinterestTitle": "내 Pinterest 프로필 링크"
+      "pinterestTitle": "내 Pinterest 프로필 링크",
+      "unavailable": "이용할 수 없는"
     },
     "tags": {
       "title": "Tags"
