@@ -9,7 +9,7 @@ tags:
   - javascript
   - npm
   - packages
-updatedAt: 2024-05-22T15:07:34.090Z
+updatedAt: 2025-01-24T11:39:46.529Z
 createdAt: 2024-05-21T15:07:34.090Z
 ---
 
@@ -83,6 +83,24 @@ npm i https://dropbox.com/abcdsf # dropbox
 npm i gist:<unique-hash>
 ```
 
+- 오래된 패키지 표시
+
+```
+npm outdated
+```
+
+- 사용하지 않은 패키지 삭제
+
+```
+npm prune
+```
+
+- Shrinkwrap으로 변환
+
+```
+npm shrinkwrap
+```
+
 - 패키지 정보 얻음
 
 ```
@@ -116,7 +134,8 @@ published a year ago by jgonggrijp <dev@juliangonggrijp.com>
 
 ```
 git tag 1.0.2 (푸시 및 게시 후)
-git push --tags
+git push --tags (모두 태그를 푸시)
+git push origin tag 1.0.2 (단일 태그 푸시)
 ```
 
 - 바전 업데이트

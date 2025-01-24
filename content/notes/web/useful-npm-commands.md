@@ -9,7 +9,7 @@ tags:
   - javascript
   - npm
   - packages
-updatedAt: 2024-05-21T15:07:34.090Z
+updatedAt: 2025-01-24T11:39:46.529Z
 createdAt: 2024-05-21T15:07:34.090Z
 ---
 
@@ -83,6 +83,24 @@ The gist must have a `package.json` file to be installable.
 npm i gist:<unique-hash>
 ```
 
+- Get outdated packages
+
+```
+npm outdated
+```
+
+- Remove unused packages
+
+```
+npm prune
+```
+
+- Convert to shrinkwrap
+
+```
+npm shrinkwrap
+```
+
 - Get info for a package
 
 ```
@@ -116,7 +134,8 @@ published a year ago by jgonggrijp <dev@juliangonggrijp.com>
 
 ```
 git tag 1.0.2 (after push & publish)
-git push --tags
+git push --tags (push all tags)
+git push origin tag 1.0.2 (push single tag)
 ```
 
 - Updating semver
