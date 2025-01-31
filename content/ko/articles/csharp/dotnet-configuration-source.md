@@ -1,6 +1,6 @@
 ---
 title: .NET Core의 구성 소스
-description: .NET Core에서 구성을 사용하여 비밀을 관리하는 방법애 대한 가이드
+description: .NET Core에서 구성을 사용하여 비밀을 관리하는 방법에 대한 가이드
 topic: C#
 authors:
   - name: Shaun Chong
@@ -9,11 +9,11 @@ tags:
   - secrets
   - configuration
   - csharp
-updatedAt: 2025-01-12T07:29:26.289Z
+updatedAt: 2025-01-31T16:58:45.041Z
 createdAt: 2025-01-12T07:29:26.289Z
 ---
 
-프로젝트를 개발하는 동안, 우리는 불가피하게 API키, 연결 문자열 또는 다른 서비스와 통합할때 비밀번호와 같은 비밀을 마주치게 됩니다. 다음은 .NET Core에서 이를 관리하는 몇 가지 일반적인 방법입니다.
+프로젝트를 개발하는 동안, 우리는 불가피하게 API키, 연결 문자열 또는 다른 서비스와 통합할때 비밀번호와 같은 비밀을 마주치게 됩니다. 다음은 .NET Core에서 이를 관리하는 몇 가지 방법입니다.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ createdAt: 2025-01-12T07:29:26.289Z
 type: warning
 title: 부인 성명
 ---
-저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+한국어 실력이 부적하여 이 기사는 구글 번역기를 주로 활용했기 때문에 부정확한 문법과 어휘가 있을수 있습니다. 이 점 양해 부탁드리며, 추후에 다시 검토하여 수정하도록 하겠습니다.
 ::
 <!-- prettier-ignore-end -->
 
@@ -93,7 +93,7 @@ public class MySettings
 ```json [appsettings.json]
 {
   "mySettings": {
-    "connectionString": "내 안전한 연결 문제열",
+    "connectionString": "내 안전한 연결 문자열",
     "timeoutInSeconds": 10
   }
 }
@@ -112,7 +112,7 @@ var mySettings = builder.Configuration.GetSection(nameof(MySettings)).Get<MySett
 
 환경 변수는 프로젝트 외부의 사용자 또는 머신 레벨에 존재하는 변수입니다. .NET 구성은 인스턴스화 중에 환경 변수를 메모리로 읽어들입니다.
 
-PowerShell에서는 사용 가능한 환경 변수 목록을 검색할 수 있습니다.
+PowerShell에서는 사용 가능한 환경 변수 목록을 이렇게 검색할 수 있습니다.
 
 ```ps1
 Get-ChildItem env:* | Sort-Object name
@@ -171,6 +171,8 @@ dotnet run --MYENV foobar
   }
 }
 ```
+
+다음과 같이 애플리케이션 코드 내의 `GetSection` 메서드에서 값을 얻얼 수 있습니다.
 
 ```cs
 var myEnv = builder.Configuration.GetSection("MYENV")?.Value; // hello

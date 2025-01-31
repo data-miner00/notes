@@ -9,7 +9,7 @@ tags:
   - secrets
   - configuration
   - csharp
-updatedAt: 2025-01-12T07:29:26.289Z
+updatedAt: 2025-01-31T16:58:45.041Z
 createdAt: 2025-01-12T07:29:26.289Z
 ---
 
@@ -161,6 +161,8 @@ We can provide the command line arguments in the `launchSettings.json` as well.
   }
 }
 ```
+
+The value can be retrieved from the `GetSection` method inside the application code as follows.
 
 ```cs
 var myEnv = builder.Configuration.GetSection("MYENV")?.Value; // hello
