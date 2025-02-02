@@ -9,11 +9,11 @@ tags:
   - wpf
   - csharp
   - autofac
-updatedAt: 2024-03-24T08:28:42.756Z
+updatedAt: 2025-02-02T03:06:17.000Z
 createdAt: 2023-11-04T08:28:42.756Z
 ---
 
-Dependency Injection is a common practice to receive external functionalities that a dependant needs instead of creating their own. This practice can be further extended to incorporate [Inversion of Control (IoC)](https://www.educative.io/answers/what-is-inversion-of-control) to use a container for managing said dependencies.
+Dependency Injection is a common practice to receive external functionalities that a dependant needs instead of creating on their own. This practice can be further extended to incorporate [Inversion of Control (IoC)](https://www.educative.io/answers/what-is-inversion-of-control) to use a container for managing its dependencies.
 
 <!--more-->
 
@@ -25,12 +25,11 @@ This demonstration is tested with the technologies with the following versions:
 
 | Index | Technology                              | Version        |
 | ----- | --------------------------------------- | -------------- |
-| 1.    | dotnet CLI                              | 7.0.304        |
-| 2.    | Target Framework                        | net6.0-windows |
-| 3.    | Autofac                                 | 7.1.0          |
-| 4.    | Autofac.Configuration                   | 6.0.0          |
-| 5.    | Microsoft.Extensions.Configuration      | 7.0.0          |
-| 6.    | Microsoft.Extensions.Configuration.Json | 7.0.0          |
+| 1.    | dotnet CLI                              | 9.0.100        |
+| 2.    | Target Framework                        | net9.0-windows |
+| 3.    | Autofac                                 | 8.2.0          |
+| 4.    | Autofac.Configuration                   | 7.0.0          |
+| 5.    | Microsoft.Extensions.Configuration.Json | 9.0.1          |
 
 ## Create IoC Container
 
@@ -68,8 +67,6 @@ using Autofac;
 public partial class App : Application
 {
 	public static IContainer Container { get; private set; } = ContainerConfig.Configure();
-
-	public static ILifetimeScope Scope { get; private set; } = Container.BeginLifetimeScope();
 }
 ```
 
@@ -78,7 +75,7 @@ Next, override the `OnStartup` to call the main window for display through the D
 ```cs[App.xaml.cs]
 protected override void OnStartup(StartupEventArgs e)
 {
-	var mainWindow = Scope.Resolve<MainWindow>();
+	var mainWindow = Container.Resolve<MainWindow>();
 	mainWindow.Show();
 
 	base.OnStartup(e);
