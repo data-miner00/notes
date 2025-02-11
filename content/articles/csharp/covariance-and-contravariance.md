@@ -9,15 +9,15 @@ tags:
   - variance
   - interface
   - csharp
-updatedAt: 2024-05-22T03:53:55.046Z
+updatedAt: 2025-02-11T12:22:05.000Z
 createdAt: 2022-11-09T15:06:47.818Z
 ---
 
-Covariant and Contravariant are the terms originated from Physics to explain how the scale of the factor can affect the scale of the outcome. Covariant is indicative of the scale of outcome is directly proportional to the scale of the cause whereas contravariant is inversely proportional.
+Covariance and contravariace are the terms originated from Physics to explain how the scale of the factor can affect the scale of the outcome. Covariant is indicative of the scale of outcome is directly proportional to the scale of the cause whereas contravariant is inversely proportional.
 
 <!--more-->
 
-In Programming, covariance and contravariance exists to compliment the Liskov Substitution Principle of the [SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/).
+In Programming, covariance and contravariance compliments the Liskov Substitution Principle of the [SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/).
 
 Simply put, contravariance is the conversion of a derived entity to its parent entity that are higher in the hierarchy. An epitome would converting Cat to Animal (upcasting).
 
@@ -165,6 +165,17 @@ authors:
 title: What is Covariance and Contravariance in C#
 url: https://www.youtube.com/watch?v=Wp5iYQqHspg
 date: 2022, May 16
+source: websites
+---
+::
+
+::apa-reference
+---
+authors:
+ - Ssabae
+title: 공변성, 반공변성, 무공변성이란?
+url: https://velog.io/@lsb156/covariance-contravariance
+date: 2020, October 25
 source: websites
 ---
 ::
