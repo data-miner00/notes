@@ -9,7 +9,7 @@ tags:
   - javascript
   - npm
   - packages
-updatedAt: 2025-01-24T11:39:46.529Z
+updatedAt: 2025-02-11T05:19:06.000Z
 createdAt: 2024-05-21T15:07:34.090Z
 ---
 
@@ -144,6 +144,34 @@ git push origin tag 1.0.2 (push single tag)
 npm version minor
 npm version major
 npm version patch
+```
+
+- Login
+
+```
+npm login
+```
+
+- Publish for scoped project
+
+```
+npm publish --access=public
+```
+
+- Testing Npm Package Locally
+
+```
+├─ packages
+│  ├─ my-pkg
+│  │  ├─ index.js
+│  │  └─ package.json
+├─ test-project
+│  ├─ index.js
+│  └─ package.json (run npm link in this project)
+```
+
+```
+npm link <my-pkg>
 ```
 
 ## Npm Registry
