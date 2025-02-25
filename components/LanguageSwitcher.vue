@@ -45,7 +45,7 @@ function closePopup() {
     </button>
     <div
       v-if="isPopupOpen"
-      class="absolute -bottom-24 right-0 flex flex-col items-stretch rounded bg-gray-100 dark:bg-slate-800"
+      class="absolute -bottom-[100px] right-0 top-8 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-slate-600 dark:highlight-white/5 dark:text-slate-300 mt-4"
     >
       <NuxtLink
         :to="switchLocalePath('en')"
@@ -81,5 +81,5 @@ function closePopup() {
 
 <style scoped lang="sass">
 .language
-  @apply p-2 flex gap-1 items-center hover:border-gray-200 dark:hover:border-slate-700 dark:hover:bg-slate-800 hover:bg-white border border-solid border-transparent rounded text-center w-32
+  @apply p-2 flex items-center gap-2 dark:hover:bg-slate-700 hover:bg-gray-50 text-center
 </style>

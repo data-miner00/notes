@@ -9,11 +9,11 @@ tags:
   - wpf
   - csharp
   - autofac
-updatedAt: 2024-03-24T08:28:42.756Z
+updatedAt: 2025-02-02T03:06:17.000Z
 createdAt: 2023-11-04T08:28:42.756Z
 ---
 
-의존성 두입은 종속 항목을 직접 만드는 대신 종속 항목에 필요한 외부 기능을 수신하는 일반적인 방법입니다. 이 방식은 [IoC (Inversion of Control)](https://www.educative.io/answers/what-is-inversion-of-control)를 통합하여 해당 종속성을 관리하기 위한 컨테이너를 사용하도록 더욱 확장될 수 있습니다.
+의존성 주입은 종속 항목을 직접 만드는 대신 종속 항목에 필요한 외부 기능을 수신하는 일반적인 방법입니다. 이 방식은 [IoC (Inversion of Control)](https://www.educative.io/answers/what-is-inversion-of-control)를 통합하여 해당 종속성을 관리하기 위한 컨테이너를 사용하도록 더욱 확장될 수 있습니다.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ createdAt: 2023-11-04T08:28:42.756Z
 type: warning
 title: 부인 성명
 ---
-저는 이제 아직 한국어 잘 못했으니까 이 기사는 구글 번역은 많이 사용했어서 잘못된 문법과 어휘는 있으니 죄송합니다. 이 기사가 나중에 다시 리뷰를 할겁니다.
+한국어 실력이 부적하여 이 글이 구글 번역기를 주로 활용했기 때문에 부정확한 문법과 어휘가 있을수 있습니다. 이 점 양해 부탁드리며, 추후에 다시 검토하여 수정하도록 하겠습니다.
 ::
 <!-- prettier-ignore-end -->
 
@@ -35,16 +35,15 @@ title: 부인 성명
 
 | 색인 | 기술                                    | 버전           |
 | ---- | --------------------------------------- | -------------- |
-| 1.   | dotnet CLI                              | 7.0.304        |
-| 2.   | Target Framework                        | net6.0-windows |
-| 3.   | Autofac                                 | 7.1.0          |
-| 4.   | Autofac.Configuration                   | 6.0.0          |
-| 5.   | Microsoft.Extensions.Configuration      | 7.0.0          |
-| 6.   | Microsoft.Extensions.Configuration.Json | 7.0.0          |
+| 1.   | dotnet CLI                              | 9.0.100        |
+| 2.   | Target Framework                        | net9.0-windows |
+| 3.   | Autofac                                 | 8.2.0          |
+| 4.   | Autofac.Configuration                   | 7.0.0          |
+| 5.   | Microsoft.Extensions.Configuration.Json | 9.0.1          |
 
 ## IoC 컨테이너 만두기
 
-먼저 `ContainerConfig.cs`라는 클래스 파일을 만듭니다. 의존송 및 기타 시작 구성을 등록하는 곳입니다.
+먼저 `ContainerConfig.cs`라는 클래스 파일을 만듭니다. 이 파일은 의존송 및 기타 시작 구성을 등록하는 곳입니다.
 
 ```cs[ContainerConfig.cs]
 using Autofac;
@@ -78,8 +77,6 @@ using Autofac;
 public partial class App : Application
 {
 	public static IContainer Container { get; private set; } = ContainerConfig.Configure();
-
-	public static ILifetimeScope Scope { get; private set; } = Container.BeginLifetimeScope();
 }
 ```
 
@@ -88,7 +85,7 @@ public partial class App : Application
 ```cs[App.xaml.cs]
 protected override void OnStartup(StartupEventArgs e)
 {
-	var mainWindow = Scope.Resolve<MainWindow>();
+	var mainWindow = Container.Resolve<MainWindow>();
 	mainWindow.Show();
 
 	base.OnStartup(e);
@@ -127,7 +124,7 @@ protected override void OnExit(ExitEventArgs e)
 
 DI 컨테이너가 올바르게 설정되었으므로 이제 `ContainerConfig.cs` 파일에 종속성이 올바르게 등록되어 있는 한 프로젝트에서 종속성을 자유롭게 사용할 수 있습니다.
 
-다음은 `MainWindow.xaml.cs`를 사용한 간단한 예입니다. 양식이 초기화되지 않을 때 양식 요소 조작 예외를 방지하려면 생성자 상단에 `this.InitializeComponent` 메소드 호출을 유지하십시오.
+다음은 `MainWindow.xaml.cs`를 간단한 적용하는 예입니다. 양식이 초기화되지 않을 때 양식 요소 조작 예외를 방지하려면 생성자 상단에 `this.InitializeComponent` 메소드 호출을 유지하십시오.
 
 ```cs[MainWindow.xaml.cs]
 public partial class MainWindow : Window

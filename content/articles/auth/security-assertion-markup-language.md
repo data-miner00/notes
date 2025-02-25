@@ -10,7 +10,7 @@ tags:
   - okta
   - saml
   - sso
-updatedAt: 2024-11-03T05:40:33.392Z
+updatedAt: 2025-02-07T14:53:09.000Z
 createdAt: 2024-11-03T05:40:33.392Z
 ---
 
@@ -97,7 +97,7 @@ This is an example AuthnRequest from [signicat.com](https://developer.signicat.c
 
 SAML Response contains statements (a.k.a assertions) that are signed with [XML Signatures (DSig)](https://www.cryptosys.net/sc14n/example-signed-xmldsig.html). Besides, it also contain **attributes** which are the profile info such as first name and last name of the user. The SAML Response are being validated in the client side by its own **Assertion Consumer Service**.
 
-This is an example response from [signicat.com](https://developer.signicat.com/broker/signicat-identity-broker/service-providers/saml/saml-examples.html#authnresponse-examples) as well.
+This is an example response from [signicat.com](https://developer.signicat.com/broker/signicat-identity-broker/service-providers/saml/saml-examples.html#authnresponse-examples).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -155,7 +155,7 @@ A shared configuration between IdP and SP so that each of them recognizes each o
 
 ### Provisioning
 
-The identity provider is the source of truth for the user. From time to time, the user data that kept in the service provider needs to be synced to get the updated info. It can be done by **Just-in-time provisioning** and **real-time provisioning**.
+The identity provider is the source of truth for the user. From time to time, the user data that kept in the service provider needs to be synced to get the updated info. It can be done by **just-in-time provisioning** and **real-time provisioning**.
 
 - **Just-in-time provisioning**: When the service provider internally does not have an account that is currently requested by the user and is authenticated, JIT kicks in and provisions the new account. It is also responsible to update the account.
 

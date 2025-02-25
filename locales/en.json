@@ -19,7 +19,8 @@
       "title": "Socials",
       "githubTitle": "Link to my GitHub",
       "twitterTitle": "Link to my Twitter",
-      "pinterestTitle": "Link to my Pinterest"
+      "pinterestTitle": "Link to my Pinterest",
+      "unavailable": "Unavailable"
     },
     "tags": {
       "title": "Tags"

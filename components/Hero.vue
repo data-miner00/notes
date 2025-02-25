@@ -6,7 +6,7 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const stringifiedRoles = computed(() => props.roles.join(" • "));
+const stringifiedRoles = computed(() => props.roles.join(" ✦ "));
 </script>
 
 <template>

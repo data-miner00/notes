@@ -2,6 +2,7 @@
 import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
+const localePath = useLocalePath();
 const { locale, t } = useI18n();
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles"))
@@ -65,6 +66,13 @@ const imageUrls = urls.images;
             :image-alt="$t('homePage.article-feed.illustration-img-alt')"
             :image-lazy-loaded="index === 0"
           />
+
+          <NuxtLink
+            :to="localePath('/articles')"
+            class="block mx-auto w-fit px-3 py-2 uppercase border border-solid rounded border-gray-500 text-sm tracking-wide hover:border-green-500 hover:bg-green-500 hover:text-white transition-colors"
+          >
+            {{ $t("homePage.article-feed.read-more") }}
+          </NuxtLink>
         </main>
         <aside class="lg:basis-4/12">
           <section class="mb-8">
@@ -92,7 +100,12 @@ const imageUrls = urls.images;
                 :title="$t('homePage.socials.twitterTitle')"
                 ><i class="bi bi-twitter"></i
               ></NuxtLink>
-              <div><i class="bi bi-facebook"></i></div>
+              <div
+                class="cursor-not-allowed"
+                :title="$t('homePage.socials.unavailable')"
+              >
+                <i class="bi bi-facebook"></i>
+              </div>
               <NuxtLink
                 :to="urls.github"
                 target="_blank"
@@ -107,7 +120,12 @@ const imageUrls = urls.images;
                 :title="$t('homePage.socials.pinterestTitle')"
                 ><i class="bi bi-pinterest"></i
               ></NuxtLink>
-              <div><i class="bi bi-instagram"></i></div>
+              <div
+                class="cursor-not-allowed"
+                :title="$t('homePage.socials.unavailable')"
+              >
+                <i class="bi bi-instagram"></i>
+              </div>
             </div>
           </section>
 

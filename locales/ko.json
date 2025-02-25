@@ -4,7 +4,7 @@
     "updatedAt": "{date} 업데이트됨"
   },
   "homePage": {
-    "title": "노트과 기사",
+    "title": "노트과 글",
     "hero": {
       "name": "정은지",
       "role1": "소프트웨어 개발자",
@@ -19,7 +19,8 @@
       "title": "Socials",
       "githubTitle": "내 GitHub 프로필 링크",
       "twitterTitle": "내 Twitter 프로필 링크",
-      "pinterestTitle": "내 Pinterest 프로필 링크"
+      "pinterestTitle": "내 Pinterest 프로필 링크",
+      "unavailable": "이용할 수 없는"
     },
     "tags": {
       "title": "Tags"
@@ -40,8 +41,8 @@
   "indexPages": {
     "index": "색인",
     "articlePage": {
-      "title": "기사",
-      "description": "내가 수년에 걸쳐 작성한 독자 친화적인 기술 기사 목록"
+      "title": "글",
+      "description": "내가 수년에 걸쳐 작성한 독자 친화적인 기술 글의 목록"
     },
     "notesPage": {
       "title": "노트",
@@ -51,7 +52,7 @@
   "header": {
     "home": "홈",
     "notes": "노트",
-    "articles": "기사",
+    "articles": "글",
     "life": "생활",
     "site": "사이트",
     "theme-switcher": {
