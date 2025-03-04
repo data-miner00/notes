@@ -21,7 +21,7 @@ curl icanhazip.com
 ```
 
 ```
-curl ifconfig.me
+curl ifconfig.me/ip
 ```
 
 ```
