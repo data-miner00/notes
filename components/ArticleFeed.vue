@@ -20,7 +20,12 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
 
 <template>
   <article>
-    <NuxtLink class="block mb-16" :to="url" :title="title">
+    <NuxtLink
+      class="block mb-16"
+      :to="url"
+      :title="title"
+      :aria-label="`Read more about ${title}`"
+    >
       <p
         :title="$t('shared.publishedAt', { date: friendlyPublishedDate })"
         class="text-center text-xs text-gray-400 mb-1 tracking-wide"
@@ -29,7 +34,7 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
           {{ friendlyPublishedDate }}
         </time>
       </p>
-      <h1 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h1>
+      <h2 class="text-2xl font-bold text-center uppercase mb-8">{{ title }}</h2>
 
       <div
         class="lg:h-96 w-full overflow-hidden object-cover object-center mb-4 bg-gray-200 dark:bg-gray-700"
