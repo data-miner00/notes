@@ -118,4 +118,5 @@ onBeforeUnmount(() => {
       <TableOfContent :toc="toc.links" :updated-at="data?.updatedAt" />
     </div>
   </main>
+  <VProgressBar />
 </template>

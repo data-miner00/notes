@@ -1,14 +1,14 @@
 ---
 title: 개체 관계
-description: 객체 간의 관계를 연관, 상속, 집합, 합성의 관점에서 이해하기
+description: 객체 간의 관계를 연관, 상속, 실현, 집합, 합성의 관점에서 이해하기
 topic: 일반
 authors:
   - name: Shaun Chong
     avatar: levi.png
 tags:
   - theory
-  - system
-updatedAt: 2024-05-24T13:10:15.014Z
+  - object
+updatedAt: 2025-03-04T11:21:30.000Z
 createdAt: 2023-11-27T14:10:03.378Z
 ---
 
@@ -76,6 +76,28 @@ title: 부인 성명
 _"이다"_ 는 상속을 위한 키워드입니다.
 
 ![고양이와 동물의 유전 관계를 보여주는 다이어그램](/images/object-relationships/inheritance.png)
+
+<!-- prettier-ignore-start -->
+::callout
+---
+type: info
+title: 표기법
+---
+상속 관계를 나타내는 클래스 다이어그램에서 부모가 추상 클래스인 경우 클래스 이름은 _기울임꼴로_ 표시됩니다.
+::
+<!-- prettier-ignore-end -->
+
+## 실현관계
+
+상속과 비슷하게 실현(realization)은 다른 클래스로부터 상속하는 대신 인터페이스를 **구현**하는 것을 의미합니다.
+
+예를 들어:
+
+- 여기의 동물은 인터페이스이고 동물이 가진 특정 행동을 캡슐화합니다. 고양이는 동물처럼 행동합니다.
+
+_"~처럼 행동하다" 또는 "~할 수 있다"는_ 실현의 키워드입니다.
+
+![고양이와 동물 인터페이스 간의 실현 관계를 보여주는 다이어그램](/images/object-relationships/realization.png)
 
 ## 참고
 

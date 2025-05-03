@@ -1,14 +1,14 @@
 ---
 title: Object Relationships
-description: Comprehending the relationships of objects in terms of association, inheritance, aggregation and composition
+description: Comprehending the relationships of objects in terms of association, inheritance, realization, aggregation and composition
 topic: General
 authors:
   - name: Shaun Chong
     avatar: levi.png
 tags:
   - theory
-  - system
-updatedAt: 2024-05-20T20:10:03.378Z
+  - object
+updatedAt: 2025-03-04T11:21:30.000Z
 createdAt: 2023-11-27T14:10:03.378Z
 ---
 
@@ -66,6 +66,28 @@ Example:
 _"Is a"_ is the keyword for inheritance.
 
 ![Diagrams showing the inheritance relationship between cat and animal](/images/object-relationships/inheritance.png)
+
+<!-- prettier-ignore-start -->
+::callout
+---
+type: info
+title: Notation
+---
+In a class diagram that is representing the inheritance relationship, if the parent is an abstract class, the class name is _italicized_.
+::
+<!-- prettier-ignore-end -->
+
+## Realization
+
+Similar to inheritance, realization refers to the **implementation** of an interface instead of inheriting from another class.
+
+Example:
+
+- The animal here is an interface and it encapsulates certain behaviours that an animal has. The cat behaves like an animal.
+
+_"Behaves like" or "can do"_ is the keyword for realization.
+
+![Diagrams showing the realization relationship between cat and animal interface](/images/object-relationships/realization.png)
 
 ## References
 
