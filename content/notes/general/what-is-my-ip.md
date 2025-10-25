@@ -45,6 +45,10 @@ curl wtfismyip.com/text
 ```
 
 ```
+curl checkip.amazonaws.com
+```
+
+```
 nslookup myip.opendns.com resolver1.opendns.com
 ```
 
