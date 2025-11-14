@@ -49,7 +49,7 @@ git worktree add ../feature-x-dir feature-x
 
 `feature-x` 브랜치를 즉석에서 생성하려면 브랜치 이름 앞에 `-b` 플래그를 추가하세요.
 
-```
+```bash
 git worktree add ../feature-x-dir -b feature-x
 ```
 
@@ -87,20 +87,28 @@ repo/
 
 ```
 > git worktree list
-D:/Workspace/projects/webutils        f9d49ec [master]
-D:/Workspace/projects/webutils-test   f9d49ec [test]
-D:/Workspace/projects/webutils-test2  f9d49ec [test2]
+D:/repo/website                            f9d49ec [master]
+D:/repo/website-feat-ImplementNavigation   f8d48ec [test]
+D:/repo/website-fix-CumulativeLayoutShift  f7d47ec [test2]
 ```
 
 ## Worktree를 삭제
 
 작업 트리를 모두 사용하고 나면 `worktree remove` 명령어를 사용하여 해당 트리를 제거할 수 있습니다. 이 명령어를 사용하면 작업 트리 디렉터리에 있는 빌드 결과물을 포함한 모든 파일이 삭제되므로 매우 편리합니다. 작업 트리 경로를 인수로 제공하기만 하면 됩니다.
 
-참고로, 이 기능이 제대로 작동하려면 작업 트리가 깨끗한 상태여야 합니다. 즉, 모든 변경 사항이 커밋되거나 폐기되어야 합니다.
+주목하는 것을 있다. 이 기능이 제대로 작동하려면 작업 트리가 깨끗한 상태여야 합니다. 즉, 모든 변경 사항이 커밋되거나 폐기되어야 합니다. 그렇지 않은면 `--force` 플래그를 사용하여 변경 사항을 취소하고 작업 트리를 제거합니다.
 
 ```
 git worktree remove <path>
 ```
+
+예를 들어, 원래 디렉토리 `website` 내부에서 다음을 실행합니다.
+
+```bash
+git worktree remove ../website-feat-ImplementNavigation --force
+```
+
+하지만 이 작업으로 작업 트리와 연관된 **분기**는 삭제되지 않습니다.
 
 ## 요약
 
@@ -134,6 +142,7 @@ retrievedDate: 2025, November 10
 source: websites
 ---
 ::
+
 ::apa-reference
 ---
 authors:

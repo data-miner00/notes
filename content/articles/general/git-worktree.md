@@ -49,7 +49,7 @@ git worktree add ../feature-x-dir feature-x
 
 To create the `feature-x` branch on the fly, add the `-b` flag before the branch name.
 
-```
+```bash
 git worktree add ../feature-x-dir -b feature-x
 ```
 
@@ -87,20 +87,28 @@ For each of the worktrees created, we can list all of them with the `worktree li
 
 ```
 > git worktree list
-D:/Workspace/projects/webutils        f9d49ec [master]
-D:/Workspace/projects/webutils-test   f9d49ec [test]
-D:/Workspace/projects/webutils-test2  f9d49ec [test2]
+D:/repo/website                            f9d49ec [master]
+D:/repo/website-feat-ImplementNavigation   f8d48ec [test]
+D:/repo/website-fix-CumulativeLayoutShift  f7d47ec [test2]
 ```
 
 ## Remove Worktree
 
 After we are done with the worktree, we can remove them with `worktree remove` command and it will get rid of everything including the build artifacts in the worktree directory, which is extremely handy! We just need to supply the path to the worktree as an argument.
 
-Note that the worktree must remain clean, i.e. all changes commit/discarded for it to work.
+Note that the worktree must remain clean, i.e. all changes commit/discarded for it to work. Otherwise, use the `--force` flag to discard the changes and remove the worktree.
 
 ```
 git worktree remove <path>
 ```
+
+For example, inside the original repository directory `website`, run the following.
+
+```bash
+git worktree remove ../website-feat-ImplementNavigation --force
+```
+
+However, note that the **branch** associated with the worktree is not deleted with this operation.
 
 ## Summary
 
@@ -134,6 +142,7 @@ retrievedDate: 2025, November 10
 source: websites
 ---
 ::
+
 ::apa-reference
 ---
 authors:
