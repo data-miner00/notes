@@ -1,6 +1,6 @@
 ---
 title: Security Assertion Markup Language (SAML)
-description: Attempting to demystify what SAML really is
+description: Attempting to demystify SAML through my own understanding
 topic: Auths
 authors:
   - name: Shaun Chong
@@ -10,7 +10,7 @@ tags:
   - okta
   - saml
   - sso
-updatedAt: 2025-02-07T14:53:09.000Z
+updatedAt: 2025-11-23T04:41:46.000Z
 createdAt: 2024-11-03T05:40:33.392Z
 ---
 
@@ -32,7 +32,7 @@ SAML is a complex topic to grapple with. I am still trying understand it on a de
 
 ## Stakeholders
 
-The authentication flow involves three parties - the principal, service provider (SP) and identity provider (IdP).
+The authentication flow involves three parties - the **principal**, **service provider (SP)** and **identity provider (IdP)**.
 
 ### Principal (a.k.a Subject)
 
@@ -68,7 +68,11 @@ The authentication flow initiated from a service provider (app). The user reques
 
 ### IdP Init
 
-The authentication flow initiated from the identity provider (idp). The difference is that there is no SAML request involved in this flow. User can just sign in directly at the IdP level and get the response.
+The authentication flow initiated from the identity provider (IdP). The difference is that there is no SAML request involved in this flow. This is often done via the IdP portal with registered apps. The IdP will then sends an unsolicited SAML response to the SP to create a login session.
+
+Below is an example of application dashboard in Okta.
+
+![Okta dashboard](/images/saml/okta-dashboard.jpg)
 
 ## Glossary
 

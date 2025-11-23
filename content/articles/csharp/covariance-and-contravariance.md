@@ -9,7 +9,7 @@ tags:
   - variance
   - interface
   - csharp
-updatedAt: 2025-02-11T12:22:05.000Z
+updatedAt: 2025-11-23T06:33:51.000Z
 createdAt: 2022-11-09T15:06:47.818Z
 ---
 
@@ -84,7 +84,7 @@ interface IConsumer<in T> {
 
 ### Covariance
 
-If the `IProducer` takes in a type of higher hierarchical order, the method `Produce` will produce the higher type which isn't compatible with the derived type reference.
+For example, a producer of type `IProducer<Animal>` cannot directly assign the return value to the `Cat` variable because `Produce()` returns `Animal`.
 
 ```cs
 IProducer<Animal> producer;
@@ -92,7 +92,7 @@ Animal a = producer.Produce();
 Cat b = producer.Produce(); // error
 ```
 
-However, if the `IProducer` takes in a derived type of a higher hierarchy, the method `Produce` will fit in both the base and derived reference.
+Conversely, if it's `IProducer<Cat>`, `Produce()` returns `Cat`, which can also be assigned to a variable of type `Animal`.
 
 ```cs
 IProducer<Cat> producer;
@@ -100,7 +100,7 @@ Animal c = producer.Produce();
 Cat d = producer.Produce(); // no issue
 ```
 
-These means that a **derived** type is _behaving the same_ as the **base** type, hence covariance.
+This means that it is safe for a subtype to be placed in the position of a supertype, and this is called covariance.
 
 ```
 Cat : Animal ==> IProducer<Cat> : IProducer<Animal>
@@ -108,20 +108,20 @@ Cat : Animal ==> IProducer<Cat> : IProducer<Animal>
 
 ### Contravariance
 
-The `Consume` method takes in the generic typed parameter of `T` and it is apparent to notice the difference; Now both the derived type and the base type fits in well in the equation as seen below.
+`IConsumer<Animal>` can consume not only `Animal` but also `Cat`.
 
 ```cs
 IConsumer<Animal> consumer;
 consumer.Consume(new Animal());
-consumer.Consume(new Cat()); // also no problem
+consumer.Consume(new Cat()); // no problem
 ```
 
-The lesser derived type on the consumer have the opposite behaviour.
+Conversely, `IConsumer<Cat>` can only safely consume `Cat` and will throw an error if passed `Animal`.
 
 ```cs
 IConsumer<Cat> consumer;
 consumer.Consume(new Cat());
-consumer.Consume(new Animal()); // obviously does not work
+consumer.Consume(new Animal()); // error
 ```
 
 Hence, they implies contravariance as they behaves in the opposite way.
@@ -132,7 +132,7 @@ Cat : Animal ==> IConsumer<Animal> : IConsumer<Cat>
 
 ## Invariant Type
 
-Interfaces with type `T` itself without any base or derived types can always satisfy both ends for consuming and producing. They are called the invariant type.
+If a generic parameter does not have a mutation notation such as `in` or `out`, the type is invariant, meaning it does not allow substitution between subtypes.
 
 ## Reference
 

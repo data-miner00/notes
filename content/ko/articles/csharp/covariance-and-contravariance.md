@@ -1,6 +1,6 @@
 ---
 title: 공변성 및 반변성
-description: C# 예제에서 공변성 및 반변성는 간단하게 설명 드릴게요
+description: C# 예제를 통해 공변성과 반변성을 간단히 설명합니다
 topic: C#
 authors:
   - name: Shaun Chong
@@ -9,11 +9,11 @@ tags:
   - variance
   - interface
   - csharp
-updatedAt: 2025-02-11T12:22:05.000Z
+updatedAt: 2025-11-23T06:33:51.000Z
 createdAt: 2022-11-09T15:06:47.818Z
 ---
 
-공변성(covariance)과 반변성(contravariance)은 요인의 규모가 결과의 규모에 어떻게 영향을 미칠 수 있는지 설명하기 위해 물리학에서 유래한 용어입니다. 공변은 결과 규모가 원인의 규모에 정비례하는 반면 반공변은 반비례한다는 것을 나타냅니다.
+공변성(covariance)과 반변성(contravariance)은 원래 수학·물리학에서 유래한 용어이지만, 프로그래밍에서는 주로 타입 치환(type substitution) 관계를 설명할 때 사용됩니다. 간단히 말해 공변성은 하위 타입이 상위 타입의 위치에 안전하게 들어갈 수 있는 성질을 말하고, 반변성은 그 반대 방향의 치환을 허용하는 성질을 말합니다.
 
 <!--more-->
 
@@ -21,23 +21,23 @@ createdAt: 2022-11-09T15:06:47.818Z
 ::callout
 ---
 type: warning
-title: 부인 성명
+title: 면책 조항
 ---
-한국어 실력이 부적하여 이 글이 구글 번역기를 주로 활용했기 때문에 부정확한 문법과 어휘가 있을수 있습니다. 이 점 양해 부탁드리며, 추후에 다시 검토하여 수정하도록 하겠습니다.
+이 글은 작성자의 한국어 실력이 충분치 않아 주로 기계 번역(예: 구글 번역기)을 활용해 작성되었습니다. 그로 인해 문법이나 어휘가 부정확할 수 있습니다. 읽으시면서 어색한 부분을 발견하시면 알려주시면 감사하겠습니다. 추후 다시 검토해 수정하겠습니다.
 ::
 <!-- prettier-ignore-end -->
 
-프로그램밍에서는 그 것 들은 [SOLID 원칙](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)중 하나인 리스코프 치환 원칙(Liskov Substitution Principle)을 보완하다.
+프로그래밍에서는 이 개념들이 [SOLID 원칙](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/) 중 하나인 리스코프 치환 원칙(Liskov Substitution Principle)과 관련이 있습니다.
 
-간단히 말해서, 공변성은 파생 엔터티를 계층 구조에서 더 높은 상위 엔터티로 변환하는 것입니다. 고양이를 동물로 변환하는 것(업캐스팅)이 전형입니다.
+간단히 말해, 공변성은 하위 타입(subtype)이 상위 타입(supertype)의 위치에 안전하게 대체될 수 있는 성질을 말합니다. 예를 들어 고양이(Cat)를 동물(Animal)으로 취급하는 업캐스팅(upcasting)이 대표적인 사례입니다.
 
 ![간단한 계층 도표](/images/variance/hierarchy.png)
 
-반변성은 상위 엔터티를 계층 구조 아래의 더 파생되고 구체적인 엔터티로 변환하는 것입니다. 이는 동물을 고양이로 변환하는 것과 같습니다(다운캐스팅).
+반면 반변성은 상위 타입의 참조를 하위 타입이 기대하는 위치에 사용할 수 있게 하는 성질입니다. 다운캐스팅은 항상 안전하지 않을 수 있으므로 주의해야 합니다.
 
 ## 기본 소개
 
-`Animal` 과 `Cat` 클래스를 예로 들어보겠습니다.
+`Animal`과 `Cat` 클래스를 예로 들어보겠습니다.
 
 ```cs
 class Animal {
@@ -49,21 +49,21 @@ class Cat : Animal {
 }
 ```
 
-기반 클래스 `Animal` 은 `Animal` 및 `Cat` 개체를 인스턴스화할 때 두 참조에 사용됩니다.
+다음과 같이 `Animal`과 `Cat`을 인스턴스화하고 참조할 수 있습니다.
 
 ```cs
 Animal x = new Animal();
 Animal y = new Cat();
 ```
 
-`x` 와 `y` 두는 `Eat` 메서드를 호출할 수 있습니다. 그러나 `Meow` 메서드는 `Cat` 클래스에만 존재하므로 기본 `Animal` 클래스에서 참조하는 `Cat` 객체는 해당 메서드를 **호출할 수 없습니다**.
+`x`와 `y`는 둘 다 `Eat` 메서드를 호출할 수 있습니다. 그러나 `Meow` 메서드는 `Cat` 클래스에만 있으므로, `Animal` 타입으로 참조할 경우 `Meow`에 접근할 수 없습니다.
 
 ```cs
 x.Meow(); // 컴파일 오류
 y.Meow(); // 컴파일 오류
 ```
 
-참조로 자체 클래스가 있는 `Cat` 인스턴스만 `Meow` 메서드에 액세스할 수 있습니다.
+직접 `Cat` 타입으로 참조하는 경우에만 `Meow` 메서드에 접근할 수 있습니다.
 
 ```cs
 Cat z = new Cat();
@@ -72,9 +72,9 @@ z.Meow();
 
 ## 제네릭
 
-제네릭 타입 인터페이스의 경우 변동성은 주로 **객체를 대체할 수 있는 방법** 과 관련이 있습니다.
+제네릭 타입의 경우, 변이(variance)는 주로 타입을 서로 대체(substitution)할 수 있는 방식과 관련있습니다.
 
-`T` 타입의 공변 인터페이스는 해당 파생 항목에 `T` 타입의 엔터티를 생성하는 메서드만 있음을 나타냅니다. 그가 `out` 키워드로 지정됩니다.
+제네릭 매개변수 `T`가 공변(out)으로 표시된 인터페이스는 주로 `T`를 반환하는(생성하는) 용도로만 사용되어야 한다는 의미입니다. C#에서는 `out` 키워드로 표시합니다.
 
 ```cs
 // 공변성
@@ -83,7 +83,7 @@ interface IProducer<out T> {
 }
 ```
 
-반대로 `T` 타입의 반공변 인터페이스는 파생물에 `T` 타입의 객체 매개변수를 사용하지만 이를 반환하지 않는 메서드만 있음을 보여줍니다. 이는 `in` 키워드로 표시됩니다.
+반대로 `in`으로 표시된 반공변(contravariant) 인터페이스는 메서드가 `T` 타입의 매개변수를 받지만 `T`를 반환하지 않아야 한다는 제약을 뜻합니다. C#에서는 `in` 키워드로 표시합니다.
 
 ```cs
 // 반변성
@@ -94,7 +94,7 @@ interface IConsumer<in T> {
 
 ### 공변성
 
-`IProducer`가 더 높은 계층적 순서의 타입을 취하는 경우 `Produce` 메소드는 파생된 타입 참조와 호환되지 않는 더 높은 타입을 생성합니다.
+예를 들어 `IProducer<Animal>` 타입의 프로듀서는 `Produce()`가 `Animal`을 반환하므로, 반환값을 `Cat` 변수에 바로 할당할 수 없습니다.
 
 ```cs
 IProducer<Animal> producer;
@@ -102,7 +102,7 @@ Animal a = producer.Produce();
 Cat b = producer.Produce(); // 오류
 ```
 
-그러나 'IProducer'가 더 높은 계층 구조의 파생 타입을 사용하는 경우 'Produce' 메서드는 기본 참조와 파생 참조 모두에 적합합니다.
+반대로 `IProducer<Cat>`인 경우, `Produce()`는 `Cat`을 반환하며 이를 `Animal` 타입의 변수에도 할당할 수 있습니다.
 
 ```cs
 IProducer<Cat> producer;
@@ -110,7 +110,7 @@ Animal c = producer.Produce();
 Cat d = producer.Produce(); // 문제 없음
 ```
 
-이는 **파생** 타입이 **기본** 타입과 _동일하게 동작_ 하므로 공분산이 있음을 의미합니다.
+이는 하위 타입이 상위 타입의 위치에 들어가도 안전하다는 의미이며, 이를 공변성이라고 합니다.
 
 ```
 Cat : Animal ==> IProducer<Cat> : IProducer<Animal>
@@ -118,23 +118,23 @@ Cat : Animal ==> IProducer<Cat> : IProducer<Animal>
 
 ### 반변성
 
-`Consume` 메소드는 `T`의 제네릭 타입 매개변수를 사용하며 차이점을 확연히 알 수 있습니다. 이제 아래 표시된 대로 파생 타입과 기본 타입이 모두 방정식에 잘 들어맞습니다.
+`IConsumer<Animal>`는 `Animal`뿐 아니라 `Cat`도 소비할 수 있습니다.
 
 ```cs
 IConsumer<Animal> consumer;
 consumer.Consume(new Animal());
-consumer.Consume(new Cat()); // 문제도 없음
+consumer.Consume(new Cat()); // 문제 없음
 ```
 
-소비자에서 덜 파생된 타입은 반대 동작을 갖습니다.
+반대로 `IConsumer<Cat>`는 `Cat`만 안전하게 소비할 수 있고 `Animal`을 전달하면 오류가 납니다.
 
 ```cs
 IConsumer<Cat> consumer;
 consumer.Consume(new Cat());
-consumer.Consume(new Animal()); // 분명히 못됩니다
+consumer.Consume(new Animal()); // 오류
 ```
 
-따라서 그들은 반대는 속성이 있습니다.
+따라서 반변성 관계는 다음과 같이 표현됩니다.
 
 ```
 Cat : Animal ==> IConsumer<Animal> : IConsumer<Cat>
@@ -142,7 +142,7 @@ Cat : Animal ==> IConsumer<Animal> : IConsumer<Cat>
 
 ## 무변성
 
-기본 타입이나 파생 타입이 없는 `T` 타입 자체가 있는 인터페이스는 항상 소비와 생성의 양쪽 끝을 모두 만족시킬 수 있습니다. 이를 무변성 타입이라고 합니다.
+제네릭 매개변수에 `in` 또는 `out`과 같은 변이 표시가 없는 경우, 해당 타입은 무변성(invariant)입니다. 즉, 하위/상위 타입 간의 치환을 허용하지 않습니다.
 
 ## 참고
 

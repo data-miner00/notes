@@ -15,6 +15,8 @@ createdAt: 2025-10-12T06:50:49.000Z
 
 Bicep is an Azure-native IaC solution that facilitates the provisioning of resources by transpiling into ARM template. It is a declarative domain-specific language (DSL) that is easier to read and maintain.
 
+<!--more-->
+
 ## Installation
 
 [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest&pivots=msi) is required to use Bicep related commands. To verify the installation, use `az version` and it will show the installed Azure CLI components in a JSON format.
