@@ -120,3 +120,8 @@ onBeforeUnmount(() => {
   </main>
   <VProgressBar />
 </template>
+
+<style lang="sass">
+rt
+  @apply text-red-500 text-[10px]
+</style>
