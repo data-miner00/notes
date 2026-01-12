@@ -9,7 +9,8 @@ tags:
   - cloud
   - iac
   - infra
-updatedAt: 2025-10-25T06:50:49.000Z
+  - azure
+updatedAt: 2026-01-12T15:47:59.000Z
 createdAt: 2025-10-12T06:50:49.000Z
 ---
 
@@ -50,7 +51,7 @@ Use `bicep version` to check for installed version.
 az bicep version
 ```
 
-To upgrade, simply run
+To upgrade, simply run the `upgrade` command.
 
 ```
 az bicep upgrade
@@ -92,7 +93,7 @@ az deployment group create \
   --resource-group <existing-resource-group>
 ```
 
-The command above provisions the `main.bicep` at the resource group level. On the other side, the command below provisions the `main.bicep` at the subscription level.
+The command above provisions the `main.bicep` at the resource group level. On the other side, the command below provisions the `main.bicep` at the subscription level using the `sub` subcommand.
 
 ```
 az deployment sub create --location eastus --template-file main.bicep
@@ -153,6 +154,24 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = [for (r
 }]
 ```
 
+### If Statement
+
+If statement can be used to conditionally deploy a resource. For example, there might be some resource that is only required in the specific region. In that case, we can give a conditional clause to deploy the said resource.
+
+```bicep
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = if (region == 'uksouth') {
+  name: 'mystorage${region}${index}'
+  location: region
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+  }
+}
+```
+
 ### Functions
 
 Bicep comes with a lot of built in functions for manipulating the data types that it supported. Here are a few examples showcasing the use of a few functions for string type and array type. The full list can be found on the [official documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions).
@@ -173,9 +192,16 @@ var array2 = [2, 3, 4]
 var result = union(array1, array2) // [1, 2, 3, 4]
 ```
 
+A custom function can be created with the keyword `func` that takes in some input and returns an output value.
+
+```bicep
+func prefixName(prefix string, name string) string => '${prefix}_${name}'
+func add(num1 int, num2 int) int => num1 + num2
+```
+
 ### Modules
 
-Using modules allows us to group related resources in a logical manner that represents the architecture of the resources accurately. A module contains three main parts: Parameters, Resources and Outputs.
+Using modules allows us to group related resources in a logical manner that represents the architecture of the resources accurately. A module contains three main parts: **parameters**, **resources** and **outputs**.
 
 Parameters are the data that is passed in by the caller, denoted with the `param` keyword. The resources are the actual resources that will be created by the module and outputs is the important info of the created resources that the caller might be interested to get hold of, such as resource ID.
 
@@ -255,6 +281,19 @@ var appName = appService.outputs.webAppHostName
 
 The full code can be found on my [GitHub repository](https://github.com/data-miner00/infra/tree/master/bicep).
 
+### Existing Resource
+
+Bicep can refer to preexisting resource without the need to reprovision them. It can be declared using the `existing` keyword as shown below.
+
+```bicep [main.bicep]
+var exampleRG = 'example-rg'
+
+resource existingStorage 'Microsoft.Storage/storageAccounts@2025-06-01' existing = {
+  name: 'examplestorage'
+  scope: resourceGroup(exampleRG)
+}
+```
+
 ## Parameterize Main File
 
 The main file can be parameterized as well using the `param` keyword.
@@ -311,12 +350,36 @@ az deployment group create \
 
 Bicep has a [VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) for syntax highlighting, intellisense, validation and a resource visualizer which is very handy to understand the deployment arrangement.
 
+![VSCode extension resource visualizer](/images/bicep/bicep-vscode-extension-visualizer.png)
+
+### Linting
+
+The Bicep file can be linted with the `lint` command.
+
+```
+az bicep lint --file <your-bicep-file>
+```
+
 ### Formatting
 
 The Bicep file can be formatted in-place with the `format` command.
 
 ```
 az bicep format --file <your-bicep-file>
+```
+
+### Building
+
+The Bicep file can be compiled into ARM Template in JSON format by using the `build` command. Alternatively, we can use the `--outdir` flag to specify the build directory.
+
+```
+az bicep build --file <your-bicep-file> --outdir <outdir>
+```
+
+For the Bicep parameters file, it can be built with `build-params` command.
+
+```
+az bicep build --file <your-bicepparam-file> --outdir <outdir>
 ```
 
 ## What-If
@@ -327,9 +390,23 @@ Use `what-if` for previewing changes made to the resources in the environment be
 az deployment group what-if --resource-group my-rg --template-file main.bicep
 ```
 
+<!-- ```
+az deployment group validate --resource-group <your-rg> --template-file <your-bicep-file> --parameters <params>
+``` -->
+
 ## References
 
 <!-- prettier-ignore-start -->
+::apa-reference
+---
+organization: Microsoft
+title: Bicep documentation
+url: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/
+retrievedDate: 2026, January 12
+source: websites
+---
+::
+
 ::apa-reference
 ---
 authors:
