@@ -19,7 +19,7 @@
       "title": "Socials",
       "githubTitle": "내 GitHub 프로필 링크",
       "twitterTitle": "내 Twitter 프로필 링크",
-      "pinterestTitle": "내 Pinterest 프로필 링크",
+      "linkedInTitle": "내 LinkedIn 프로필 링크",
       "unavailable": "이용할 수 없는"
     },
     "tags": {
@@ -76,12 +76,12 @@
     "projects": {
       "title": "프로젝트",
       "blogs": "블로그",
-      "website": "웹사이트",
-      "book": "책",
+      "sway": "스웨이",
+      "keyLogger": "키 로거",
       "linker": "링커",
       "hn": "해커뉴스",
       "arkn": "명일방주",
-      "us": "Url 단축기"
+      "diskAnalyzer": "디스크 분석기"
     },
     "templates": {
       "title": "템플릿",
@@ -95,7 +95,7 @@
     "powerByNuxt": "Nuxt에 의해 구동됨"
   },
   "error": {
-    "title": "404 Not Found",
+    "title": "404 찾을 수 없음",
     "description": "콘텐츠가 존재하지 않습니다. 다른 것을 시도해 보세요."
   },
   "errorPage": {

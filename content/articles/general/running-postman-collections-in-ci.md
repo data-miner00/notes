@@ -13,7 +13,7 @@ updatedAt: 2025-05-10T12:32:13.000Z
 createdAt: 2025-05-10T12:32:13.000Z
 ---
 
-[Postman](https://www.postman.com/product/what-is-postman/) is a feature-rich API client for building, managing and testing APIs. It allows people to share their API collections easilly with a JSON export file. It is also a great tool to test against API endpoints and can be integrated into CI environments.
+[Postman](https://www.postman.com/product/what-is-postman/) is a feature-rich API client for building, managing and testing APIs. It allows people to share their API collections easily with a JSON export file. It is also a great tool to test against API endpoints and can be integrated into CI environments.
 
 <!--more-->
 

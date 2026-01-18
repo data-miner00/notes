@@ -9,7 +9,8 @@ tags:
   - cloud
   - iac
   - infra
-updatedAt: 2025-10-25T06:50:49.000Z
+  - azure
+updatedAt: 2026-01-12T15:47:59.000Z
 createdAt: 2025-10-12T06:50:49.000Z
 ---
 
@@ -102,7 +103,7 @@ az deployment group create \
   --resource-group <existing-resource-group>
 ```
 
-위 명령어는 `main.bicep` 파일을 리소스 그룹 수준에서 배포합니다. 반면에 아래 명령어는 `main.bicep` 파일을 구독 수준에서 배포합니다.
+위 명령어는 `main.bicep` 파일을 리소스 그룹 수준에서 배포합니다. 반면에 아래 명령은 `sub` 하위 명령을 사용하여 구독 수준에서 `main.bicep`을 프로비저닝합니다.
 
 ```
 az deployment sub create --location eastus --template-file main.bicep
@@ -163,6 +164,24 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = [for (r
 }]
 ```
 
+### If 문
+
+if 문은 리소스를 조건부로 배포하는 데 사용할 수 있습니다. 예를 들어 특정 지역에서만 필요한 리소스가 있을 수 있습니다. 이 경우 조건절을 사용하여 해당 리소스를 배포하도록 할 수 있습니다.
+
+```bicep
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = if (region == 'uksouth') {
+  name: 'mystorage${region}${index}'
+  location: region
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+  }
+}
+```
+
 ### 함수
 
 Bicep은 지원하는 데이터 형식을 조작하기 위한 다양한 내장 함수를 제공합니다. 다음은 문자열 및 배열 유형에 사용되는 몇 가지 함수의 예입니다. 전체 함수 목록은 [공식 문서](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions)에서 확인할 수 있습니다.
@@ -183,9 +202,16 @@ var array2 = [2, 3, 4]
 var result = union(array1, array2) // [1, 2, 3, 4]
 ```
 
+`func` 키워드를 사용하면 입력값을 받아 출력값을 반환하는 사용자 정의 함수를 만들 수 있습니다.
+
+```bicep
+func prefixName(prefix string, name string) string => '${prefix}_${name}'
+func add(num1 int, num2 int) int => num1 + num2
+```
+
 ### 모듈
 
-모듈을 사용하면 관련 리소스를 논리적인 방식으로 그룹화하여 리소스 아키텍처를 정확하게 표현할 수 있습니다. 모듈은 매개변수, 리소스 및 출력이라는 세 가지 주요 부분으로 구성됩니다.
+모듈을 사용하면 관련 리소스를 논리적인 방식으로 그룹화하여 리소스 아키텍처를 정확하게 표현할 수 있습니다. 모듈은 **매개변수**, **리소스** 및 **출력**이라는 세 가지 주요 부분으로 구성됩니다.
 
 매개변수는 호출자가 전달하는 데이터이며, `param` 키워드로 표시됩니다. 리소스는 모듈에 의해 실제로 생성될 리소스이며, 출력은 호출자가 필요로 할 수 있는 생성된 리소스에 대한 중요한 정보(예: 리소스 ID)입니다.
 
@@ -265,6 +291,19 @@ var appName = appService.outputs.webAppHostName
 
 전체 코드는 제 [GitHub 저장소](https://github.com/data-miner00/infra/tree/master/bicep)에서 확인할 수 있습니다.
 
+### 기존 자원
+
+Bicep은 리소스를 다시 프로비저닝할 필요 없이 기존 리소스를 참조할 수 있습니다. 아래와 같이 `existing` 키워드를 사용하여 선언할 수 있습니다.
+
+```bicep [main.bicep]
+var exampleRG = 'example-rg'
+
+resource existingStorage 'Microsoft.Storage/storageAccounts@2025-06-01' existing = {
+  name: 'examplestorage'
+  scope: resourceGroup(exampleRG)
+}
+```
+
 ## 메인 파일 매개변수화
 
 메인 파일도 `param` 키워드를 사용하여 매개변수화할 수 있습니다.
@@ -321,12 +360,36 @@ az deployment group create \
 
 Bicep은 구문 강조 표시, 인텔리센스, 유효성 검사 및 배포 구성을 이해하는 데 매우 유용한 리소스 시각화 도구를 제공하는 [VS Code 확장 프로그램](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)을 제공합니다.
 
+![VSCode 확장 프로그램에 리소스 시각화](/images/bicep/bicep-vscode-extension-visualizer.png)
+
+### 린팅
+
+Bicep 파일은 `lint` 명령을 사용하여 린팅할 수 있습니다.
+
+```
+az bicep lint --file <your-bicep-file>
+```
+
 ### 포맷팅
 
 Bicep 파일은 `format` 명령을 사용하여 제자리에서 형식을 지정할 수 있습니다.
 
 ```
 az bicep format --file <your-bicep-file>
+```
+
+### 빌딩
+
+Bicep 파일은 build 명령을 사용하여 JSON 형식의 ARM 템플릿으로 컴파일할 수 있습니다. 대안적으로 `--outdir` 플래그를 사용하여 빌드 디렉토리를 지정할 수도 있습니다.
+
+```
+az bicep build --file <your-bicep-file> --outdir <outdir>
+```
+
+Bicep 매개변수 파일은 `build-params` 명령어를 사용하여 생성할 수 있습니다.
+
+```
+az bicep build --file <your-bicepparam-file> --outdir <outdir>
 ```
 
 ## What-If
@@ -340,6 +403,16 @@ az deployment group what-if --resource-group my-rg --template-file main.bicep
 ## 참고
 
 <!-- prettier-ignore-start -->
+::apa-reference
+---
+organization: Microsoft
+title: Bicep documentation
+url: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/
+retrievedDate: 2026, January 12
+source: websites
+---
+::
+
 ::apa-reference
 ---
 authors:

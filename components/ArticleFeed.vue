@@ -12,7 +12,7 @@ type Props = {
 const props = defineProps<Props>();
 
 const friendlyPublishedDate = computed(() =>
-  new Intl.DateTimeFormat(["ban", "id"]).format(props.publishedAt)
+  new Intl.DateTimeFormat(["ban", "id"]).format(props.publishedAt),
 );
 
 const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
@@ -41,7 +41,7 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
       >
         <NuxtImg
           :src="imageUrl"
-          class="max-w-full block h-auto"
+          class="w-full block h-auto"
           :alt="imageAlt"
           :loading="loadingMode"
         ></NuxtImg>
@@ -49,7 +49,7 @@ const loadingMode = computed(() => (props.imageLazyLoaded ? "eager" : "lazy"));
 
       <div class="leading-[1.75] mb-4">
         <ContentRenderer :value="excerpt">
-          <ContentRendererMarkdown :value="(excerpt as Record<string, any>)" />
+          <ContentRendererMarkdown :value="excerpt as Record<string, any>" />
         </ContentRenderer>
       </div>
     </NuxtLink>

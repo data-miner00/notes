@@ -19,7 +19,7 @@ createdAt: 2025-11-09T15:21:57.000Z
 
 ## Why use `git worktree`?
 
-Ever been frustrated while being called for a urgent PR review while you are working on your new feature that have 1000+ uncommited files in the same repository? You'll most likely stash all the changes, and then check out to the other branch for review. Worse, you received a PR comment on your other feature that couldn't be delayed further and requires immediate fix, you'll probably switch the branch again.
+Ever been frustrated while being called for a urgent PR review while you are working on your new feature that have 1000+ uncommitted files in the same repository? You'll most likely stash all the changes, and then check out to the other branch for review. Worse, you received a PR comment on your other feature that couldn't be delayed further and requires immediate fix, you'll probably switch the branch again.
 
 The scenario above is a nightmare to maintain and navigate. As much as we'll like to avoid multitasking, sometimes it's just inevitable and in this case, working with multiple branches simultaneously. With `git worktree`, we can avoid making extra clones or stashing our work.
 
@@ -53,7 +53,7 @@ To create the `feature-x` branch on the fly, add the `-b` flag before the branch
 git worktree add ../feature-x-dir -b feature-x
 ```
 
-This directory wll now look like this.
+This directory will now look like this.
 
 ```
 repo/
