@@ -95,7 +95,7 @@
     "powerByNuxt": "Nuxt에 의해 구동됨"
   },
   "error": {
-    "title": "404 Not Found",
+    "title": "404 찾을 수 없음",
     "description": "콘텐츠가 존재하지 않습니다. 다른 것을 시도해 보세요."
   },
   "errorPage": {
