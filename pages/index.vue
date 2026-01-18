@@ -201,28 +201,3 @@ const imageUrls = urls.images;
     </div>
   </div>
 </template>
-
-<style scoped lang="sass">
-.dark .pulse
-  --pulse-from-color: rgba(255, 255, 255, 0.2)
-  --pulse-to-color: rgba(255, 255, 255, 0)
-
-.circle
-  width: 8px
-  height: 8px
-  border-radius: 50%
-  box-shadow: 0px 0px 1px 1px #0000001a
-  @apply bg-sky-400
-
-.pulse
-  --pulse-from-color: rgba(0, 0, 0, 0.2)
-  --pulse-to-color: rgba(0, 0, 0, 0)
-  animation: pulse-animation 2s infinite
-
-@keyframes pulse-animation
-  0%
-    box-shadow: 0 0 0 0px var(--pulse-from-color)
-
-  100%
-    box-shadow: 0 0 0 20px var(--pulse-to-color)
-</style>
