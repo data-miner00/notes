@@ -40,7 +40,7 @@ The side that accepts the sunlight the most will be summer and winter for the op
 
 ## Summer
 
-- Time of year: June to August (Northen), December to February (Southern Hemisphere)
+- Time of year: June to August (Northern), December to February (Southern Hemisphere)
 - Weather: Hot and sunny, long daylight hours.
 - Nature:
   - Trees are full and green.

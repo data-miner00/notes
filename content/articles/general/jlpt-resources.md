@@ -27,23 +27,23 @@ For example, the word "table" in Japanese is "tsukue", which can be written in H
 
 > つ(tsu) + く(ku) + え(e) = 机(tsukue) = Table
 
-Note that the same Kanji can have different pronounciation depending on the context. Example, the word "学" is pronounced "gaku (がく)" but in "学ぶ" it is not pronounced as "gakubu(がくぶ)" but "manabu (まなぶ)" instead.
+Note that the same Kanji can have different pronunciation depending on the context. Example, the word "学" is pronounced "gaku (がく)" but in "学ぶ" it is not pronounced as "gakubu(がくぶ)" but "manabu (まなぶ)" instead.
 
 ### Katakana
 
-Katakana is exactly identical to Hiragana in terms of pronounciation, just the writing is different. It is mainly used to represent words of foreign origin.
+Katakana is exactly identical to Hiragana in terms of pronunciation, just the writing is different. It is mainly used to represent words of foreign origin.
 
-The word "camera" is written as "kamera (カメラ)" in Katakana. As you can see, the pronounciation is almost the same with the English word. It can be written in Hiragana "kamera (かめら)" as well, but honestly nobody usually do this.
+The word "camera" is written as "kamera (カメラ)" in Katakana. As you can see, the pronunciation is almost the same with the English word. It can be written in Hiragana "kamera (かめら)" as well, but honestly nobody usually do this.
 
 ### Furigana
 
-Furigana (振り仮名) is the small Hiragana hint that appears above Kanji on it's pronounciation. It can be usually seen in news articles, novel or the likes of it.
+Furigana (振り仮名) is the small Hiragana hint that appears above Kanji on it's pronunciation. It can be usually seen in news articles, novel or the likes of it.
 
 Here is an example sentence with Furigana: <ruby>私<rt>わたし</rt></ruby>の<ruby>名<rt>なま</rt>前<rt>え</rt></ruby>は<ruby>田<rt>た</rt>中<rt>なか</rt></ruby>です。
 
 On the rare case, Furigana might be in Katakana as well. For example, the unicorn: <ruby>一角獣<rp>(</rp><rt>ユニコーン</rt><rp>)</rp></ruby> and even English acronyms can have Furigana too: <ruby>OL<rp>(</rp><rt>オーエル</rt><rp>)</rp></ruby>.
 
-So do make use of the Furigana to learn it's pronounciation for difficult words.
+So do make use of the Furigana to learn it's pronunciation for difficult words.
 
 ### Learn The Basics
 

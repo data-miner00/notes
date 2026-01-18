@@ -1,7 +1,7 @@
 ---
 title: Key Points
 topic: Physics
-description: The informations related to Physics
+description: The information related to Physics
 author:
   - name: Shaun Chong
     avatar: levi.png
@@ -179,7 +179,7 @@ $$
 
 - Bernoulli's Principle states that in a steady flow of a fluid, the pressure of the fluid decreases when the velocity of the fluid increases
 
-- The heat capacity of an object is the quantity of head energy required to increase its temperature by 1 degree celcius.
+- The heat capacity of an object is the quantity of head energy required to increase its temperature by 1 degree celsius.
 
 $$
 \begin{align}

@@ -384,7 +384,7 @@ az bicep build --file <your-bicepparam-file> --outdir <outdir>
 
 ## What-If
 
-Use `what-if` for previewing changes made to the resources in the environment before commiting it. This can prevent any accidental destruction during the deployment.
+Use `what-if` for previewing changes made to the resources in the environment before committing it. This can prevent any accidental destruction during the deployment.
 
 ```
 az deployment group what-if --resource-group my-rg --template-file main.bicep
