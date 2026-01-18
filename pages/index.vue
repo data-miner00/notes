@@ -5,7 +5,7 @@ import { urls } from "../appsettings.json";
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
 const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation(queryContent("articles"))
+  fetchContentNavigation(queryContent("articles")),
 );
 
 // very ugly...
@@ -29,10 +29,10 @@ const tags = computed(() =>
   Array.from(
     new Set(
       navigation.value?.[0].children?.flatMap((topic) =>
-        topic.children?.flatMap((article) => article.tags)
-      )
-    )
-  ).slice(0, 30)
+        topic.children?.flatMap((article) => article.tags),
+      ),
+    ),
+  ).slice(0, 30),
 );
 
 useHead({
@@ -114,11 +114,11 @@ const imageUrls = urls.images;
                 ><i class="bi bi-github"></i
               ></NuxtLink>
               <NuxtLink
-                :to="urls.pinterest"
+                :to="urls.linkedIn"
                 target="_blank"
                 class="block"
-                :title="$t('homePage.socials.pinterestTitle')"
-                ><i class="bi bi-pinterest"></i
+                :title="$t('homePage.socials.linkedInTitle')"
+                ><i class="bi bi-linkedin"></i
               ></NuxtLink>
               <div
                 class="cursor-not-allowed"

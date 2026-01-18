@@ -19,7 +19,7 @@
       "title": "Socials",
       "githubTitle": "Link to my GitHub",
       "twitterTitle": "Link to my Twitter",
-      "pinterestTitle": "Link to my Pinterest",
+      "linkedInTitle": "Link to my LinkedIn",
       "unavailable": "Unavailable"
     },
     "tags": {
@@ -76,12 +76,12 @@
     "projects": {
       "title": "Projects",
       "blogs": "Blogs",
-      "website": "Website",
-      "book": "Book",
+      "sway": "Sway",
+      "keyLogger": "Key Logger",
       "linker": "Linker",
       "hn": "Hackernews",
       "arkn": "Arknights",
-      "us": "Url Shortener"
+      "diskAnalyzer": "Disk Analyzer"
     },
     "templates": {
       "title": "Templates",

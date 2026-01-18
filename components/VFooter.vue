@@ -28,16 +28,16 @@ const projects: NavigationLink[] = [
     url: urls.blogRepo,
   },
   {
-    translationKey: "footer.projects.website",
-    url: urls.websiteRepo,
-  },
-  {
-    translationKey: "footer.projects.book",
-    url: urls.bookRepo,
-  },
-  {
     translationKey: "footer.projects.linker",
     url: urls.linkerRepo,
+  },
+  {
+    translationKey: "footer.projects.keyLogger",
+    url: urls.keyLoggerRepo,
+  },
+  {
+    translationKey: "footer.projects.sway",
+    url: urls.swayRepo,
   },
   {
     translationKey: "footer.projects.hn",
@@ -48,8 +48,8 @@ const projects: NavigationLink[] = [
     url: urls.arknRepo,
   },
   {
-    translationKey: "footer.projects.us",
-    url: urls.usRepo,
+    translationKey: "footer.projects.diskAnalyzer",
+    url: urls.diskAnalyzerRepo,
   },
 ];
 
