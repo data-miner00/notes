@@ -9,7 +9,7 @@ tags:
   - language
   - japanese
   - jlpt
-updatedAt: 2026-01-07T14:16:41.000Z
+updatedAt: 2026-05-04T06:52:56.000Z
 createdAt: 2026-01-06T13:48:12.000Z
 ---
 
@@ -137,6 +137,12 @@ Here are a few blogging websites used by native Japanese people. Zenn and Qiita 
 - [zenn.dev](https://zenn.dev/)
 - [Qiita](https://qiita.com/)
 
+## Browser Extension
+
+Yomitan is a useful browser dictionary extension that lets us to quickly learn about new Japanese words we stumble on the internet without needing to leave the page at all.
+
+- [Yomitan](https://yomitan.wiki/)
+
 ## Other Resources
 
 List of other pertinent resources.
@@ -144,4 +150,15 @@ List of other pertinent resources.
 - [Youtube](https://www.youtube.com/results?search_query=JLPT+N4)
 - [Anki Japanese Decks](https://ankiweb.net/shared/decks?search=japanese)
 - [Tofugu](https://www.tofugu.com/)
+- [は and が](https://www.tofugu.com/japanese/wa-and-ga/)
+- [Particle に](https://www.tofugu.com/japanese-grammar/particle-ni/)
 - [NHK Learn Japanese](https://www3.nhk.or.jp/nhkworld/en/learnjapanese/)
+- [Todaii Japanese](https://japanese.todaiinews.com/en)
+
+### Dictionaries
+
+- [Nihongo Master](https://www.nihongomaster.com/japanese/dictionary)
+- [JapanDict](https://www.japandict.com/)
+- [jisho](https://jisho.org/)
+- [jiten](https://jiten.moe/)
+- [jpdb](https://jpdb.io/)

@@ -8,7 +8,7 @@ author:
 tags:
   - engineering
   - pullrequest
-updatedAt: 2024-08-25T05:17:01.046Z
+updatedAt: 2026-05-04T06:52:56.000Z
 createdAt: 2024-06-26T12:37:01.866Z
 ---
 
@@ -63,11 +63,12 @@ title: 부인 성명
 
 > 심호흡을 해라
 
-## 기타 쿨팁을
+## 기타 쿨팁
 
 1. 큰 PR을 피하십시오. 검토 프로세스를 쉽게 하기 위해 더 작고 논리적인 PR로 나누세요. 이는 "역대 최대 규모의 PR" 기록을 깨기 위한 경쟁이 아닙니다.
-2. [기존 커밋](https://www.conventionalcommits.org/en/v1.0.0/#summary)을 사용하세요. 각 커밋을 개별적으로 검사할 수 있도록 각 논리적 커밋 앞에 적절한 용어를 붙입니다.
-3. [기존 커멘트](https://conventionalcomments.org/)를 사용하세요. 이렇게 하면 작성자나 댓글을 읽는 사람이 무엇을 기대하는지에 대해 준비할 수 있습니다.
+2. [컨벤셔널 커밋](https://www.conventionalcommits.org/en/v1.0.0/#summary)을 사용하세요. 각 커밋을 개별적으로 검사할 수 있도록 각 논리적 커밋 앞에 적절한 용어를 붙입니다.
+3. [컨벤셔널 커멘트](https://conventionalcomments.org/)를 사용하세요. 이렇게 하면 작성자나 댓글을 읽는 사람이 무엇을 기대하는지에 대해 준비할 수 있습니다.
+4. [컨벤셔널 브랜치](https://conventional-branch.github.io/)를 사용하세요. 이렇게 하면 브랜치에 의도를 명확하고 집중적으로 전달하는 작업이 부여됩니다.
 
 ## 요약
 
