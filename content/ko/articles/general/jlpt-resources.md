@@ -9,7 +9,7 @@ tags:
   - language
   - japanese
   - jlpt
-updatedAt: 2026-01-07T14:16:41.000Z
+updatedAt: 2026-05-04T06:52:56.000Z
 createdAt: 2026-01-06T13:48:12.000Z
 ---
 
@@ -150,6 +150,12 @@ JLPT N1 공부에 대해 유용한 링크입니다.
 - [zenn.dev](https://zenn.dev/)
 - [Qiita](https://qiita.com/)
 
+## 브라우저 확장 프로그람
+
+Yomitan은 웹에서 접하는 새로운 일본어 단어의 의미를 페이지를 벗어나지 않고도 빠르게 알아볼 수 있게 해주는 유용한 브라우저 사전 확장 프로그램입니다.
+
+- [Yomitan](https://yomitan.wiki/)
+
 ## 기타 자료
 
 기타 관련 자료 목록.
@@ -157,4 +163,15 @@ JLPT N1 공부에 대해 유용한 링크입니다.
 - [유튜브](https://www.youtube.com/results?search_query=JLPT+N4)
 - [Anki Japanese Decks](https://ankiweb.net/shared/decks?search=japanese)
 - [Tofugu](https://www.tofugu.com/)
+- [は and が](https://www.tofugu.com/japanese/wa-and-ga/)
+- [Particle に](https://www.tofugu.com/japanese-grammar/particle-ni/)
 - [NHK Learn Japanese](https://www3.nhk.or.jp/nhkworld/en/learnjapanese/)
+- [Todaii Japanese](https://japanese.todaiinews.com/en)
+
+### 사전
+
+- [Nihongo Master](https://www.nihongomaster.com/japanese/dictionary)
+- [JapanDict](https://www.japandict.com/)
+- [jisho](https://jisho.org/)
+- [jiten](https://jiten.moe/)
+- [jpdb](https://jpdb.io/)

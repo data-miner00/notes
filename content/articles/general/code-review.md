@@ -8,7 +8,7 @@ author:
 tags:
   - engineering
   - pullrequest
-updatedAt: 2024-08-25T05:17:01.046Z
+updatedAt: 2026-05-04T06:52:56.000Z
 createdAt: 2024-06-26T12:37:01.866Z
 ---
 
@@ -58,6 +58,7 @@ For the authors, if you are offended by the reviewer's comment, take a step back
 1. Avoid huge PRs. Break it down into smaller, logical PRs to ease the review process. It is not a race to break your "Biggest PR ever created" record.
 2. Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Prefix each logical commit with appropriate terms so that each commits can be examined separately.
 3. Use [conventional comments](https://conventionalcomments.org/). This will prepare the author or anyone reading the comment on what to expect from it.
+4. Use [conventional branch](https://conventional-branch.github.io/). This gives the branch a clear and focused action that convey intentions.
 
 ## Summary
 
