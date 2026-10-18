@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// Not backed by a markdown document, so skip the document-driven page lookup.
+definePageMeta({
+  documentDriven: { page: false, surround: false },
+});
+
 const { locale, t } = useI18n();
 const queryBuilder = computed(() =>
   locale.value === "en" ? queryContent("notes") : queryContent("ko", "notes")

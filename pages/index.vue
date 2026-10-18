@@ -2,6 +2,11 @@
 import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
+// Not backed by a markdown document, so skip the document-driven page lookup.
+definePageMeta({
+  documentDriven: { page: false, surround: false },
+});
+
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
 const { data: navigation } = await useAsyncData("navigation", () =>
