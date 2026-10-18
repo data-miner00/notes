@@ -81,15 +81,16 @@ The technologies and tools used with this project.
 
 The list of tools that is used when development.
 
-- npm
+- [Node.js](https://nodejs.org/en/download) 20.9.0
   ```sh
-  npm install npm@latest -g
+  nvm install 20.9.0
   ```
 - Pnpm
   ```sh
-  npm i -g pnpm
+  npm i -g pnpm@10
   ```
 - [Git](https://git-scm.com/downloads)
+- [Nix](https://nixos.org/download.html) \*optional
 
 ### Installation
 
@@ -99,15 +100,19 @@ To run this project in your local for personal use or contribution, simply perfo
    ```sh
    git clone https://github.com/data-miner00/notes.git
    ```
-2. Install Node dependencies
+2. Optionally, activate Nix shell, which provides Node 20.9.0 and pnpm 10 so the Node and pnpm prerequisites can be skipped
    ```sh
-   pnpm i
+   nix-shell
    ```
-3. Copy environment file
+3. Install Node dependencies
+   ```sh
+   pnpm i --frozen-lockfile
+   ```
+4. Copy environment file
    ```sh
    cp .env.example .env
    ```
-4. Start the development server
+5. Start the development server
    ```sh
    pnpm dev
    ```
@@ -116,15 +121,16 @@ To run this project in your local for personal use or contribution, simply perfo
 
 ### Building for Production
 
-Run the `generate` command and static files will be generated in the `.outputs/public` folder that can be put under static hosting.
+Run the `generate` command and static files will be generated in the `.output/public` folder that can be put under static hosting.
 
 ```sh
 pnpm generate
 ```
 
-Optionally run the `preview` to take a peek on how the statically generated website looks like in the production.
+Optionally run the `preview` to take a peek on how the statically generated website looks like in the production. Set `NUXT_IMAGE_PROVIDER` to `none` when generating, otherwise the image paths will point to `/_vercel/image`, which only works when deployed on Vercel.
 
 ```sh
+NUXT_IMAGE_PROVIDER=none pnpm generate
 pnpm preview
 ```
 
