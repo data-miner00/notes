@@ -186,15 +186,6 @@ const imageUrls = urls.images;
             "
           ></p>
         </section>
-
-        <section>
-          <NuxtImg
-            class="block mx-auto max-w-full"
-            loading="lazy"
-            :src="urls.spotifyPlaying"
-            :alt="$t('homePage.spotify-playing')"
-          />
-        </section>
       </aside>
     </div>
   </div>
