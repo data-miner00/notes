@@ -103,6 +103,6 @@ export default defineNuxtConfig({
   },
   image: {
     provider: "vercel",
-    domains: ["fastly.picsum.photo", "spotify-github-profile.kittinanx.com"],
+    domains: ["fastly.picsum.photo"],
   },
 });
