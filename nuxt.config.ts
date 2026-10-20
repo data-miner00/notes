@@ -57,7 +57,8 @@ export default defineNuxtConfig({
     viewer: false,
   },
   content: {
-    documentDriven: true,
+    // Pages fetch their own navigation; the global copy only bloats every payload.
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -70,7 +71,7 @@ export default defineNuxtConfig({
       rehypePlugins: ["rehype-mathjax"],
     },
     navigation: {
-      fields: ["updatedAt", "description", "tags", "excerpt", "createdAt"],
+      fields: ["tags"],
     },
   },
   colorMode: { classSuffix: "" },

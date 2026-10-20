@@ -9,7 +9,6 @@ const { data } = await useAsyncData(`content-${path}`, () => {
 const {
   // Global references
   globals,
-  navigation,
   surround,
   page,
   // Computed properties from `page` key
