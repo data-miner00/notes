@@ -109,4 +109,10 @@ export default defineNuxtConfig({
   image: {
     provider: "vercel",
   },
+  nitro: {
+    prerender: {
+      // Not linked from any page, so the crawler won't find them on its own.
+      routes: ["/rss.xml", "/ko/rss.xml"],
+    },
+  },
 });
