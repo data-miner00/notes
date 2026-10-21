@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { computedAsync } from "@vueuse/core";
 import { urls } from "../appsettings.json";
 
 // Not backed by a markdown document, so skip the document-driven page lookup.
@@ -13,22 +12,17 @@ const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles")),
 );
 
-// very ugly...
-const articles = computedAsync(async () => {
-  if (locale.value === "en") {
-    return await queryContent("articles")
+const { data: articles } = await useAsyncData(
+  "latest-articles",
+  () =>
+    queryContent(locale.value === "en" ? "articles" : "ko/articles")
       .where({ _extension: { $eq: "md" } })
       .sort({ createdAt: -1 })
       .limit(5)
-      .find();
-  } else {
-    return await queryContent("ko", "articles")
-      .where({ _extension: { $eq: "md" } })
-      .sort({ createdAt: -1 })
-      .limit(5)
-      .find();
-  }
-});
+      .only(["_id", "_path", "title", "excerpt", "createdAt"])
+      .find(),
+  { watch: [locale] },
+);
 
 const tags = computed(() =>
   Array.from(
