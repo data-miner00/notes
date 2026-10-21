@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { urls } from "../appsettings.json";
+import { urls } from "../settings.json";
 
 // Not backed by a markdown document, so skip the document-driven page lookup.
 definePageMeta({
