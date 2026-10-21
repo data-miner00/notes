@@ -5,6 +5,7 @@ type FeedOptions = {
   contentPath: string;
   feedPath: string;
   language: string;
+  site: { name: string; description: string };
 };
 
 function escapeXml(value: string) {
@@ -18,9 +19,9 @@ function escapeXml(value: string) {
 
 export async function renderRssFeed(
   event: H3Event,
-  { contentPath, feedPath, language }: FeedOptions,
+  { contentPath, feedPath, language, site }: FeedOptions,
 ) {
-  const { siteUrl, siteName, siteDescription } = useRuntimeConfig().public;
+  const { siteUrl } = useRuntimeConfig().public;
   const homeUrl = new URL(language === "en" ? "/" : `/${language}`, siteUrl);
   const feedUrl = new URL(feedPath, siteUrl);
 
@@ -50,9 +51,9 @@ export async function renderRssFeed(
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(siteName)}</title>
+    <title>${escapeXml(site.name)}</title>
     <link>${escapeXml(homeUrl.href)}</link>
-    <description>${escapeXml(siteDescription)}</description>
+    <description>${escapeXml(site.description)}</description>
     <language>${language}</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${escapeXml(feedUrl.href)}" rel="self" type="application/rss+xml" />
