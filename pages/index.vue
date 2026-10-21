@@ -8,6 +8,7 @@ definePageMeta({
 
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
+const { latestArticleCount } = useRuntimeConfig().public;
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles")),
 );
@@ -18,7 +19,7 @@ const { data: articles } = await useAsyncData(
     queryContent(locale.value === "en" ? "articles" : "ko/articles")
       .where({ _extension: { $eq: "md" } })
       .sort({ createdAt: -1 })
-      .limit(5)
+      .limit(latestArticleCount)
       .only(["_id", "_path", "title", "excerpt", "createdAt"])
       .find(),
   { watch: [locale] },
@@ -60,7 +61,7 @@ const imageUrls = urls.images;
           :title="article?.title ?? 'Untitled'"
           :excerpt="article?.excerpt"
           :url="article?._path ?? ''"
-          :image-url="imageUrls[index]"
+          :image-url="imageUrls[index % imageUrls.length]"
           :image-alt="$t('homePage.article-feed.illustration-img-alt')"
           :image-lazy-loaded="index === 0"
         />
