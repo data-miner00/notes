@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { urls } from "../settings.json";
 const localePath = useLocalePath();
+const feedUrl = useFeedUrl();
 
 type NavigationLink = {
   translationKey: string;
@@ -134,6 +135,11 @@ const now = new Date();
             <NuxtLink :to="localePath(link.url)">
               {{ $t(link.translationKey) }}
             </NuxtLink>
+          </li>
+          <li>
+            <a :href="feedUrl">
+              {{ $t("footer.sitemap.rss") }}
+            </a>
           </li>
         </ul>
       </nav>

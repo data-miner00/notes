@@ -74,7 +74,8 @@
       "title": "Sitemap",
       "homepage": "@:header.home",
       "notes": "@:header.notes",
-      "articles": "@:header.articles"
+      "articles": "@:header.articles",
+      "rss": "RSS Feed"
     },
     "projects": {
       "title": "Projects",

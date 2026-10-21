@@ -74,7 +74,8 @@
       "title": "사이트맵",
       "homepage": "@:header.home",
       "notes": "@:header.notes",
-      "articles": "@:header.articles"
+      "articles": "@:header.articles",
+      "rss": "RSS 피드"
     },
     "projects": {
       "title": "프로젝트",

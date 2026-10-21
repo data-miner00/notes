@@ -7,15 +7,12 @@ const head = useLocaleHead({
 
 const htmlAttrs = computed(() => head.value.htmlAttrs!);
 
-const { locale } = useI18n();
 useHead({
   link: [
     {
       rel: "alternate",
       type: "application/rss+xml",
-      href: computed(() =>
-        locale.value === "en" ? "/rss.xml" : "/ko/rss.xml",
-      ),
+      href: useFeedUrl(),
     },
   ],
 });
