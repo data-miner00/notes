@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { urls } from "../appsettings.json";
+import { urls } from "../settings.json";
 
 const { t } = useI18n();
 const localePath = useLocalePath();

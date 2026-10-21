@@ -1,4 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+import { latestArticleCount } from "./settings.json";
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -100,6 +102,8 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://notes.mumk.dev",
       siteName: "Shaun Chong's Blog",
       siteDescription: "Technical blog website by Shaun Chong.",
+      // Overridden by NUXT_PUBLIC_LATEST_ARTICLE_COUNT when set.
+      latestArticleCount,
     },
   },
   image: {

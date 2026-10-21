@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { computedAsync } from "@vueuse/core";
-import { urls } from "../appsettings.json";
+import { urls } from "../settings.json";
 
 // Not backed by a markdown document, so skip the document-driven page lookup.
 definePageMeta({
@@ -9,26 +8,22 @@ definePageMeta({
 
 const localePath = useLocalePath();
 const { locale, t } = useI18n();
+const { latestArticleCount } = useRuntimeConfig().public;
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("articles")),
 );
 
-// very ugly...
-const articles = computedAsync(async () => {
-  if (locale.value === "en") {
-    return await queryContent("articles")
+const { data: articles } = await useAsyncData(
+  "latest-articles",
+  () =>
+    queryContent(locale.value === "en" ? "articles" : "ko/articles")
       .where({ _extension: { $eq: "md" } })
       .sort({ createdAt: -1 })
-      .limit(5)
-      .find();
-  } else {
-    return await queryContent("ko", "articles")
-      .where({ _extension: { $eq: "md" } })
-      .sort({ createdAt: -1 })
-      .limit(5)
-      .find();
-  }
-});
+      .limit(latestArticleCount)
+      .only(["_id", "_path", "title", "excerpt", "createdAt"])
+      .find(),
+  { watch: [locale] },
+);
 
 const tags = computed(() =>
   Array.from(
@@ -66,7 +61,7 @@ const imageUrls = urls.images;
           :title="article?.title ?? 'Untitled'"
           :excerpt="article?.excerpt"
           :url="article?._path ?? ''"
-          :image-url="imageUrls[index]"
+          :image-url="imageUrls[index % imageUrls.length]"
           :image-alt="$t('homePage.article-feed.illustration-img-alt')"
           :image-lazy-loaded="index === 0"
         />

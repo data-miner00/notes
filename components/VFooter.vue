@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { urls } from "../appsettings.json";
+import { urls } from "../settings.json";
 const localePath = useLocalePath();
 
 type NavigationLink = {
