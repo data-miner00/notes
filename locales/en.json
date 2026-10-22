@@ -1,4 +1,8 @@
 {
+  "site": {
+    "name": "Shaun Chong's Blog",
+    "description": "Technical blog website by Shaun Chong."
+  },
   "shared": {
     "publishedAt": "Published on {date}",
     "updatedAt": "Last updated on {date}"
@@ -70,7 +74,8 @@
       "title": "Sitemap",
       "homepage": "@:header.home",
       "notes": "@:header.notes",
-      "articles": "@:header.articles"
+      "articles": "@:header.articles",
+      "rss": "RSS Feed"
     },
     "projects": {
       "title": "Projects",

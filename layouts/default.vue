@@ -6,6 +6,16 @@ const head = useLocaleHead({
 });
 
 const htmlAttrs = computed(() => head.value.htmlAttrs!);
+
+useHead({
+  link: [
+    {
+      rel: "alternate",
+      type: "application/rss+xml",
+      href: useFeedUrl(),
+    },
+  ],
+});
 </script>
 
 <template>

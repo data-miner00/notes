@@ -10,16 +10,16 @@ function toggleSidebar() {
   open.value = !open.value;
 }
 
+function onScroll() {
+  scrolled.value = window.scrollY > 0;
+}
+
 onMounted(() => {
-  window.addEventListener("scroll", () => {
-    scrolled.value = window.scrollY > 0;
-  });
+  window.addEventListener("scroll", onScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", () =>
-    console.log("Unsubscribed scroll")
-  );
+  window.removeEventListener("scroll", onScroll);
 });
 
 type NavigationLink = {

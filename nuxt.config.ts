@@ -9,10 +9,6 @@ export default defineNuxtConfig({
       title: "Shaun Chong's Blog",
       meta: [
         {
-          name: "description",
-          content: "Technical blog website by Shaun Chong.",
-        },
-        {
           name: "theme-color",
           media: "(prefers-color-scheme: light)",
           content: "white",
@@ -100,13 +96,17 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://notes.mumk.dev",
-      siteName: "Shaun Chong's Blog",
-      siteDescription: "Technical blog website by Shaun Chong.",
       // Overridden by NUXT_PUBLIC_LATEST_ARTICLE_COUNT when set.
       latestArticleCount,
     },
   },
   image: {
     provider: "vercel",
+  },
+  nitro: {
+    prerender: {
+      // Not linked from any page, so the crawler won't find them on its own.
+      routes: ["/rss.xml", "/ko/rss.xml"],
+    },
   },
 });
