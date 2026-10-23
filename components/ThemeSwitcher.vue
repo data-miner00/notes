@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
-const open = useState("open", () => false);
+const open = ref(false);
 
 function selectTheme(selectedTheme: "system" | "light" | "dark") {
   colorMode.preference = selectedTheme;
