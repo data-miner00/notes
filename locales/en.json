@@ -7,6 +7,9 @@
     "publishedAt": "Published on {date}",
     "updatedAt": "Last updated on {date}"
   },
+  "tableOfContent": {
+    "title": "In this article"
+  },
   "homePage": {
     "title": "Notes and Articles",
     "hero": {

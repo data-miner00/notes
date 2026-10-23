@@ -7,6 +7,9 @@
     "publishedAt": "{date} 게시됨",
     "updatedAt": "{date} 업데이트됨"
   },
+  "tableOfContent": {
+    "title": "이 글의 내용"
+  },
   "homePage": {
     "title": "노트과 글",
     "hero": {
