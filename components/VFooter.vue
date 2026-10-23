@@ -137,6 +137,11 @@ const now = new Date();
             </NuxtLink>
           </li>
           <li>
+            <a href="/sitemap.xml">
+              {{ $t("footer.sitemap.xml") }}
+            </a>
+          </li>
+          <li>
             <a :href="feedUrl">
               {{ $t("footer.sitemap.rss") }}
             </a>

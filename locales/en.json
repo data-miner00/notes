@@ -75,6 +75,7 @@
       "homepage": "@:header.home",
       "notes": "@:header.notes",
       "articles": "@:header.articles",
+      "xml": "XML Sitemap",
       "rss": "RSS Feed"
     },
     "projects": {
