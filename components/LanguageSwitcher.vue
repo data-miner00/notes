@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath();
-const isPopupOpen = useState("popup-open", () => false);
+const isPopupOpen = ref(false);
 
 function closePopup() {
   isPopupOpen.value = false;

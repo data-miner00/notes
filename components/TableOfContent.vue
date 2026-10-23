@@ -4,20 +4,16 @@ const props = defineProps(["toc", "updatedAt"]);
 
 const isShowToTopButton = ref(false);
 
+function onScroll() {
+  isShowToTopButton.value = window.scrollY > screen.height / 2;
+}
+
 onMounted(() => {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > screen.height / 2) {
-      isShowToTopButton.value = true;
-    } else {
-      isShowToTopButton.value = false;
-    }
-  });
+  window.addEventListener("scroll", onScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", () =>
-    console.log("unmounted scroll listener")
-  );
+  window.removeEventListener("scroll", onScroll);
 });
 
 var scrollToTop = function () {
@@ -43,7 +39,9 @@ const formattedLastUpdatedDate = computed(() => {
     <header
       class="py-3 px-7 border-b border-solid border-gray-200 dark:border-gray-700 flex justify-between"
     >
-      <h3 class="text-gray-600 dark:text-gray-300 block">In this article</h3>
+      <h3 class="text-gray-600 dark:text-gray-300 block">
+        {{ $t("tableOfContent.title") }}
+      </h3>
 
       <button
         v-show="isShowToTopButton"

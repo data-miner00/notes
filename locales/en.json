@@ -7,6 +7,9 @@
     "publishedAt": "Published on {date}",
     "updatedAt": "Last updated on {date}"
   },
+  "tableOfContent": {
+    "title": "In this article"
+  },
   "homePage": {
     "title": "Notes and Articles",
     "hero": {
@@ -75,6 +78,7 @@
       "homepage": "@:header.home",
       "notes": "@:header.notes",
       "articles": "@:header.articles",
+      "xml": "XML Sitemap",
       "rss": "RSS Feed"
     },
     "projects": {
@@ -96,14 +100,22 @@
     "technologies": {
       "title": "Technologies"
     },
-    "powerByNuxt": "Powered by Nuxt"
+    "powerByNuxt": "Powered by Nuxt",
+    "copyright": "Notes © {year} by Shaun. All rights reserved."
   },
   "error": {
     "title": "404 Not Found",
     "description": "The content does not exist. Please try another one. "
   },
   "errorPage": {
-    "message": "Page not found",
+    "notFound": {
+      "message": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved."
+    },
+    "unexpected": {
+      "message": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again later."
+    },
     "action": "Go back home"
   }
 }
