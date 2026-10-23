@@ -4,20 +4,16 @@ const props = defineProps(["toc", "updatedAt"]);
 
 const isShowToTopButton = ref(false);
 
+function onScroll() {
+  isShowToTopButton.value = window.scrollY > screen.height / 2;
+}
+
 onMounted(() => {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > screen.height / 2) {
-      isShowToTopButton.value = true;
-    } else {
-      isShowToTopButton.value = false;
-    }
-  });
+  window.addEventListener("scroll", onScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", () =>
-    console.log("unmounted scroll listener")
-  );
+  window.removeEventListener("scroll", onScroll);
 });
 
 var scrollToTop = function () {
