@@ -194,7 +194,7 @@ const now = new Date();
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Notes &copy; {{ now.getFullYear() }} by Shaun. All rights reserved.
+      {{ $t("footer.copyright", { year: now.getFullYear() }) }}
     </footer>
   </footer>
 </template>

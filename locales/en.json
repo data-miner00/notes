@@ -100,7 +100,8 @@
     "technologies": {
       "title": "Technologies"
     },
-    "powerByNuxt": "Powered by Nuxt"
+    "powerByNuxt": "Powered by Nuxt",
+    "copyright": "Notes © {year} by Shaun. All rights reserved."
   },
   "error": {
     "title": "404 Not Found",
